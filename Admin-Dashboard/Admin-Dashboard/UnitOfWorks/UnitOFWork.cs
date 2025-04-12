@@ -13,7 +13,6 @@ namespace Admin_Dashboard.UnitOfWorks
         GenericRepository<Category> categoryRopo;
         GenericRepository<Service> serviceRopo;
 
-        GenericRepository<Payment> paymentMethodsRopo;
         GenericRepository<Payment> paymentRepo;
 
         GenericRepository<Admin> adminRepo;
@@ -73,19 +72,6 @@ namespace Admin_Dashboard.UnitOfWorks
                 return serviceRopo;
             }
         }
-
-        public GenericRepository<Payment> _paymentMethodsRopo
-        {
-            get
-            {
-                if (paymentMethodsRopo == null)
-                {
-                    paymentMethodsRopo = new GenericRepository<Payment>(db);
-                }
-                return paymentMethodsRopo;
-            }
-        }
-
         public GenericRepository<Payment> _paymentRopo
         {
             get
