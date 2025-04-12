@@ -1,0 +1,55 @@
+﻿@{
+    var paymentMethods = new Dictionary<int, string> {
+        { 0, "Cash" },
+        { 1, "Credit Card" },
+        { 2, "PayPal"  },
+        { 3, "Bank Transfer" }
+    };
+}
+@model Payment
+
+<style>
+    input {
+        width: 60%;
+    }
+
+        input[type=file] {
+            background-color: #fff;
+            border: 1px solid #d2cbcb;
+            border-radius: 3px;
+            color: black;
+        }
+</style>
+<section style="background-color:#e7e6e6;" class="padding-large">
+    <div class="form">
+        <form method="post" asp-action="Create" asp-controller="Payment">
+            <div class="form-group">
+                <label asp-for="Amount">Amount</label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status">Status</label>
+                <input asp-for="Status" class="form-control" />
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Method">Method</label>
+				<select asp-for="Method" class="form-control">
+					@foreach (var method in paymentMethods)
+					{
+						<option value="@method.Key">@method.Value</option>
+					}
+				</select>
+				<span asp-validation-for="Method" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary" style="text-align:center;background-color:black;
+        color:#fff;width: 119px;height: 50px;margin-bottom:30px">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>

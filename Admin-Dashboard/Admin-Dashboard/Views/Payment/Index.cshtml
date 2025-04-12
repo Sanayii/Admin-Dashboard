@@ -1,0 +1,53 @@
+﻿@{
+    ViewData["Title"] = "Payemnt";
+    //ViewBag.pagename = "Products";
+    //ViewBag.img = "admin.jpg";
+}
+
+@model List<Payment>
+@* <partial name="_Banner2" /> *@
+<section style="background-color:#e7e6e6;padding:50px">
+    <a asp-action="Create" class="btn btn-outline-dark" style="text-align:center;background-color:black;
+color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a>
+    <table class="table" style="border-color:#c7cbd0;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Method</th>
+                <th scope="col">Status</th>
+                <th scope="col" colspan="3"> Buttons</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var p in Model)
+            {
+
+                    <tr style="margin-bottom:5px;">
+                        <th>@p.Id</th>
+                        <td>@p.Amount</td>
+                        <td>@p.Method.ToString()</td>
+                        <td>@p.Status</td>
+                        <td><a asp-action="Detail" asp-route-id="@p.Id" class="btn btn-outline-dark">Detail</a></td>
+                        <td><a asp-action="Edit" asp-route-id="@p.Id" class="btn btn-outline-success">Edit</a></td>
+                        <td><button onclick="confirmDelete(@p.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
+                    </tr>
+                
+            }
+
+        </tbody>
+    </table>
+</section>
+<script>
+    function confirmDelete(id) {
+        var confirmation = confirm("Are you sure to delete this Payment Process?!");
+        if (confirmation) {
+            window.location.href = "/Payment/Delete/" + id;
+        }
+    }
+</script>
+
+
+

@@ -1,0 +1,12 @@
+﻿@model Payment
+
+<section style="background-color:#e7e6e6;" class="padding-medium">
+    <div class="box product-item" style="margin-left:10%">
+        <div class="detail">
+            <H2>Amount: $@Model.Amount</H2>
+            <h3>Status: @Model.Status</h3>
+            <P>Method: @Model.Method.ToString()</P>
+            <button><a asp-action="index" style="color:#fff">Back to List</a></button>
+        </div>
+    </div>
+</section>
