@@ -16,10 +16,12 @@ public partial class Payment
     public int Id { get; set; }
 
     [Required]
-    public string Status { get; set; }
+    public PaymentStatus Status { get; set; }
 
+    [Required]
+    [Range(20, 1000000,ErrorMessage = "Amount must be 20 and 1000000")]
     public int Amount { get; set; }
-
+    [Required]
     public PaymentMethod Method { get; set; }
 
     [InverseProperty("Payment")]

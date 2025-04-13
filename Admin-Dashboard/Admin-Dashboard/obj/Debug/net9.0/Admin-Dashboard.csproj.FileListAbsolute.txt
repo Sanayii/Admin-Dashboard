@@ -807,3 +807,4 @@ C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\A
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Da.FF2ED9CE.Up2Date
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Dashboard.genruntimeconfig.cache
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\ref\Admin-Dashboard.dll
+C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\compressed\9yv55j20zw-1bhi280vuu.gz
