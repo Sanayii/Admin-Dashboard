@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj": {}
+    "C:\\Users\\AYA MAHMOUD\\Source\\Repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj": {
+    "C:\\Users\\AYA MAHMOUD\\Source\\Repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
+        "projectUniqueName": "C:\\Users\\AYA MAHMOUD\\Source\\Repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
         "projectName": "Admin-Dashboard",
-        "projectPath": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
-        "packagesPath": "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\.nuget\\packages",
-        "outputPath": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\obj\\",
+        "projectPath": "C:\\Users\\AYA MAHMOUD\\Source\\Repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
+        "packagesPath": "C:\\Users\\AYA MAHMOUD\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\AYA MAHMOUD\\Source\\Repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\AYA MAHMOUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://nuget.org/api/v2": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net9.0": {

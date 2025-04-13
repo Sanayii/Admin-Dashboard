@@ -1,0 +1,88 @@
+﻿@model Admin_Dashboard.Models.ArtisanUserViewModel
+
+@{
+    ViewData["Title"] = "Edit Artisan";
+}
+
+<h1>Edit Artisan</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <h4>User Information</h4>
+                    <div class="form-group">
+                        <label asp-for="User.FName" class="control-label"></label>
+                        <input asp-for="User.FName" class="form-control" />
+                        <span asp-validation-for="User.FName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="User.LName" class="control-label"></label>
+                        <input asp-for="User.LName" class="form-control" />
+                        <span asp-validation-for="User.LName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="User.Email" class="control-label"></label>
+                        <input asp-for="User.Email" class="form-control" />
+                        <span asp-validation-for="User.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="User.PhoneNumber" class="control-label"></label>
+                        <input asp-for="User.PhoneNumber" class="form-control" />
+                        <span asp-validation-for="User.PhoneNumber" class="text-danger"></span>
+                    </div>
+
+                    <h5>Additional Phone Numbers</h5>
+                    @{
+                        var phoneList = Model.User.UserPhones.ToList();
+                        for (int i = 0; i < phoneList.Count; i++)
+                        {
+                            <div class="form-group">
+                                <label class="control-label">Phone @(i + 1)</label>
+                                <input asp-for="User.UserPhones.ElementAt(i).PhoneNumber" class="form-control" />
+                                <span asp-validation-for="User.UserPhones.ElementAt(i).PhoneNumber" class="text-danger"></span>
+                                <input type="hidden" asp-for="User.UserPhones.ElementAt(i).UserId" />
+                            </div>
+                        }
+                    }
+                </div>
+
+                <div class="col-md-6">
+                    <h4>Artisan Information</h4>
+                    <div class="form-group">
+                        <label asp-for="Artisan.NationalityId" class="control-label"></label>
+                        <input asp-for="Artisan.NationalityId" class="form-control" />
+                        <span asp-validation-for="Artisan.NationalityId" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Artisan.Rating" class="control-label"></label>
+                        <input asp-for="Artisan.Rating" class="form-control" />
+                        <span asp-validation-for="Artisan.Rating" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Artisan.CategoryId" class="control-label"></label>
+                        <select asp-for="Artisan.CategoryId" class="form-control"
+                                asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))">
+                        </select>
+                        <span asp-validation-for="Artisan.CategoryId" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group mt-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,44 @@
+﻿@model Admin_Dashboard.Models.AdminUserViewModel
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="User.Id" />
+    <input type="hidden" asp-for="Admin.Id" />
+
+    <h3>User Info</h3>
+    <div class="form-group">
+        <label asp-for="User.FName"></label>
+        <input asp-for="User.FName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.LName"></label>
+        <input asp-for="User.LName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Email"></label>
+        <input asp-for="User.Email" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Age"></label>
+        <input asp-for="User.Age" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.City"></label>
+        <input asp-for="User.City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Street"></label>
+        <input asp-for="User.Street" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="User.Government"></label>
+        <input asp-for="User.Government" class="form-control" />
+    </div>
+
+    <h3>Admin Info</h3>
+    <div class="form-group">
+        <label asp-for="Admin.Salary"></label>
+        <input asp-for="Admin.Salary" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-warning">Save Changes</button>
+</form>
