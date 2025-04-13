@@ -7,6 +7,7 @@ C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\A
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\js\bootstrap.js.map
+C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\css\style.css
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css
@@ -61,7 +62,10 @@ C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\A
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map
 C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css
 wwwroot\css\site.css
+wwwroot\css\style.css
 wwwroot\favicon.ico
+wwwroot\images\banner.png
+wwwroot\images\test.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

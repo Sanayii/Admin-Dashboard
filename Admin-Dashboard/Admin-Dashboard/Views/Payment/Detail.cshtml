@@ -1,12 +1,20 @@
-﻿@model Payment
+﻿@{
+    ViewData["Title"] = "Payment";
+    ViewBag.pagename = "Payment";
+}
+@model Payment
 
-<section style="background-color:#e7e6e6;" class="padding-medium">
-    <div class="box product-item" style="margin-left:10%">
-        <div class="detail">
-            <H2>Amount: $@Model.Amount</H2>
-            <h3>Status: @Model.Status</h3>
-            <P>Method: @Model.Method.ToString()</P>
-            <button><a asp-action="index" style="color:#fff">Back to List</a></button>
+<partial name="_Banner" />
+
+<section class="container my-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <h1 class="fw-bold fs-2 text-center mb-4">Payment Process Detail</h1>
+            <p class="card-text text-2xl mb-2"><strong>Amount:</strong> @Model.Amount</p>
+            <p class="card-text text-2xl mb-2"><strong>Status:</strong> @Model.Status.ToString()</p>
+            <p class="card-text text-2xl mb-4"><strong>Method:</strong> @Model.Method.ToString()</p>
+
+            <a asp-action="Index" class="btn w-100 text-white" style="background-color:#262e39;">← Back to List</a>
         </div>
     </div>
 </section>

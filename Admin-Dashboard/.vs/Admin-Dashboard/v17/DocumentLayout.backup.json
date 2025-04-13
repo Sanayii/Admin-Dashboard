@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\payment\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\payment\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\payment\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,8 +27,36 @@
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\payment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_banner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_banner.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +66,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1069,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,13 +78,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAUwBAAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T21:36:42.261Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Admin-Dashboard\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T15:47:37.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAAAGoAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T22:15:35.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "PaymentMethod.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentMethod.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Enums\\PaymentMethod.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentMethod.cs",
               "RelativeToolTip": "Admin-Dashboard\\Enums\\PaymentMethod.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T22:01:13.251Z",
               "EditorCaption": ""
@@ -69,22 +136,9 @@
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Detail.cshtml",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Detail.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Detail.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T21:41:21.722Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
-              "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-12T21:36:42.261Z",
               "EditorCaption": ""
             },
             {
@@ -95,48 +149,113 @@
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Index.cshtml",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Index.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T21:36:00.586Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\wwwroot\\css\\style.css",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "Admin-Dashboard\\wwwroot\\css\\style.css",
+              "ViewState": "AgIAALMEAAAAAAAAAAAAALMEAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-04-13T17:03:38.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Create.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Create.cshtml",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Create.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Create.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAnwCEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T21:26:39.799Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Payment.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Payment.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T21:18:49.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Artisan.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Artisan.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Artisan.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T22:24:14.825Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "_Banner.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Banner.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_Banner.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Banner.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_Banner.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T22:31:33.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "PaymentStatus.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentStatus.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Enums\\PaymentStatus.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentStatus.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Enums\\PaymentStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T14:19:37.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\PaymentController.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "Admin-Dashboard\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAADkAAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-12T20:58:33.266Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Payment.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Payment.cs*",
-              "RelativeToolTip": "Admin-Dashboard\\Models\\Payment.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T21:18:49.623Z",
+              "DocumentIndex": 13,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeToolTip": "Admin-Dashboard\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-13T14:27:06.162Z",
               "EditorCaption": ""
             }
           ]
