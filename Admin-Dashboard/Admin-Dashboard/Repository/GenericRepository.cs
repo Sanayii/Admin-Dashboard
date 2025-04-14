@@ -11,13 +11,13 @@ namespace Admin_Dashboard.Repository
                 this.db = db;
             }
 
-            public List<TEntity> getAll()
+            public  virtual List<TEntity> getAll()
             {
                 List<TEntity> allEntity = db.Set<TEntity>().ToList();
                 return allEntity;
             }
 
-            public TEntity getById<T>(T id)
+            public virtual TEntity getById<T>(T id)
             {
                 TEntity entity = db.Set<TEntity>().Find(id);
                 return entity;

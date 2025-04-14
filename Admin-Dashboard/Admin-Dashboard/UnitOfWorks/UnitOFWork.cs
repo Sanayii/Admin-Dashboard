@@ -8,6 +8,9 @@ namespace Admin_Dashboard.UnitOfWorks
     {
         SanayiiContext db;
 
+        AdminRepository adminRepo;
+
+
         GenericRepository<IdentityRole> roleRepo;
 
         GenericRepository<Category> categoryRopo;
@@ -15,8 +18,8 @@ namespace Admin_Dashboard.UnitOfWorks
 
         GenericRepository<Payment> paymentRepo;
 
-        GenericRepository<Admin> adminRepo;
-        GenericRepository<Customer> customerRepo;
+        //GenericRepository<Admin> adminRepo;
+        CustomerRepository customerRepo;
         ArtisanRepository artisanRepo;
 
         GenericRepository<Contract> contractRepo;
@@ -84,26 +87,27 @@ namespace Admin_Dashboard.UnitOfWorks
             }
         }
 
-        public GenericRepository<Admin> _adminRopo
+        public AdminRepository _adminRopo
         {
             get
             {
                 if (adminRepo == null)
                 {
-                    adminRepo = new GenericRepository<Admin>(db);
+                    adminRepo = new AdminRepository(db);
                 }
                 return adminRepo;
             }
         }
 
 
-        public GenericRepository<Customer> _customerRepo
+
+        public CustomerRepository _customerRepo
         {
             get
             {
                 if (customerRepo == null)
                 {
-                    customerRepo = new GenericRepository<Customer>(db);
+                    customerRepo = new CustomerRepository(db);
                 }
                 return customerRepo;
             }

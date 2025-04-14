@@ -1,0 +1,54 @@
+﻿@model Admin_Dashboard.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit Customer";
+}
+
+<h2>Edit Customer</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <input type="hidden" asp-for="IdNavigation.Id" />
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.FName"></label>
+        <input asp-for="IdNavigation.FName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.LName"></label>
+        <input asp-for="IdNavigation.LName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.Email"></label>
+        <input asp-for="IdNavigation.Email" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.City"></label>
+        <input asp-for="IdNavigation.City" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.Street"></label>
+        <input asp-for="IdNavigation.Street" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="IdNavigation.Government"></label>
+        <input asp-for="IdNavigation.Government" class="form-control" />
+    </div>
+
+    <h4>Phone Numbers</h4>
+    <div class="form-group">
+        @for (int i = 0; i < Model.IdNavigation.UserPhones.Count; i++)
+        {
+            var phone = Model.IdNavigation.UserPhones.ElementAt(i);
+            <input name="IdNavigation.UserPhones[@i].PhoneNumber" class="form-control mb-2" value="@phone.PhoneNumber" />
+            <input type="hidden" name="IdNavigation.UserPhones[@i].UserId" value="@phone.UserId" />
+        }
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
