@@ -2,53 +2,74 @@
 
 @{
     ViewData["Title"] = "Edit Customer";
+    ViewBag.pagename = "customer";
 }
 
-<h2>Edit Customer</h2>
+<partial name="_Banner" />
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Id" />
-    <input type="hidden" asp-for="IdNavigation.Id" />
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-info text-white">
+            <h3 class="mb-0">Edit Customer</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="Id" />
+                <input type="hidden" asp-for="IdNavigation.Id" />
 
-    <div class="form-group">
-        <label asp-for="IdNavigation.FName"></label>
-        <input asp-for="IdNavigation.FName" class="form-control" />
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="IdNavigation.FName" class="form-label"></label>
+                        <input asp-for="IdNavigation.FName" class="form-control" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="IdNavigation.LName" class="form-label"></label>
+                        <input asp-for="IdNavigation.LName" class="form-control" />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IdNavigation.Email" class="form-label"></label>
+                    <input asp-for="IdNavigation.Email" class="form-control" />
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="IdNavigation.City" class="form-label"></label>
+                        <input asp-for="IdNavigation.City" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="IdNavigation.Street" class="form-label"></label>
+                        <input asp-for="IdNavigation.Street" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="IdNavigation.Government" class="form-label"></label>
+                        <input asp-for="IdNavigation.Government" class="form-control" />
+                    </div>
+                </div>
+
+                <h5 class="mt-4 text-secondary">Phone Numbers</h5>
+                <div class="mb-3">
+                    @for (int i = 0; i < Model.IdNavigation.UserPhones.Count; i++)
+                    {
+                        var phone = Model.IdNavigation.UserPhones.ElementAt(i);
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">Phone @(i + 1)</span>
+                            <input name="IdNavigation.UserPhones[@i].PhoneNumber" class="form-control" value="@phone.PhoneNumber" />
+                            <input type="hidden" name="IdNavigation.UserPhones[@i].UserId" value="@phone.UserId" />
+                        </div>
+                    }
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left-circle"></i> Back to List
+                    </a>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-save"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label asp-for="IdNavigation.LName"></label>
-        <input asp-for="IdNavigation.LName" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="IdNavigation.Email"></label>
-        <input asp-for="IdNavigation.Email" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="IdNavigation.City"></label>
-        <input asp-for="IdNavigation.City" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="IdNavigation.Street"></label>
-        <input asp-for="IdNavigation.Street" class="form-control" />
-    </div>
-
-    <div class="form-group">
-        <label asp-for="IdNavigation.Government"></label>
-        <input asp-for="IdNavigation.Government" class="form-control" />
-    </div>
-
-    <h4>Phone Numbers</h4>
-    <div class="form-group">
-        @for (int i = 0; i < Model.IdNavigation.UserPhones.Count; i++)
-        {
-            var phone = Model.IdNavigation.UserPhones.ElementAt(i);
-            <input name="IdNavigation.UserPhones[@i].PhoneNumber" class="form-control mb-2" value="@phone.PhoneNumber" />
-            <input type="hidden" name="IdNavigation.UserPhones[@i].UserId" value="@phone.UserId" />
-        }
-    </div>
-
-    <button type="submit" class="btn btn-primary">Save</button>
-</form>
+</div>
