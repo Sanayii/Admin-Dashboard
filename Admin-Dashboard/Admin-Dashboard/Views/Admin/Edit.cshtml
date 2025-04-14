@@ -1,44 +1,64 @@
 ﻿@model Admin_Dashboard.Models.AdminUserViewModel
+@{
+    ViewData["Title"] = "Edit Admin";
+    ViewBag.pagename = "Admin";
+}
+<partial name="_Banner" />
 
-<form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="User.Id" />
-    <input type="hidden" asp-for="Admin.Id" />
+<div class="container mt-5">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Edit Admin</h2>
+        </div>
+        <div class="card-body">
+            <form asp-action="Edit" method="post">
+                <input type="hidden" asp-for="User.Id" />
+                <input type="hidden" asp-for="Admin.Id" />
 
-    <h3>User Info</h3>
-    <div class="form-group">
-        <label asp-for="User.FName"></label>
-        <input asp-for="User.FName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.LName"></label>
-        <input asp-for="User.LName" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.Email"></label>
-        <input asp-for="User.Email" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.Age"></label>
-        <input asp-for="User.Age" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.City"></label>
-        <input asp-for="User.City" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.Street"></label>
-        <input asp-for="User.Street" class="form-control" />
-    </div>
-    <div class="form-group">
-        <label asp-for="User.Government"></label>
-        <input asp-for="User.Government" class="form-control" />
-    </div>
+                <h4 class="mb-3 text-secondary">User Info</h4>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="User.FName" class="form-label"></label>
+                        <input asp-for="User.FName" class="form-control" />
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label asp-for="User.LName" class="form-label"></label>
+                        <input asp-for="User.LName" class="form-control" />
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="User.Email" class="form-label"></label>
+                    <input asp-for="User.Email" class="form-control" />
+                </div>
+                <div class="row">
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="User.Age" class="form-label"></label>
+                        <input asp-for="User.Age" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="User.City" class="form-label"></label>
+                        <input asp-for="User.City" class="form-control" />
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <label asp-for="User.Street" class="form-label"></label>
+                        <input asp-for="User.Street" class="form-control" />
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label asp-for="User.Government" class="form-label"></label>
+                    <input asp-for="User.Government" class="form-control" />
+                </div>
 
-    <h3>Admin Info</h3>
-    <div class="form-group">
-        <label asp-for="Admin.Salary"></label>
-        <input asp-for="Admin.Salary" class="form-control" />
-    </div>
+                <h4 class="mb-3 text-secondary">Admin Info</h4>
+                <div class="mb-4">
+                    <label asp-for="Admin.Salary" class="form-label"></label>
+                    <input asp-for="Admin.Salary" class="form-control" />
+                </div>
 
-    <button type="submit" class="btn btn-warning">Save Changes</button>
-</form>
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-warning px-4">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
