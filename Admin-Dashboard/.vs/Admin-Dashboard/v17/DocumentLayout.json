@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -41,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -130,7 +142,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1069,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -158,33 +170,59 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "UnitOFWork.cs",
-              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAMwMYAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T22:09:10.468Z",
+              "DocumentIndex": 2,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAcAAAAAAAAAAIAwwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T06:56:14.612Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T06:56:12.088Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T06:56:09.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAAgAAAAAAAAAAIAwwDgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADcAAAAATFSQbQj0vzgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-13T16:49:34.077Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Artisan\\Index.cshtml",
@@ -192,12 +230,24 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\Artisan\\Index.cshtml",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwCsAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-13T22:36:18.43Z",
+              "WhenOpened": "2025-04-13T22:36:18.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T21:18:57.302Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\CustomerController.cs",
@@ -205,12 +255,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Controllers\\CustomerController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAywBcAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T22:04:28.429Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T22:04:28.429Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Review.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Review.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Review.cs",
@@ -218,12 +267,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Models\\Review.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAWwA0AAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T22:02:22.982Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-13T22:02:22.982Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "ArtisanRepository.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ArtisanRepository.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ArtisanRepository.cs",
@@ -235,7 +283,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
+              "Title": "UnitOFWork.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAMwMYAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T22:09:10.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Customer\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Customer\\Index.cshtml",
@@ -247,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
               "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
@@ -259,7 +319,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "AdminController.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\AdminController.cs",
@@ -271,7 +331,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "CustomerRepository.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
@@ -283,19 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAiwCMAAABeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-13T21:18:57.302Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Customer\\Edit.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Customer\\Edit.cshtml",
@@ -307,7 +355,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Customer.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Customer.cs",
@@ -319,7 +367,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "UserPhone.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\UserPhone.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\UserPhone.cs",
@@ -331,7 +379,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "Payment.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Payment.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Payment.cs",
@@ -343,7 +391,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\User.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\User.cs",
@@ -355,7 +403,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\GenericRepository.cs",
@@ -367,7 +415,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "ArtisanUserViewModel.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\ArtisanUserViewModel.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\ArtisanUserViewModel.cs",
@@ -379,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 22,
               "Title": "IEntity.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\IEntity.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\IEntity.cs",
@@ -391,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "Artisan.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Artisan.cs",
@@ -403,7 +451,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "Admin.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Admin.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Admin.cs",
@@ -415,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Data\\ApplicationDbContext.cs",
@@ -427,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\HomeController.cs",
@@ -439,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\PaymentController.cs",
@@ -451,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
@@ -463,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "PaymentMethod.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentMethod.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Enums\\PaymentMethod.cs",
@@ -475,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "Detail.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Detail.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Detail.cshtml",
@@ -487,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
@@ -499,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 32,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Index.cshtml",
@@ -511,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Create.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Create.cshtml",
