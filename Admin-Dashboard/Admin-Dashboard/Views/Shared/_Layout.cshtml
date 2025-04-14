@@ -7,9 +7,14 @@
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/Admin_Dashboard.styles.css" asp-append-version="true" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="pt-20" >
+    <!-- Add padding-top to compensate for fixed navbar -->
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -38,20 +43,113 @@
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
+
+        <!-- Navbar -->
+        <nav class="fixed top-0 left-0 w-full z-50 bg-[#262e39] text-white flex items-center justify-between px-6 py-4 shadow-md">
+            <!-- Logo -->
+            <div class="text-2xl font-bold tracking-wider">
+                <span class="border-r-4 pr-1 mr-1 border-white">MG</span>K
+
             </div>
+
+            <!-- Navigation Links -->
+            <div class="flex space-x-6 items-center text-sm font-medium">
+                <!-- Dropdown -->
+                <div class="relative group">
+                    <button class="flex items-center space-x-1">
+                        <span>Kategorie</span>
+                        <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                    <!-- Dropdown menu -->
+                    <div class="absolute hidden group-hover:block mt-2 bg-white text-black rounded shadow-lg w-40 z-10">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kategorie 1</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kategorie 2</a>
+                    </div>
+                </div>
+
+                <a href="#" class="hover:text-gray-300">O nas</a>
+                <a href="#" class="hover:text-gray-300">Dlaczego MGK</a>
+                <a asp-action="index" asp-controller="payment" class="hover:text-gray-300">Payment</a>
+            </div>
+
+            <!-- CTA Button -->
+            <a href="#" class="border border-white rounded-full px-5 py-2 text-sm font-medium hover:bg-white hover:text-[#2c3e50] transition-all sm:hidden">
+                Wszystkie produkty →
+            </a>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    @RenderBody()
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Admin_Dashboard - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="bg-[#262e39] text-white py-10 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Logo -->
+            <div class="flex flex-col justify-between">
+                <div class="text-2xl font-bold tracking-wider mb-6">
+                    <span class="border-r-4 pr-1 mr-1 border-white">MG</span>K
+                </div>
+                <!-- Social Icons -->
+                <div class="flex space-x-2 mt-4">
+                    <a href="#" class="bg-white text-[#2c3e50] p-2 rounded-sm">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="bg-white text-[#2c3e50] p-2 rounded-sm">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="#" class="bg-white text-[#2c3e50] p-2 rounded-sm">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Navigation -->
+            <div>
+                <h3 class="uppercase font-bold text-white text-sm mb-3">Navigation</h3>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">Artisans</a></li>
+                    <li><a href="#" class="hover:underline">How It Works</a></li>
+                    <li><a href="#" class="hover:underline">About Us</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h3 class="uppercase font-bold text-white text-sm mb-3">Contact</h3>
+                <p class="text-sm mb-1">+1 (555) 123-4567</p>
+                <p class="text-sm">support@craftconnect.com</p>
+            </div>
+
+            <!-- Help Boxes -->
+            <div class="space-y-4">
+                <div class="border border-gray-400 rounded-2xl p-4">
+                    <h4 class="font-bold mb-1 text-white">Need Help?</h4>
+                    <p class="text-sm text-gray-300">Didn't find what you were looking for or need support?</p>
+                    <div class="text-right mt-2">→</div>
+                </div>
+                <div class="border border-gray-400 rounded-2xl p-4">
+                    <h4 class="font-bold mb-1 text-white">Custom Project?</h4>
+                    <p class="text-sm text-gray-300">Looking for a custom service from an artisan?</p>
+                    <div class="text-right mt-2">→</div>
+                </div>
+            </div>
         </div>
+
+        <!-- Bottom Bar -->
+        <div class="mt-10 border-t border-gray-500 pt-6 flex flex-col md:flex-row items-center justify-between text-sm text-gray-300">
+            <p>Sanayii 2025 © All rights reserved</p>
+            <div class="flex space-x-6 mt-2 md:mt-0">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+                <a href="#" class="hover:underline">Cookie Settings</a>
+            </div>
+        </div>
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
