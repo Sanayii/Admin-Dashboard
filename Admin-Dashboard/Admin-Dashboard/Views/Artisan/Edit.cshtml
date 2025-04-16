@@ -1,4 +1,4 @@
-﻿@model Admin_Dashboard.Models.ArtisanUserViewModel
+﻿@model Admin_Dashboard.ViewModels.ArtisanViewModel
 
 @{
     ViewData["Title"] = "Edit Artisan";
@@ -13,51 +13,60 @@
             <h3 class="mb-0">Edit Artisan</h3>
         </div>
         <div class="card-body">
-            <form asp-action="Edit">
+            <form asp-action="Edit" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
                 <div class="row">
                     <!-- User Info -->
                     <div class="col-md-6">
                         <h4 class="text-secondary">User Information</h4>
-
+                        <input type="hidden" asp-for="Id" />
                         <div class="mb-3">
-                            <label asp-for="User.FName" class="form-label"></label>
-                            <input asp-for="User.FName" class="form-control" />
-                            <span asp-validation-for="User.FName" class="text-danger"></span>
+                            <label asp-for="FName" class="form-label"></label>
+                            <input asp-for="FName" class="form-control" />
+                            <span asp-validation-for="FName" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="User.LName" class="form-label"></label>
-                            <input asp-for="User.LName" class="form-control" />
-                            <span asp-validation-for="User.LName" class="text-danger"></span>
+                            <label asp-for="LName" class="form-label"></label>
+                            <input asp-for="LName" class="form-control" />
+                            <span asp-validation-for="LName" class="text-danger"></span>
                         </div>
-
                         <div class="mb-3">
-                            <label asp-for="User.Email" class="form-label"></label>
-                            <input asp-for="User.Email" class="form-control" />
-                            <span asp-validation-for="User.Email" class="text-danger"></span>
+                            <label asp-for="Age" class="form-label"></label>
+                            <input asp-for="Age" class="form-control" />
+                            <span asp-validation-for="Age" class="text-danger"></span>
                         </div>
-
                         <div class="mb-3">
-                            <label asp-for="User.PhoneNumber" class="form-label"></label>
-                            <input asp-for="User.PhoneNumber" class="form-control" />
-                            <span asp-validation-for="User.PhoneNumber" class="text-danger"></span>
+                            <label asp-for="Email" class="form-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
                         </div>
-
-                        <h5 class="mt-4 text-secondary">Additional Phone Numbers</h5>
-                        @{
-                            var phoneList = Model.User.UserPhones.ToList();
-                            for (int i = 0; i < phoneList.Count; i++)
+                        <div class="mb-3">
+                            <label asp-for="City" class="form-label"></label>
+                            <input asp-for="City" class="form-control" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Government" class="form-label"></label>
+                            <input asp-for="Government" class="form-control" />
+                            <span asp-validation-for="Government" class="text-danger"></span>
+                        </div>
+                        <div class="mb-3">
+                            <label asp-for="Street" class="form-label"></label>
+                            <input asp-for="Street" class="form-control" />
+                            <span asp-validation-for="Street" class="text-danger"></span>
+                        </div>
+                        <h5 class="mt-4 text-secondary">Phone Numbers</h5>
+                        <div class="mb-3">
+                            @for (int i = 0; i < Model.Phones.Count; i++)
                             {
-                                <div class="mb-3">
-                                    <label class="form-label">Phone @(i + 1)</label>
-                                    <input asp-for="User.UserPhones.ElementAt(i).PhoneNumber" class="form-control" />
-                                    <span asp-validation-for="User.UserPhones.ElementAt(i).PhoneNumber" class="text-danger"></span>
-                                    <input type="hidden" asp-for="User.UserPhones.ElementAt(i).UserId" />
+                                <div class="input-group mb-2">
+                                    <span class="input-group-text">Phone @(i + 1)</span>
+                                    <input name="Phones[@i]" class="form-control" value="@Model.Phones[i]" />
                                 </div>
                             }
-                        }
+                        </div>
                     </div>
 
                     <!-- Artisan Info -->
@@ -65,23 +74,22 @@
                         <h4 class="text-secondary">Artisan Information</h4>
 
                         <div class="mb-3">
-                            <label asp-for="Artisan.NationalityId" class="form-label"></label>
-                            <input asp-for="Artisan.NationalityId" class="form-control" />
-                            <span asp-validation-for="Artisan.NationalityId" class="text-danger"></span>
+                            <label asp-for="NationalityId" class="form-label"></label>
+                            <input asp-for="NationalityId" class="form-control" />
+                            <span asp-validation-for="NationalityId" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Artisan.Rating" class="form-label"></label>
-                            <input asp-for="Artisan.Rating" class="form-control" />
-                            <span asp-validation-for="Artisan.Rating" class="text-danger"></span>
+                            <label asp-for="Rating" class="form-label"></label>
+                            <input asp-for="Rating" class="form-control" />
+                            <span asp-validation-for="Rating" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label asp-for="Artisan.CategoryId" class="form-label"></label>
-                            <select asp-for="Artisan.CategoryId" class="form-select"
-                                    asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))">
+                            <label asp-for="CategoryId" class="form-label"></label>
+                            <select asp-for="CategoryId" class="form-select" asp-items="@(new SelectList(ViewBag.Categories, "Id", "Name"))">
                             </select>
-                            <span asp-validation-for="Artisan.CategoryId" class="text-danger"></span>
+                            <span asp-validation-for="CategoryId" class="text-danger"></span>
                         </div>
                     </div>
                 </div>
@@ -99,8 +107,3 @@
     </div>
 </div>
 
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

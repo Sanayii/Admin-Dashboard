@@ -9,21 +9,21 @@ using Microsoft.EntityFrameworkCore;
 namespace Admin_Dashboard.Models;
 
 [Table("Customer")]
-public partial class Customer
+public partial class Customer : AppUser
 {
-    [Key]
-    public string Id { get; set; }
+    //[Key]
+    //public string Id { get; set; }
 
-    [InverseProperty("Customer")]
+
     public virtual ICollection<CustomerDiscount> CustomerDiscounts { get; set; } = new List<CustomerDiscount>();
 
-    [ForeignKey("Id")]
-    [InverseProperty("Customer")]
-    public virtual User IdNavigation { get; set; }
+    //[ForeignKey("Id")]
 
-    [InverseProperty("Customer")]
+    //public virtual AppUser IdNavigation { get; set; }
+
+
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 
-    [InverseProperty("Customer")]
+
     public virtual ICollection<ServiceRequestPayment> ServiceRequestPayments { get; set; } = new List<ServiceRequestPayment>();
 }

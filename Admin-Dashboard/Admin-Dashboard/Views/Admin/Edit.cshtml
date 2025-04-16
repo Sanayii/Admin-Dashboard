@@ -1,4 +1,4 @@
-﻿@model Admin_Dashboard.Models.AdminUserViewModel
+﻿@model Admin_Dashboard.ViewModels.AdminViewModel
 @{
     ViewData["Title"] = "Edit Admin";
     ViewBag.pagename = "Admin";
@@ -12,47 +12,57 @@
         </div>
         <div class="card-body">
             <form asp-action="Edit" method="post">
-                <input type="hidden" asp-for="User.Id" />
-                <input type="hidden" asp-for="Admin.Id" />
+                <input type="hidden" asp-for="Id" />
 
                 <h4 class="mb-3 text-secondary">User Info</h4>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label asp-for="User.FName" class="form-label"></label>
-                        <input asp-for="User.FName" class="form-control" />
+                        <label asp-for="FName" class="form-label"></label>
+                        <input asp-for="FName" class="form-control" />
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label asp-for="User.LName" class="form-label"></label>
-                        <input asp-for="User.LName" class="form-control" />
+                        <label asp-for="LName" class="form-label"></label>
+                        <input asp-for="LName" class="form-control" />
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label asp-for="User.Email" class="form-label"></label>
-                    <input asp-for="User.Email" class="form-control" />
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
                 </div>
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <label asp-for="User.Age" class="form-label"></label>
-                        <input asp-for="User.Age" class="form-control" />
+                        <label asp-for="Age" class="form-label"></label>
+                        <input asp-for="Age" class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label asp-for="User.City" class="form-label"></label>
-                        <input asp-for="User.City" class="form-control" />
+                        <label asp-for="City" class="form-label"></label>
+                        <input asp-for="City" class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label asp-for="User.Street" class="form-label"></label>
-                        <input asp-for="User.Street" class="form-control" />
+                        <label asp-for="Street" class="form-label"></label>
+                        <input asp-for="Street" class="form-control" />
                     </div>
                 </div>
                 <div class="mb-4">
-                    <label asp-for="User.Government" class="form-label"></label>
-                    <input asp-for="User.Government" class="form-control" />
+                    <label asp-for="Government" class="form-label"></label>
+                    <input asp-for="Government" class="form-control" />
+                </div>
+
+                <h5 class="mt-4 text-secondary">Phone Numbers</h5>
+                <div class="mb-3">
+                    @for (int i = 0; i < Model.Phones.Count; i++)
+                    {
+                        <div class="input-group mb-2">
+                            <span class="input-group-text">Phone @(i + 1)</span>
+                            <input name="Phones[@i]" class="form-control" value="@Model.Phones[i]" />
+                        </div>
+                    }
                 </div>
 
                 <h4 class="mb-3 text-secondary">Admin Info</h4>
                 <div class="mb-4">
-                    <label asp-for="Admin.Salary" class="form-label"></label>
-                    <input asp-for="Admin.Salary" class="form-control" />
+                    <label asp-for="Salary" class="form-label"></label>
+                    <input asp-for="Salary" class="form-control" />
                 </div>
 
                 <div class="d-flex justify-content-end">

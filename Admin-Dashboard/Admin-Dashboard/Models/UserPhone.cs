@@ -19,5 +19,5 @@ public partial class UserPhone
 
     [ForeignKey("UserId")]
     [InverseProperty("UserPhones")]
-    public virtual User User { get; set; }
+    public virtual AppUser User { get; set; }
 }

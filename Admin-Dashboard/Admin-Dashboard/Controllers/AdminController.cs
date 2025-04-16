@@ -1,7 +1,7 @@
 ﻿using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
 using Microsoft.AspNetCore.Mvc;
-
+using Admin_Dashboard.ViewModels;
 namespace Admin_Dashboard.Controllers
 {
     public class AdminController : Controller
@@ -26,31 +26,64 @@ namespace Admin_Dashboard.Controllers
         public IActionResult Edit(string id)
         {
             var admin = unitOFWork._adminRopo.getById(id);
-            var user = admin.IdNavigation;
 
-            var viewModel = new AdminUserViewModel
+            if(admin == null) 
+                return NotFound();
+
+            var viewModel = new AdminViewModel
             {
-                Admin = admin,
-                User = user
+                Id= admin.Id,
+                FName= admin.FName,
+                LName= admin.LName,
+                Age= admin.Age,
+                Email= admin.Email,
+                City= admin.City,
+                Street= admin.Street,
+                Government= admin.Government,       
+                Phones= admin.UserPhones.Select(p => p.PhoneNumber).ToList(),
+                Salary= admin.Salary,
             };
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(AdminUserViewModel viewModel)
+        public IActionResult Edit(AdminViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                viewModel.Admin.Id = viewModel.User.Id;
+                var admin = unitOFWork._adminRopo.getById(viewModel.Id);
 
-                unitOFWork._adminRopo.edit(viewModel.Admin);
-                unitOFWork._customerRepo.db.Users.Update(viewModel.User);
+                if (admin == null)
+                    return NotFound();
+
+                admin.FName = viewModel.FName;
+                admin.LName = viewModel.LName;
+                admin.Age = viewModel.Age;
+                admin.Email = viewModel.Email;
+                admin.City = viewModel.City;
+                admin.Street = viewModel.Street;
+                admin.Government = viewModel.Government;
+                admin.Salary = viewModel.Salary;
+
+                // Clear old phones and add new ones
+                admin.UserPhones.Clear();
+                foreach (var phone in viewModel.Phones)
+                {
+                    admin.UserPhones.Add(new UserPhone
+                    {
+                        PhoneNumber = phone,
+                        UserId = admin.Id
+                    });
+                }
+
+                unitOFWork._adminRopo.edit(admin);
+                
 
                 unitOFWork.save();
                 return RedirectToAction("Index");
             }
-            
+
             logger.LogError(" ModelState is invalid. Errors:");
 
             foreach (var state in ModelState)

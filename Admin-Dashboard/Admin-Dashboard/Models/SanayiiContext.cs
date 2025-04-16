@@ -2,11 +2,13 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Models;
 
-public partial class SanayiiContext : DbContext
+public partial class SanayiiContext : IdentityDbContext<AppUser>
 {
     public SanayiiContext()
     {
@@ -20,8 +22,6 @@ public partial class SanayiiContext : DbContext
     public virtual DbSet<Admin> Admins { get; set; }
 
     public virtual DbSet<Artisan> Artisans { get; set; }
-
-    public virtual DbSet<AspNetRole> AspNetRoles { get; set; }
 
     public virtual DbSet<AuditLog> AuditLogs { get; set; }
 
@@ -43,7 +43,7 @@ public partial class SanayiiContext : DbContext
 
     public virtual DbSet<ServiceRequestPayment> ServiceRequestPayments { get; set; }
 
-    public virtual DbSet<User> Users { get; set; }
+    public virtual DbSet<AppUser> Users { get; set; }
 
     public virtual DbSet<UserPhone> UserPhones { get; set; }
 
@@ -59,14 +59,19 @@ public partial class SanayiiContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+        // Custom table names
+        //modelBuilder.Entity<AppUser>().ToTable("Users");
+        modelBuilder.Entity<AppUser>().ToTable("Users");
+        modelBuilder.Entity<IdentityRole>().ToTable("Roles");   
+        modelBuilder.Entity<IdentityUserRole<string>>().ToTable("UserRoles");
+        modelBuilder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims");
+        modelBuilder.Entity<IdentityUserLogin<string>>().ToTable("UserLogins");
+        modelBuilder.Entity<IdentityRoleClaim<string>>().ToTable("RoleClaims");
+        modelBuilder.Entity<IdentityUserToken<string>>().ToTable("UserTokens");
         modelBuilder.UseCollation("Arabic_CI_AS");
 
-        modelBuilder.Entity<AspNetRole>(entity =>
-        {
-            entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
-                .IsUnique()
-                .HasFilter("([NormalizedName] IS NOT NULL)");
-        });
+
 
         modelBuilder.Entity<Review>(entity =>
         {
@@ -77,23 +82,12 @@ public partial class SanayiiContext : DbContext
             entity.HasOne(d => d.Service).WithMany(p => p.Reviews).OnDelete(DeleteBehavior.ClientSetNull);
         });
 
-        modelBuilder.Entity<User>(entity =>
+        modelBuilder.Entity<AppUser>(entity =>
         {
             entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
                 .IsUnique()
                 .HasFilter("([NormalizedUserName] IS NOT NULL)");
 
-            entity.HasMany(d => d.Roles).WithMany(p => p.Users)
-                .UsingEntity<Dictionary<string, object>>(
-                    "UserRole",
-                    r => r.HasOne<AspNetRole>().WithMany().HasForeignKey("RoleId"),
-                    l => l.HasOne<User>().WithMany().HasForeignKey("UserId"),
-                    j =>
-                    {
-                        j.HasKey("UserId", "RoleId");
-                        j.ToTable("UserRoles");
-                        j.HasIndex(new[] { "RoleId" }, "IX_UserRoles_RoleId");
-                    });
         });
 
         OnModelCreatingPartial(modelBuilder);
