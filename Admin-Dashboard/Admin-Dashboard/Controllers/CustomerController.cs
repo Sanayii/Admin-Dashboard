@@ -23,43 +23,46 @@ namespace Admin_Dashboard.Controllers
         public IActionResult Edit(string id)
         {
             var customer = _unitOfWork._customerRepo.getById(id);
-            if (customer == null || customer.IdNavigation == null)
+            if (customer == null)
                 return NotFound();
 
             return View(customer);
         }
-
         [HttpPost]
         public IActionResult Edit(Customer customer)
         {
-            if (ModelState.IsValid)
-            {
-                _unitOfWork._customerRepo.edit(customer);
-                _unitOfWork._customerRepo.db.Users.Update(customer.IdNavigation);
+            if (!ModelState.IsValid)
+                return View(customer);
 
-                foreach (var phone in customer.IdNavigation.UserPhones)
-                {
-                    _unitOfWork._customerRepo.db.UserPhones.Update(phone);
-                }
+            var existingCustomer = _unitOfWork._customerRepo.getById(customer.Id);
+            if (existingCustomer == null)
+                return NotFound();
 
-                _unitOfWork.save();
-                return RedirectToAction("Index");
-            }
+            existingCustomer.FName = customer.FName;
+            existingCustomer.LName = customer.LName;
+            existingCustomer.Age = customer.Age;
+            existingCustomer.Email = customer.Email;
+            existingCustomer.City = customer.City;
+            existingCustomer.Street = customer.Street;
+            existingCustomer.Government = customer.Government;
+            existingCustomer.UserPhones.Clear();    
+            existingCustomer.UserPhones = customer.UserPhones;
 
-            return View(customer);
+            _unitOfWork.save();
+
+            return RedirectToAction("Index");
         }
+
+
         [HttpPost]
         public IActionResult Delete(string id)
         {
             var customer = _unitOfWork._customerRepo.getById(id);
             if (customer != null)
             {
-                // Soft delete: Mark the user as deleted
-                customer.IdNavigation.IsDeleted = true;
 
+                customer.IsDeleted = true;
                 _unitOfWork._customerRepo.edit(customer);
-                _unitOfWork._customerRepo.db.Users.Update(customer.IdNavigation);
-
                 _unitOfWork.save();
             }
 

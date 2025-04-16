@@ -8,15 +8,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Models;
 
-public partial class Admin
+public partial class Admin : AppUser
 {
-    [Key]
-    public string Id { get; set; }
+
 
     [Column(TypeName = "decimal(18, 2)")]
     public decimal Salary { get; set; }
 
     [ForeignKey("Id")]
-    [InverseProperty("Admin")]
-    public virtual User IdNavigation { get; set; }
+
+    public virtual AppUser IdNavigation { get; set; }
 }

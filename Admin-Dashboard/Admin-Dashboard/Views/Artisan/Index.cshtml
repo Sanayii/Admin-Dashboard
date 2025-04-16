@@ -12,6 +12,7 @@
 <table class="table">
     <thead>
         <tr>
+            <th>Artisan ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone</th>
@@ -24,12 +25,13 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>@item.IdNavigation.FName @item.IdNavigation.LName</td>
-                <td>@item.IdNavigation.Email</td>
+                <td>@item.Id</td>
+                <td>@item.FName @item.LName</td>
+                <td>@item.Email</td>
                 <td>
-                    @if (item.IdNavigation.UserPhones.Any())
+                    @if (item.UserPhones.Any())
                     {
-                        @item.IdNavigation.UserPhones.First().PhoneNumber
+                        @item.UserPhones.First().PhoneNumber
                     }
                 </td>
                 <td>@item.Category?.Name</td>
