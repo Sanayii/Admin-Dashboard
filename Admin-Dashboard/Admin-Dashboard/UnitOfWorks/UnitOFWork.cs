@@ -9,6 +9,7 @@ namespace Admin_Dashboard.UnitOfWorks
         SanayiiContext db;
 
         GenericRepository<IdentityRole> roleRepo;
+        GenericRepository<UserPhone> userPhoneRepo;
 
         GenericRepository<Category> categoryRopo;
         GenericRepository<Service> serviceRopo;
@@ -16,8 +17,8 @@ namespace Admin_Dashboard.UnitOfWorks
         GenericRepository<Payment> paymentMethodsRopo;
         GenericRepository<Payment> paymentRepo;
 
-        GenericRepository<Admin> adminRepo;
-        GenericRepository<Customer> customerRepo;
+        AdminRepository adminRepo;
+        CustomerRepository customerRepo;
         ArtisanRepository artisanRepo;
 
         GenericRepository<Contract> contractRepo;
@@ -61,6 +62,18 @@ namespace Admin_Dashboard.UnitOfWorks
                 return categoryRopo;
             }
         }
+        public GenericRepository<UserPhone> _userPhoneRepo
+        {
+            get
+            {
+                if (userPhoneRepo == null)
+                {
+                    userPhoneRepo = new GenericRepository<UserPhone>(db);
+                }
+                return userPhoneRepo;
+            }
+        }
+
 
         public GenericRepository<Service> _serviceRopo
         {
@@ -98,26 +111,26 @@ namespace Admin_Dashboard.UnitOfWorks
             }
         }
 
-        public GenericRepository<Admin> _adminRopo
+        public AdminRepository _adminRopo
         {
             get
             {
                 if (adminRepo == null)
                 {
-                    adminRepo = new GenericRepository<Admin>(db);
+                    adminRepo = new AdminRepository(db);
                 }
                 return adminRepo;
             }
         }
 
 
-        public GenericRepository<Customer> _customerRepo
+        public CustomerRepository _customerRepo
         {
             get
             {
                 if (customerRepo == null)
                 {
-                    customerRepo = new GenericRepository<Customer>(db);
+                    customerRepo = new CustomerRepository(db);
                 }
                 return customerRepo;
             }

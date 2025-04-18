@@ -17,6 +17,7 @@ public partial class Artisan : AppUser
     [Required]
     public string NationalityId { get; set; }
 
+    [Range(1, 5)]
     public int Rating { get; set; }
 
     public int CategoryId { get; set; }
@@ -26,8 +27,8 @@ public partial class Artisan : AppUser
 
     public virtual Contract Contract { get; set; }
 
-    //[ForeignKey("Id")]
-    //public virtual AppUser IdNavigation { get; set; }
+    [ForeignKey("Id")]
+    public virtual AppUser IdNavigation { get; set; }
 
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();

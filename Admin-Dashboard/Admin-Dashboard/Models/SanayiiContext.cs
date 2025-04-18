@@ -2,6 +2,7 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using Admin_Dashboard.Repository;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -53,7 +54,7 @@ public partial class SanayiiContext : IdentityDbContext<AppUser>
     {
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Sanayii;Integrated Security=True;Encrypt=False");
+            optionsBuilder.UseSqlServer("Server=LAPTOP-K8OJCRJP\\SQLEXPRESS;Database=Sanayii;Integrated Security=True;Encrypt=False");
         }
     }
 
