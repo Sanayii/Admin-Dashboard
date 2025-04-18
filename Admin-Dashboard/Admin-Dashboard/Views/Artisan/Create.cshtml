@@ -1,0 +1,237 @@
+﻿@model Admin_Dashboard.ViewModels.ArtisanViewModel
+@{
+    ViewData["Title"] = "Create New Artisan";
+    ViewBag.pagename = "Add New Artisan";
+}
+<partial name="_Banner" />
+
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="mb-0">Create New Artisan</h3>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create" method="post" id="artisanForm">
+                <div class="row">
+                    <!-- Personal Information -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="FName" class="form-label">First Name <span class="text-danger">*</span></label>
+                            <input asp-for="FName" class="form-control" required maxlength="50" />
+                            <span asp-validation-for="FName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="LName" class="form-label">Last Name <span class="text-danger">*</span></label>
+                            <input asp-for="LName" class="form-control" required maxlength="50" />
+                            <span asp-validation-for="LName" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Age" class="form-label">Age <span class="text-muted">(Minimum 18)</span></label>
+                            <input asp-for="Age" class="form-control" type="number" min="18" max="100" />
+                            <span asp-validation-for="Age" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information -->
+                    <div class="col-md-6">
+                        <div class="form-group mb-3">
+                            <label asp-for="Email" class="form-label">Email <span class="text-danger">*</span></label>
+                            <input asp-for="Email" class="form-control" type="email" required />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="NationalityId" class="form-label">National ID <span class="text-danger">*</span></label>
+                            <input asp-for="NationalityId" class="form-control" required
+                                   pattern="\d{14}" title="National ID must be 14 digits" />
+                            <span asp-validation-for="NationalityId" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="Rating" class="form-label">Initial Rating <span class="text-danger">*</span></label>
+                            <div class="d-flex align-items-center">
+                                <input asp-for="Rating" type="number" min="1" max="5"
+                                       class="form-control w-auto" required />
+                                <div class="ms-2 rating-display">
+                                    @for (int i = 1; i <= 5; i++)
+                                    {
+                                        <i class="bi bi-star@(i <= Model.Rating ? "-fill" : "") text-warning"></i>
+                                    }
+                                </div>
+                            </div>
+                            <span asp-validation-for="Rating" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address Information -->
+                <div class="row mt-3">
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="City" class="form-label">City</label>
+                            <input asp-for="City" class="form-control" maxlength="50" />
+                            <span asp-validation-for="City" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="Street" class="form-label">Street</label>
+                            <input asp-for="Street" class="form-control" maxlength="100" />
+                            <span asp-validation-for="Street" class="text-danger"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group mb-3">
+                            <label asp-for="Government" class="form-label">Governorate</label>
+                            <input asp-for="Government" class="form-control" maxlength="50" />
+                            <span asp-validation-for="Government" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category Selection -->
+                <div class="form-group mb-3">
+                    <label asp-for="CategoryId" class="form-label">Category <span class="text-danger">*</span></label>
+                    <select asp-for="CategoryId" class="form-select" required>
+                        <option value="">-- Select Category --</option>
+                        @if (ViewBag.Categories != null)
+                        {
+                            foreach (var category in ViewBag.Categories as IEnumerable<Category>)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        }
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
+                </div>
+
+                <!-- Phone Numbers -->
+                <div class="form-group mb-4">
+                    <label class="form-label">Phone Numbers <span class="text-danger">*</span></label>
+                    <div id="phoneNumbers">
+                        @if (Model.Phones != null && Model.Phones.Count > 0)
+                        {
+                            for (int i = 0; i < Model.Phones.Count; i++)
+                            {
+                                <div class="input-group mb-2 phone-group">
+                                    <input type="tel" name="Phones[@i]" class="form-control phone-input"
+                                           value="@Model.Phones[i]" placeholder="Phone number"
+                                           pattern="01[0-9]{9}" title="Egyptian phone number (11 digits starting with 01)" required />
+                                    @if (i > 0)
+                                    {
+                                        <button type="button" class="btn btn-outline-danger remove-phone">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+                                    }
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="input-group mb-2 phone-group">
+                                <input type="tel" name="Phones[0]" class="form-control phone-input"
+                                       placeholder="Phone number" required
+                                       pattern="01[0-9]{9}" title="Egyptian phone number (11 digits starting with 01)" />
+                            </div>
+                        }
+                    </div>
+                    <button type="button" id="addPhone" class="btn btn-outline-primary mt-2">
+                        <i class="bi bi-plus"></i> Add Another Phone
+                    </button>
+                    <div class="text-danger" id="phoneError"></div>
+                </div>
+
+                <!-- Submit Buttons -->
+                <div class="d-flex justify-content-between mt-4 pt-3 border-top">
+                    <button type="submit" class="btn btn-success px-4">
+                        <i class="bi bi-check-circle"></i> Create Artisan
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary px-4">
+                        <i class="bi bi-x-circle"></i> Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        $(document).ready(function() {
+            // Add phone field
+            $("#addPhone").click(function() {
+                const container = $("#phoneNumbers");
+                const inputs = container.find(".phone-input");
+                const index = inputs.length;
+
+                if(index >= 3) {
+                    $("#phoneError").text("Maximum 3 phone numbers allowed");
+                    return;
+                }
+
+                const newInput = $(`
+                    <div class="input-group mb-2 phone-group">
+                        <input type="tel" name="Phones[${index}]" class="form-control phone-input"
+                               placeholder="Phone number" required
+                               pattern="01[0-9]{9}" title="Egyptian phone number (11 digits starting with 01)" />
+                        <button type="button" class="btn btn-outline-danger remove-phone">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                `);
+
+                container.append(newInput);
+                $("#phoneError").empty();
+            });
+
+            // Remove phone field
+            $(document).on("click", ".remove-phone", function() {
+                const phoneGroup = $(this).closest(".phone-group");
+                const groups = $(".phone-group");
+
+                if(groups.length > 1) {
+                    phoneGroup.remove();
+
+                    // Re-index remaining phone inputs
+                    $(".phone-group").each(function(index) {
+                        $(this).find(".phone-input").attr("name", `Phones[${index}]`);
+                    });
+                }
+            });
+
+            // Rating stars display
+            $("#Rating").on("input", function() {
+                const rating = parseInt($(this).val());
+                const stars = $(".rating-display i");
+
+                stars.each(function(index) {
+                    $(this).toggleClass("bi-star-fill", index < rating);
+                    $(this).toggleClass("bi-star", index >= rating);
+                });
+            });
+
+            // Phone number validation
+            $("#artisanForm").submit(function(e) {
+                const phoneInputs = $(".phone-input");
+                const phoneValues = phoneInputs.map(function() {
+                    return $(this).val();
+                }).get();
+
+                // Check for duplicates
+                const uniquePhones = [...new Set(phoneValues)];
+                if(uniquePhones.length !== phoneValues.length) {
+                    $("#phoneError").text("Phone numbers must be unique");
+                    return false;
+                }
+
+                return true;
+            });
+        });
+    </script>
+}

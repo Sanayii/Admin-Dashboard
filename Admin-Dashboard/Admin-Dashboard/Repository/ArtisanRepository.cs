@@ -10,5 +10,9 @@ namespace Admin_Dashboard.Repository
         {
             return db.Artisans.OrderByDescending(a => a.Rating).ToList();
         }
+        public List <Artisan> getAllArtisan()
+        {
+            return db.Artisans.Where(Artisan => Artisan.IsDeleted == false).ToList();
+        }
     }
 }

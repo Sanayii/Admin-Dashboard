@@ -1,0 +1,87 @@
+﻿@model Admin_Dashboard.ViewModels.AdminViewModel
+
+@{
+    ViewData["Title"] = "Create Admin";
+    ViewBag.pagename = "Add new Admin";
+}
+
+<h2>Create Admin</h2>
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="FName" class="control-label"></label>
+        <input asp-for="FName" class="form-control" />
+        <span asp-validation-for="FName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="LName" class="control-label"></label>
+        <input asp-for="LName" class="form-control" />
+        <span asp-validation-for="LName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age" class="control-label"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Email" class="control-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+        <span asp-validation-for="City" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Street" class="control-label"></label>
+        <input asp-for="Street" class="form-control" />
+        <span asp-validation-for="Street" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Government" class="control-label"></label>
+        <input asp-for="Government" class="form-control" />
+        <span asp-validation-for="Government" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Salary" class="control-label"></label>
+        <input asp-for="Salary" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Phones</label>
+        <div id="phones-container">
+            <input name="Phones" class="form-control mb-2" placeholder="Phone Number" />
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="addPhone()">Add Phone</button>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        function addPhone() {
+            const container = document.getElementById("phones-container");
+            const input = document.createElement("input");
+            input.name = "Phones";
+            input.className = "form-control mb-2";
+            input.placeholder = "Phone Number";
+            container.appendChild(input);
+        }
+    </script>
+}
