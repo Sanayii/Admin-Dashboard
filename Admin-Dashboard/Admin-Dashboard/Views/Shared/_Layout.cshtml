@@ -1,4 +1,8 @@
-﻿﻿
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<AppUser> SignInManager
+@inject UserManager<AppUser> UserManager
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +11,7 @@
     <title>@ViewData["Title"] - Admin_Dashboard</title>
     <script type="importmap"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/style.css" />
     <link rel="stylesheet" href="~/Admin_Dashboard.styles.css" asp-append-version="true" />
@@ -25,30 +30,40 @@
             </div>
 
             <!-- Navigation Links -->
-            <div class="flex space-x-6 items-center text-sm font-medium">
+            <div class="flex space-x-4 items-center text-sm font-medium">
+                <div class="flex items-center space-x-4">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <span>Hello, @User.Identity?.Name!</span>
+                        <form method="post" asp-area="Identity" asp-page="/Account/Logout" id="logoutForm" class="d-inline">
+                            <button type="submit" class="btn btn-outline-light btn-sm">Logout</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-outline-light btn-sm">Login</a>
+                        <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-light btn-sm">Register</a>
+                    }
+                </div>
+                <a asp-action="All" asp-controller="Category" class="hover:text-gray-300">Category</a>
+                <a asp-action="index" asp-controller="Payment" class="hover:text-gray-300">Payment</a>
                 <!-- Dropdown -->
                 <div class="relative group">
                     <button class="flex items-center space-x-1">
-                        <span>Kategorie</span>
+                        <span>User</span>
                         <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
                     <!-- Dropdown menu -->
                     <div class="absolute hidden group-hover:block mt-2 bg-white text-black rounded shadow-lg w-40 z-10">
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kategorie 1</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kategorie 2</a>
+                        <a class="block px-4 py-2 hover:bg-gray-100" asp-action="index" asp-controller="Admin">Admin</a>
+                        <a class="block px-4 py-2 hover:bg-gray-100" asp-action="index" asp-controller="Artisan">Artisan</a>
+                        <a class="block px-4 py-2 hover:bg-gray-100" asp-action="index" asp-controller="Customer">Customer</a>
+
                     </div>
                 </div>
-
-                <a href="#" class="hover:text-gray-300">O nas</a>
-                <a href="#" class="hover:text-gray-300">Dlaczego MGK</a>
-                <a asp-action="index" asp-controller="Admin" class="hover:text-gray-300">Admin</a>
-                <a asp-action="index" asp-controller="Artisan" class="hover:text-gray-300">Artisan</a>
-                <a asp-action="index" asp-controller="Customer" class="hover:text-gray-300">Customer</a>
-                <a asp-action="index" asp-controller="payment" class="hover:text-gray-300">Payment</a>
-
-
+                
             </div>
 
             <!-- CTA Button -->
@@ -130,6 +145,8 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

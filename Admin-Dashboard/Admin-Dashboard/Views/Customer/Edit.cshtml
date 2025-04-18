@@ -2,7 +2,7 @@
 
 @{
     ViewData["Title"] = "Edit Customer";
-    ViewBag.pagename = "customer";
+    ViewBag.pagename = " Edit customer";
 }
 
 <partial name="_Banner" />
@@ -15,48 +15,51 @@
         <div class="card-body">
             <form asp-action="Edit" method="post">
                 <input type="hidden" asp-for="Id" />
-                <input type="hidden" asp-for="IdNavigation.Id" />
+
 
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label asp-for="IdNavigation.FName" class="form-label"></label>
-                        <input asp-for="IdNavigation.FName" class="form-control" />
+                        <label asp-for="FName" class="form-label"></label>
+                        <input asp-for="FName" class="form-control" />
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label asp-for="IdNavigation.LName" class="form-label"></label>
-                        <input asp-for="IdNavigation.LName" class="form-control" />
+                        <label asp-for="LName" class="form-label"></label>
+                        <input asp-for="LName" class="form-control" />
                     </div>
                 </div>
-
                 <div class="mb-3">
-                    <label asp-for="IdNavigation.Email" class="form-label"></label>
-                    <input asp-for="IdNavigation.Email" class="form-control" />
+                    <label asp-for="Age" class="form-label"></label>
+                    <input asp-for="Age" class="form-control" />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label"></label>
+                    <input asp-for="Email" class="form-control" />
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 mb-3">
-                        <label asp-for="IdNavigation.City" class="form-label"></label>
-                        <input asp-for="IdNavigation.City" class="form-control" />
+                        <label asp-for="City" class="form-label"></label>
+                        <input asp-for="City" class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label asp-for="IdNavigation.Street" class="form-label"></label>
-                        <input asp-for="IdNavigation.Street" class="form-control" />
+                        <label asp-for="Street" class="form-label"></label>
+                        <input asp-for="Street" class="form-control" />
                     </div>
                     <div class="col-md-4 mb-3">
-                        <label asp-for="IdNavigation.Government" class="form-label"></label>
-                        <input asp-for="IdNavigation.Government" class="form-control" />
+                        <label asp-for="Government" class="form-label"></label>
+                        <input asp-for="Government" class="form-control" />
                     </div>
                 </div>
 
                 <h5 class="mt-4 text-secondary">Phone Numbers</h5>
                 <div class="mb-3">
-                    @for (int i = 0; i < Model.IdNavigation.UserPhones.Count; i++)
+                    @for (int i = 0; i < Model.UserPhones.Count; i++)
                     {
-                        var phone = Model.IdNavigation.UserPhones.ElementAt(i);
+                        var phone = Model.UserPhones.ElementAt(i);
                         <div class="input-group mb-2">
                             <span class="input-group-text">Phone @(i + 1)</span>
-                            <input name="IdNavigation.UserPhones[@i].PhoneNumber" class="form-control" value="@phone.PhoneNumber" />
-                            <input type="hidden" name="IdNavigation.UserPhones[@i].UserId" value="@phone.UserId" />
+                            <input name="UserPhones[@i].PhoneNumber" class="form-control" value="@phone.PhoneNumber" />
+                            <input type="hidden" name="UserPhones[@i].UserId" value="@phone.UserId" />
                         </div>
                     }
                 </div>

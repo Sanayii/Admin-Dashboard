@@ -9,29 +9,27 @@ using Microsoft.EntityFrameworkCore;
 namespace Admin_Dashboard.Models;
 
 [Index("CategoryId", Name = "IX_Artisans_CategoryId")]
-public partial class Artisan
+public partial class Artisan : AppUser
 {
-    [Key]
-    public string Id { get; set; }
+    //[Key]
+    //public string Id { get; set; }
 
     [Required]
     public string NationalityId { get; set; }
 
+    [Range(1, 5)]
     public int Rating { get; set; }
 
     public int CategoryId { get; set; }
 
     [ForeignKey("CategoryId")]
-    [InverseProperty("Artisans")]
     public virtual Category Category { get; set; }
 
-    [InverseProperty("Artisan")]
     public virtual Contract Contract { get; set; }
 
     [ForeignKey("Id")]
-    [InverseProperty("Artisan")]
-    public virtual User IdNavigation { get; set; }
+    public virtual AppUser IdNavigation { get; set; }
 
-    [InverseProperty("Artisan")]
+
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();
 }

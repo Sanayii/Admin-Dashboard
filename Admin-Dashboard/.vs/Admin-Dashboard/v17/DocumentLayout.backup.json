@@ -3,6 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\",
   "Documents": [
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -17,10 +18,26 @@
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\artisan\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\artisan\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+=======
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+>>>>>>> main
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\customer\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\artisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\artisancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\admin\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -31,6 +48,7 @@
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\artisan\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+<<<<<<< HEAD
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\payment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -61,30 +79,82 @@
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+=======
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\artisan\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\artisan\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\admin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\admin\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\artisan\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\artisan\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+>>>>>>> main
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\enums\\paymentmethod.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\viewmodels\\artisanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\viewmodels\\artisanviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\admin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\admin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\admin\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\appuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\aspnetrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\aspnetrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\enums\\paymentstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\aya mahmoud\\source\\repos\\admin-dashboard\\admin-dashboard\\admin-dashboard\\migrations\\20250417175337_lazyloading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\migrations\\20250417175337_lazyloading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -94,7 +164,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1069,
+<<<<<<< HEAD
           "SelectedChildIndex": 12,
+=======
+          "SelectedChildIndex": 11,
+>>>>>>> main
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,6 +196,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
@@ -130,8 +205,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-18T14:32:48.794Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-18T14:32:48.794Z"
             },
             {
               "$type": "Document",
@@ -179,8 +253,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\Artisan\\Edit.cshtml",
               "ViewState": "AgIAAE4AAAAAAAAAAAAswGQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T09:53:19.978Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-14T09:53:19.978Z"
             },
             {
               "$type": "Document",
@@ -192,24 +265,62 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\Admin\\Edit.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T09:51:27.582Z",
+              "WhenOpened": "2025-04-14T09:51:27.582Z"
+=======
+              "DocumentIndex": 3,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs*",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\CustomerRepository.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T10:50:48.226Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Index.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\Admin\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-14T09:48:59.851Z",
+              "WhenOpened": "2025-04-18T10:47:38.673Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ArtisanController.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ArtisanController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\ArtisanController.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ArtisanController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\ArtisanController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T22:06:35.37Z",
+              "EditorCaption": ""
+>>>>>>> main
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Customer\\Index.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Customer\\Index.cshtml*",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Customer\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T22:58:39.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 9,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
@@ -343,17 +454,100 @@
             {
               "$type": "Document",
               "DocumentIndex": 15,
+=======
+              "DocumentIndex": 2,
+              "Title": "UnitOFWork.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs*",
+              "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:55:07.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\CustomerController.cs*",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\CustomerController.cs*",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAowBUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:23:37.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Index.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Artisan\\Index.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Index.cshtml*",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Artisan\\Index.cshtml*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T22:38:06.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Artisan\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Artisan\\Edit.cshtml",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T22:37:32.845Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Admin\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Admin\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-18T10:43:43.949Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Create.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Artisan\\Create.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Artisan\\Create.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Artisan\\Create.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T22:25:46.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+>>>>>>> main
               "Title": "Artisan.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Artisan.cs",
               "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
               "RelativeToolTip": "Admin-Dashboard\\Models\\Artisan.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAswCEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T22:24:14.825Z"
+              "WhenOpened": "2025-04-16T23:14:25.095Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 20,
               "Title": "PaymentStatus.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentStatus.cs",
@@ -361,20 +555,197 @@
               "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Enums\\PaymentStatus.cs",
               "RelativeToolTip": "Admin-Dashboard\\Enums\\PaymentStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAXAAAAAAAAAA==",
+=======
+              "DocumentIndex": 13,
+              "Title": "Admin.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Admin.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Admin.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Admin.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Admin.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
+>>>>>>> main
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-13T14:19:37.354Z"
+              "WhenOpened": "2025-04-17T22:40:29.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwCoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-18T00:06:57.951Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Create.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Admin\\Create.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Admin\\Create.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Admin\\Create.cshtml",
+              "ViewState": "AgIAACoAAAAAAAAAAADwv1YAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-16T22:59:52.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ArtisanViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ArtisanViewModel.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\ViewModels\\ArtisanViewModel.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ArtisanViewModel.cs",
+              "RelativeToolTip": "Admin-Dashboard\\ViewModels\\ArtisanViewModel.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T22:22:32.471Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "SanayiiContext.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAcwFoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T23:10:41.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppUser.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\AppUser.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\AppUser.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\AppUser.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\AppUser.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T21:46:48.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+<<<<<<< HEAD
+              "DocumentIndex": 18,
+=======
+              "DocumentIndex": 17,
+              "Title": "AspNetRole.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\AspNetRole.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\AspNetRole.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\AspNetRole.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\AspNetRole.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T18:57:55.492Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 18,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Customer.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Customer.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Customer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:22:49.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Category.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-16T23:04:58.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Review.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Review.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Review.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Review.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAmwCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T21:15:21.059Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Program.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T17:50:17.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeToolTip": "Admin-Dashboard\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-17T17:49:47.401Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-17T18:00:17.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20250417175337_lazyloading.cs",
+              "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Migrations\\20250417175337_lazyloading.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Migrations\\20250417175337_lazyloading.cs",
+              "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Migrations\\20250417175337_lazyloading.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Migrations\\20250417175337_lazyloading.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-17T17:53:37.608Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+>>>>>>> main
               "Title": "PaymentController.cs",
               "DocumentMoniker": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\PaymentController.cs",
               "ToolTip": "C:\\Users\\AYA MAHMOUD\\source\\repos\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
               "RelativeToolTip": "Admin-Dashboard\\Controllers\\PaymentController.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T20:58:33.266Z"
+              "WhenOpened": "2025-04-16T23:16:35.327Z"
             }
           ]
         },

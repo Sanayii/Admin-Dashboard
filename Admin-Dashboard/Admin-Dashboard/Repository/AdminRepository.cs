@@ -8,25 +8,15 @@ namespace Admin_Dashboard.Repository
         public AdminRepository(SanayiiContext db) : base(db)
         {
         }
-        public void edit(Admin entity)
+        public List<Admin> getAllAdmins()
+        { 
+           return db.Admins.Where(Admin=>Admin.IsDeleted == false).ToList();
+        }
+        public  void addadmin (Admin admin)
         {
-            db.Admins.Update(entity);
+            
+            db.Admins.Add(admin);
         }
 
-
-        public override List<Admin> getAll()
-        {
-            return db.Admins
-                     .Include(a => a.IdNavigation)
-                         .ThenInclude(u => u.UserPhones)
-                     .Where(a => !a.IdNavigation.IsDeleted)
-                     .ToList();
-        }
-
-
-        public override Admin getById<T>(T id)
-        {
-            return db.Admins.Include(a => a.IdNavigation).FirstOrDefault(a => a.Id.Equals(id));
-        }
     }
 }

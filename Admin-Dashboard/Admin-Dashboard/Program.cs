@@ -1,8 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Admin_Dashboard.Data;
+
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.Models;
+using Microsoft.Extensions.Options;
+using System.Configuration;
 
 namespace Admin_Dashboard;
 
@@ -14,15 +16,15 @@ public class Program
 
         // Add services to the container.
         builder.Services.AddDbContext<SanayiiContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseLazyLoadingProxies().UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-        // Register Identity services correctly
-        builder.Services.AddIdentity<IdentityUser, IdentityRole>()
-            .AddEntityFrameworkStores<ApplicationDbContext>()
-            .AddDefaultTokenProviders(); // Adds RoleManager<IdentityRole> and UserManager<IdentityUser>
+        builder.Services.AddDefaultIdentity<AppUser>(options =>
+        {
+            options.SignIn.RequireConfirmedAccount = false; 
+        })
+        .AddRoles<IdentityRole>()
+        .AddEntityFrameworkStores<SanayiiContext>();
 
         // Add Razor Pages
         builder.Services.AddRazorPages(); // Add this line to register Razor Pages services
@@ -45,6 +47,7 @@ public class Program
         }
 
         app.UseHttpsRedirection();
+        app.UseAuthentication();
         app.UseRouting();
 
         app.UseAuthorization();

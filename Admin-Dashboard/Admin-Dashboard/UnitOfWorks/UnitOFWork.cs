@@ -8,17 +8,16 @@ namespace Admin_Dashboard.UnitOfWorks
     {
         SanayiiContext db;
 
-        AdminRepository adminRepo;
-
-
         GenericRepository<IdentityRole> roleRepo;
+        GenericRepository<UserPhone> userPhoneRepo;
 
         GenericRepository<Category> categoryRopo;
         GenericRepository<Service> serviceRopo;
 
+        GenericRepository<Payment> paymentMethodsRopo;
         GenericRepository<Payment> paymentRepo;
 
-        //GenericRepository<Admin> adminRepo;
+        AdminRepository adminRepo;
         CustomerRepository customerRepo;
         ArtisanRepository artisanRepo;
 
@@ -63,6 +62,18 @@ namespace Admin_Dashboard.UnitOfWorks
                 return categoryRopo;
             }
         }
+        public GenericRepository<UserPhone> _userPhoneRepo
+        {
+            get
+            {
+                if (userPhoneRepo == null)
+                {
+                    userPhoneRepo = new GenericRepository<UserPhone>(db);
+                }
+                return userPhoneRepo;
+            }
+        }
+
 
         public GenericRepository<Service> _serviceRopo
         {
@@ -75,6 +86,19 @@ namespace Admin_Dashboard.UnitOfWorks
                 return serviceRopo;
             }
         }
+
+        public GenericRepository<Payment> _paymentMethodsRopo
+        {
+            get
+            {
+                if (paymentMethodsRopo == null)
+                {
+                    paymentMethodsRopo = new GenericRepository<Payment>(db);
+                }
+                return paymentMethodsRopo;
+            }
+        }
+
         public GenericRepository<Payment> _paymentRopo
         {
             get
@@ -98,7 +122,6 @@ namespace Admin_Dashboard.UnitOfWorks
                 return adminRepo;
             }
         }
-
 
 
         public CustomerRepository _customerRepo

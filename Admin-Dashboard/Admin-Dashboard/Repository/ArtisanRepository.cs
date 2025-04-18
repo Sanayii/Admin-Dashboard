@@ -1,5 +1,4 @@
 ﻿using Admin_Dashboard.Models;
-using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Repository
 {
@@ -11,19 +10,9 @@ namespace Admin_Dashboard.Repository
         {
             return db.Artisans.OrderByDescending(a => a.Rating).ToList();
         }
-        // You can add any custom methods for Artisan here, for example, to get Artisan by Category:
-        public IQueryable<Artisan> GetArtisansByCategory(int categoryId)
+        public List <Artisan> getAllArtisan()
         {
-            return db.Set<Artisan>().Where(a => a.CategoryId == categoryId);
+            return db.Artisans.Where(Artisan => Artisan.IsDeleted == false).ToList();
         }
-        public override List<Artisan> getAll()
-        {
-            return db.Artisans
-                .Include(a => a.Category)
-                .Include(a => a.IdNavigation)
-                    .ThenInclude(u => u.UserPhones)
-                .ToList();
-        }
-
     }
 }
