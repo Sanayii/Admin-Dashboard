@@ -1,32 +1,24 @@
 ﻿using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
-using Admin_Dashboard.Areas.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
 
 namespace Admin_Dashboard.Controllers
 {
     public class CustomerController : Controller
     {
         private readonly UnitOFWork _unitOfWork;
-        public UserManager<AppUser> _userManager;
 
-        public CustomerController(UnitOFWork unitOfWork, UserManager<AppUser> userManager)
+        public CustomerController(UnitOFWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
-            _userManager = userManager;
         }
 
         public IActionResult Index()
         {
-            var customers = _unitOfWork._customerRepo.GetAllCustomers();
+            var customers = _unitOfWork._customerRepo.getAll();
             return View(customers);
         }
-        public IActionResult GetAllCustomers()
-        {
-            var AllCustomers = _unitOfWork._customerRepo.getAll();
-            return View("Index", AllCustomers);
-        }
+
         [HttpGet]
         public IActionResult Edit(string id)
         {

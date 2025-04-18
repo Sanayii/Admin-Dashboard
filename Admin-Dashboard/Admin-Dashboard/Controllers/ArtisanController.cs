@@ -3,41 +3,32 @@ using Admin_Dashboard.UnitOfWorks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Repository;
-using Admin_Dashboard.ViewModels;
-using Microsoft.AspNetCore.Identity;
+using Admin_Dashboard.ViewModels;   
 namespace Admin_Dashboard.Controllers
 {
     public class ArtisanController : Controller
     {
-        
         private readonly UnitOFWork _unitOfWork;
         private readonly ILogger<ArtisanController> _logger;
-        public UserManager<AppUser> _userManager;
-        public ArtisanController(UnitOFWork unitOfWork, ILogger<ArtisanController> logger, UserManager<AppUser> usermanager)
+
+        public ArtisanController(UnitOFWork unitOfWork, ILogger<ArtisanController> logger)
         {
-           
             _unitOfWork = unitOfWork;
             _logger = logger;
-            _userManager = usermanager;
         }
 
         public IActionResult Index()
         {
-            var artisans = _unitOfWork._artisanRepo.getAllArtisan();
+            var artisans = _unitOfWork._artisanRepo.getAll();
             return View(artisans);
-        }
-        public IActionResult GetAllArtisans()
-        {
-            var AllArtisans = _unitOfWork._artisanRepo.getAll();
-            return View("Index", AllArtisans);
         }
 
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            var artisan = _unitOfWork._artisanRepo.getById(id);
+            var artisan = _unitOfWork._artisanRepo.getById(id);            
 
-            if (artisan == null)
+            if (artisan == null )
                 return NotFound();
 
             var viewModel = new ArtisanViewModel
@@ -115,94 +106,5 @@ namespace Admin_Dashboard.Controllers
 
             return RedirectToAction("Index");
         }
-
-
-
-        [HttpGet]
-        public IActionResult Create()
-        {
-            try
-            {
-                // Initialize view model with default values
-                var viewModel = new ArtisanViewModel
-                {
-                    Phones = new List<string> { "" }, // Start with one empty phone field
-                    Rating = 3 // Default rating
-                };
-
-                // Load categories for dropdown
-                ViewBag.Categories = _unitOfWork._categoryRopo.getAll();
-
-                return View(viewModel);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "Error loading create artisan form");
-                TempData["ErrorMessage"] = "Failed to load create form. Please try again.";
-                return RedirectToAction(nameof(Index));
-            }
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ArtisanViewModel model)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    ViewBag.Categories =  _unitOfWork._categoryRopo.getAll();
-                    return View(model);
-                }
-
-                // إنشاء Artisan مباشرةً (بدون إنشاء AppUser منفصل)
-                var artisan = new Artisan
-                {
-                    UserName = model.Email,  // إضافة خصائص IdentityUser
-                    Email = model.Email,
-                    FName = model.FName,
-                    LName = model.LName,
-                    Age = model.Age,
-                    City = model.City,
-                    Street = model.Street,
-                    Government = model.Government,
-                    EmailConfirmed = true,
-                    NationalityId = model.NationalityId,
-                    Rating = model.Rating,
-                    CategoryId = model.CategoryId
-                };
-
-                // إضافة أرقام الهواتف
-                artisan.UserPhones = model.Phones
-                    .Where(p => !string.IsNullOrWhiteSpace(p))
-                    .Select(p => new UserPhone { PhoneNumber = p })
-                    .ToList();
-
-                // إنشاء الحساب بكلمة مرور مؤقتة
-                var result = await _userManager.CreateAsync(artisan, "DefaultArtisan@123");
-
-                if (result.Succeeded)
-                {
-                    await _userManager.AddToRoleAsync(artisan, "Artisan");
-                    TempData["SuccessMessage"] = "تم إنشاء الحرفي بنجاح!";
-                    return RedirectToAction("Index");
-                }
-
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError(ex, "خطأ أثناء إنشاء الحرفي");
-                ModelState.AddModelError("", "حدث خطأ غير متوقع. الرجاء المحاولة مرة أخرى.");
-                Console.WriteLine(ex.ToString());
-                
-            }
-
-            ViewBag.Categories = _unitOfWork._categoryRopo.getAll();
-            return View(model);
-        }
-
     }
 }

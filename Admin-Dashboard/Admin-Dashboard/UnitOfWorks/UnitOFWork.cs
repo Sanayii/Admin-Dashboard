@@ -9,7 +9,6 @@ namespace Admin_Dashboard.UnitOfWorks
         SanayiiContext db;
 
         GenericRepository<IdentityRole> roleRepo;
-        GenericRepository<UserPhone> userPhoneRepo;
 
         GenericRepository<Category> categoryRopo;
         GenericRepository<Service> serviceRopo;
@@ -17,8 +16,8 @@ namespace Admin_Dashboard.UnitOfWorks
         GenericRepository<Payment> paymentMethodsRopo;
         GenericRepository<Payment> paymentRepo;
 
-        AdminRepository adminRepo;
-        CustomerRepository customerRepo;
+        GenericRepository<Admin> adminRepo;
+        GenericRepository<Customer> customerRepo;
         ArtisanRepository artisanRepo;
 
         GenericRepository<Contract> contractRepo;
@@ -62,18 +61,6 @@ namespace Admin_Dashboard.UnitOfWorks
                 return categoryRopo;
             }
         }
-        public GenericRepository<UserPhone> _userPhoneRepo
-        {
-            get
-            {
-                if (userPhoneRepo == null)
-                {
-                    userPhoneRepo = new GenericRepository<UserPhone>(db);
-                }
-                return userPhoneRepo;
-            }
-        }
-
 
         public GenericRepository<Service> _serviceRopo
         {
@@ -111,26 +98,26 @@ namespace Admin_Dashboard.UnitOfWorks
             }
         }
 
-        public AdminRepository _adminRopo
+        public GenericRepository<Admin> _adminRopo
         {
             get
             {
                 if (adminRepo == null)
                 {
-                    adminRepo = new AdminRepository(db);
+                    adminRepo = new GenericRepository<Admin>(db);
                 }
                 return adminRepo;
             }
         }
 
 
-        public CustomerRepository _customerRepo
+        public GenericRepository<Customer> _customerRepo
         {
             get
             {
                 if (customerRepo == null)
                 {
-                    customerRepo = new CustomerRepository(db);
+                    customerRepo = new GenericRepository<Customer>(db);
                 }
                 return customerRepo;
             }

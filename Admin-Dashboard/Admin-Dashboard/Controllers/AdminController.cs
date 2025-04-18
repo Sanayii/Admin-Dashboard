@@ -1,93 +1,23 @@
 ﻿using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
-using Admin_Dashboard.ViewModels;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-
+using Admin_Dashboard.ViewModels;
 namespace Admin_Dashboard.Controllers
 {
     public class AdminController : Controller
     {
-        private readonly ILogger<AdminController> _logger;
-        private readonly UnitOFWork _unitOfWork;
-        private readonly UserManager<AppUser> _userManager;
-
-        public AdminController(
-            ILogger<AdminController> logger,
-            UnitOFWork unitOfWork,
-            UserManager<AppUser> userManager)
+        private readonly ILogger<AdminController> logger;
+        private readonly UnitOFWork unitOFWork;
+        public AdminController(ILogger<AdminController> logger, UnitOFWork unitOFWork)
         {
-            _logger = logger;
-            _unitOfWork = unitOfWork;
-            _userManager = userManager;
+            this.logger = logger;
+            this.unitOFWork = unitOFWork;
         }
 
         public IActionResult Index()
         {
-            var admins = _unitOfWork._adminRopo.getAllAdmins();
+            var admins = unitOFWork._adminRopo.getAll();
             return View(admins);
-        }
-        public IActionResult GetAllAdmins()
-        {
-            var allAdmins = _unitOfWork._adminRopo.getAll();
-            return View("Index", allAdmins);
-        }
-
-        [HttpGet]
-        public IActionResult Create()
-        {
-            return View(new AdminViewModel());
-        }
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(AdminViewModel vm)
-        {
-            if (ModelState.IsValid)
-            {
-                // إنشاء Admin مباشرة (بدون إنشاء AppUser منفصل)
-                var admin = new Admin
-                {
-                    UserName = vm.Email,
-                    Email = vm.Email,
-                    FName = vm.FName,
-                    LName = vm.LName,
-                    Age = vm.Age,
-                    City = vm.City,
-                    Street = vm.Street,
-                    Government = vm.Government,
-                    Salary = vm.Salary
-                };
-
-                var result = await _userManager.CreateAsync(admin, "DefaultPassword@123");
-
-                if (result.Succeeded)
-                {
-                    // إضافة أرقام الهاتف باستخدام UserPhoneRepo
-                    foreach (var phone in vm.Phones)
-                    {
-                        if (!string.IsNullOrWhiteSpace(phone))
-                        {
-                            _unitOfWork._userPhoneRepo.add(new UserPhone
-                            {
-                                PhoneNumber = phone,
-                                UserId = admin.Id
-                            });
-                        }
-                    }
-
-                 _unitOfWork.save();
-
-                    return RedirectToAction(nameof(Index));
-                }
-
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
-                }
-            }
-
-            return View(vm);
         }
 
 
@@ -95,89 +25,95 @@ namespace Admin_Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            var admin = _unitOfWork._adminRopo.getById(id);
+            var admin = unitOFWork._adminRopo.getById(id);
 
-            if (admin == null)
+            if(admin == null) 
                 return NotFound();
 
             var viewModel = new AdminViewModel
             {
-                Id = admin.Id,
-                FName = admin.IdNavigation.FName,
-                LName = admin.IdNavigation.LName,
-                Age = admin.IdNavigation.Age,
-                Email = admin.IdNavigation.Email,
-                City = admin.IdNavigation.City,
-                Street = admin.IdNavigation.Street,
-                Government = admin.IdNavigation.Government,
-                Phones = admin.IdNavigation.UserPhones.Select(p => p.PhoneNumber).ToList(),
-                Salary = admin.Salary
+                Id= admin.Id,
+                FName= admin.FName,
+                LName= admin.LName,
+                Age= admin.Age,
+                Email= admin.Email,
+                City= admin.City,
+                Street= admin.Street,
+                Government= admin.Government,       
+                Phones= admin.UserPhones.Select(p => p.PhoneNumber).ToList(),
+                Salary= admin.Salary,
             };
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(AdminViewModel viewModel)
+        public IActionResult Edit(AdminViewModel viewModel)
         {
             if (ModelState.IsValid)
             {
-                var admin = _unitOfWork._adminRopo.getById(viewModel.Id);
+                var admin = unitOFWork._adminRopo.getById(viewModel.Id);
 
                 if (admin == null)
                     return NotFound();
 
-                // تحديث بيانات المستخدم (AppUser)
-                var appUser = admin.IdNavigation;
-                appUser.FName = viewModel.FName;
-                appUser.LName = viewModel.LName;
-                appUser.Age = viewModel.Age;
-                appUser.Email = viewModel.Email;
-                appUser.City = viewModel.City;
-                appUser.Street = viewModel.Street;
-                appUser.Government = viewModel.Government;
-
-                // تحديث بيانات الـ Admin
+                admin.FName = viewModel.FName;
+                admin.LName = viewModel.LName;
+                admin.Age = viewModel.Age;
+                admin.Email = viewModel.Email;
+                admin.City = viewModel.City;
+                admin.Street = viewModel.Street;
+                admin.Government = viewModel.Government;
                 admin.Salary = viewModel.Salary;
 
-                // تحديث أرقام الهاتف
-                appUser.UserPhones.Clear();
+                // Clear old phones and add new ones
+                admin.UserPhones.Clear();
                 foreach (var phone in viewModel.Phones)
                 {
-                    appUser.UserPhones.Add(new UserPhone
+                    admin.UserPhones.Add(new UserPhone
                     {
                         PhoneNumber = phone,
-                        UserId = appUser.Id
+                        UserId = admin.Id
                     });
                 }
 
-                await _userManager.UpdateAsync(appUser);
-                _unitOfWork._adminRopo.edit(admin);
-                _unitOfWork.save();
+                unitOFWork._adminRopo.edit(admin);
+                
 
+                unitOFWork.save();
                 return RedirectToAction("Index");
             }
 
-            foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+            logger.LogError(" ModelState is invalid. Errors:");
+
+            foreach (var state in ModelState)
             {
-                _logger.LogError($"Validation Error: {error.ErrorMessage}");
+                var key = state.Key;
+                foreach (var error in state.Value.Errors)
+                {
+                    logger.LogError("Field: {Field}, Error: {Error}", key, error.ErrorMessage);
+                }
             }
 
             return View(viewModel);
         }
 
+
+
         [HttpPost]
         public IActionResult Delete(string id)
         {
-            var admin = _unitOfWork._adminRopo.getById(id);
-
+            var admin = unitOFWork._adminRopo.getById(id);
             if (admin != null)
             {
                 admin.IdNavigation.IsDeleted = true;
-                _unitOfWork.save();
+                unitOFWork._adminRopo.edit(admin);
+                unitOFWork.save();
             }
-
             return RedirectToAction("Index");
         }
+
+
+
     }
 }
