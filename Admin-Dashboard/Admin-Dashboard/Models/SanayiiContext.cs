@@ -48,19 +48,13 @@ public partial class SanayiiContext : DbContext
     public virtual DbSet<UserPhone> UserPhones { get; set; }
 
     public virtual DbSet<Violation> Violations { get; set; }
-    private readonly IConfiguration _configuration;
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Sanayii;Integrated Security=True;Encrypt=False");
-        }
-    }
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Data Source=DESKTOP-Q3G55T3\\SQLEXPRESS;Initial Catalog=Sanayii;Integrated Security=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.UseCollation("Arabic_CI_AS");
-
         modelBuilder.Entity<AspNetRole>(entity =>
         {
             entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")

@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Contract";
+    ViewBag.pagename = "Contract";
+}
+@model Contract
+
+<partial name="_Banner" />
+<section class="container my-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <h1 class="fw-bold fs-2 text-center mb-4">Contract Details</h1>
+            @* <p class="card-text text-2xl mb-2">
+                <strong>Artisan Name</strong> :
+                @if (Model.Artisan?.IdNavigation != null)
+                {
+                    @($"{Model.Artisan.IdNavigation.FName} {Model.Artisan.IdNavigation.LName}")
+                }
+                else
+                {
+                    <span class="text-danger">N/A (Data missing)</span>
+                }
+            </p> *@           
+            <p class="card-text text-2xl mb-2">
+                <strong>Artisan Name</strong> : @ViewBag.ArtisanName
+            </p>
+            <p class="card-text text-2xl mb-2"><strong>Start Date</strong> : @Model?.StartDate</p>
+            <p class="card-text text-2xl mb-2"><strong>End Date</strong> : @Model?.EndDate</p>
+            <p class="card-text text-2xl mb-2"><strong>Status </strong>: @Model?.Status</p>
+            <p class="card-text text-2xl mb-2"><strong>Max Violations Allowed</strong> : @Model?.MaxViolationsAllowed</p>
+            <a asp-action="Index" class="btn w-100 text-white" style="background-color:#262e39;">← Back to List</a>
+        </div>
+    </div>
+</section>

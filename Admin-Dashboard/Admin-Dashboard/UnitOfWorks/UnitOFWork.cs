@@ -30,7 +30,7 @@ namespace Admin_Dashboard.UnitOfWorks
 
         GenericRepository<Review> reviewRepo;
 
-
+        public ContractRepository ContractRepo { get; }
 
         public UnitOFWork(SanayiiContext db)
         {

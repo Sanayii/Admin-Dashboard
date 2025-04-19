@@ -1,58 +1,142 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\",
+  "WorkspaceRootPath": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\service\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\servicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\viewmodels\\contractviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\viewmodels\\contractviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\contractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\contractcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\repository\\artisanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\artisanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\admin-dashboard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\admin-dashboard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\contract\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\contract\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\repository\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\artisan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\contract.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\viewmodels\\serviceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\viewmodels\\serviceviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\review\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\review\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\servicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\servicerepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\service\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\service\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\service\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\contract\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\contract\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\reviewcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\contract\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\contract\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\reviewrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\reviewrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\contractrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\contractrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\contract\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\contract\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\genericrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\review\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\review\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\review\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\review\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\service\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\service\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\review\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\review\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\sanayiicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\ientity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\data\\migrations\\applicationdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\data\\migrations\\00000000000000_createidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\data\\migrations\\00000000000000_createidentityschema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|e:\\c#\\ado-project\\admin\\admin-dashboard\\admin-dashboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|d:\\admin_dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard\\admin-dashboard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\admin-dashboard.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,15 +146,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1069,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Bookmark",
@@ -82,194 +170,435 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
-              "RelativeToolTip": "Admin-Dashboard\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-12T12:16:15.539Z",
+              "DocumentIndex": 2,
+              "Title": "ContractViewModel.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ContractViewModel.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\ViewModels\\ContractViewModel.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ContractViewModel.cs",
+              "RelativeToolTip": "Admin-Dashboard\\ViewModels\\ContractViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T17:10:48.267Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Index.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Service\\Index.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Index.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Service\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T16:36:57.261Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Program.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Program.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Title": "ContractController.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ContractController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\ContractController.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ContractController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\ContractController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:11:21.716Z",
+              "WhenOpened": "2025-04-12T18:20:18.168Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Index.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Contract\\Index.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Index.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Contract\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAACAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T12:16:16.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_ViewImports.cshtml",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Views\\_ViewImports.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\_ViewImports.cshtml",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Views\\_ViewImports.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Admin-Dashboard\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-04-12T12:09:53.296Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "UnitOFWork.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "ViewState": "AgIAAMMAAAAAAAAAAAAkwMUAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ServiceController.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ServiceController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\ServiceController.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ServiceController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\ServiceController.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAiwB4AAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T12:00:39.694Z",
+              "WhenOpened": "2025-04-12T20:39:59.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "ArtisanRepository.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ArtisanRepository.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ArtisanRepository.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ArtisanRepository.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Repository\\ArtisanRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Title": "Artisan.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Artisan.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Artisan.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Artisan.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:59:34.177Z",
+              "WhenOpened": "2025-04-13T13:27:31.091Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "GenericRepository.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\GenericRepository.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Repository\\GenericRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "Contract.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Contract.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Contract.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Contract.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Contract.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:57:49.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IEntity.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\IEntity.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\IEntity.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Repository\\IEntity.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Repository\\IEntity.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:57:06.145Z",
+              "WhenOpened": "2025-04-13T12:24:02.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Admin-Dashboard",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Admin-Dashboard.csproj",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
-              "RelativeToolTip": "Admin-Dashboard\\Admin-Dashboard.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-12T11:55:17.701Z",
+              "Title": "ServiceViewModel.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceViewModel.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\ViewModels\\ServiceViewModel.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceViewModel.cs",
+              "RelativeToolTip": "Admin-Dashboard\\ViewModels\\ServiceViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T16:57:10.733Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\HomeController.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:52:19.628Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "00000000000000_CreateIdentitySchema.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Data\\Migrations\\00000000000000_CreateIdentitySchema.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:51:39.394Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ApplicationDbContextModelSnapshot.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Data\\Migrations\\ApplicationDbContextModelSnapshot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:51:37.119Z",
+              "DocumentIndex": 9,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Index.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Review\\Index.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Index.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Review\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-19T15:08:47.169Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:51:31.317Z",
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Service\\Edit.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Service\\Edit.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAADUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T16:52:54.818Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SanayiiContext.cs",
-              "DocumentMoniker": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\SanayiiContext.cs",
-              "ToolTip": "E:\\C#\\ADO-PROJECT\\Admin\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Models\\SanayiiContext.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADcAAAB1AAAAAAAAAA==",
+              "DocumentIndex": 10,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Service.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Service.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Service.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T11:50:56.791Z",
+              "WhenOpened": "2025-04-13T16:45:43.655Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 1069,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{a80febb4-e7e0-4147-b476-21aaf2453969}"
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Create.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Service\\Create.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Create.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Service\\Create.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T16:48:42.157Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ServiceRepo.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ServiceRepo.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ServiceRepo.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ServiceRepo.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\ServiceRepo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T15:12:19.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Create.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Contract\\Create.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Create.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Contract\\Create.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAAAADIAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T13:29:12.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ReviewController.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ReviewController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\ReviewController.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ReviewController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\ReviewController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T20:00:17.195Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Review.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Review.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Review.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAAACYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T15:34:45.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Details.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Contract\\Details.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Details.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Contract\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T14:55:44.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ReviewRepo.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ReviewRepo.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ReviewRepo.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ReviewRepo.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\ReviewRepo.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-19T14:51:20.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ContractRepository.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ContractRepository.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ContractRepository.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ContractRepository.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\ContractRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAgAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-14T21:29:15.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Contract\\Edit.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Contract\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Contract\\Edit.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAEEAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T14:03:37.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "GenericRepository.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\GenericRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABMAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:57:49.211Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "UnitOFWork.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T12:00:39.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Program.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T12:11:21.716Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:51:31.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Create.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Review\\Create.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Create.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Review\\Create.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAIBJwC0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:37:50.964Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Details.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Review\\Details.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Details.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Review\\Details.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:46:54.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Details.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Service\\Details.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Service\\Details.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Service\\Details.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAIBJwBMAAABzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T17:29:20.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Review\\Edit.cshtml",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Review\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\Review\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-13T15:44:49.772Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "SanayiiContext.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\SanayiiContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:50:56.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IEntity.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\IEntity.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\IEntity.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\IEntity.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\IEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:57:06.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Admin-Dashboard.csproj",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Admin-Dashboard.csproj",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard.csproj",
+              "RelativeToolTip": "Admin-Dashboard\\Admin-Dashboard.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-12T11:55:17.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAwwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T11:52:19.628Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
+              "ToolTip": "D:\\admin_dashBoard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeToolTip": "Admin-Dashboard\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-04-12T12:16:15.539Z"
             }
           ]
         }

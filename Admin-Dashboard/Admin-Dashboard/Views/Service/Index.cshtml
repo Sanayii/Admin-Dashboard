@@ -1,0 +1,59 @@
+﻿@using Admin_Dashboard.ViewModels
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Service";
+    ViewBag.pagename = "Service";
+}
+@* @model List<Service> *@
+@model List<ServiceViewModel>
+
+<partial name="_Banner" />
+<section "container p-3">
+    <div class="table-container p-5">
+        <a asp-action="Create" class="btn btn-outline-dark" style="text-align:center;background-color:#262e39;
+        color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a>
+        <table class="Mtable table-hover">
+            <thead>
+                <tr>
+                <th scope="col">#</th>
+                <th scope="col">Service Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">BasePrice</th>
+                <th scope="col">Additional Price</th>
+                
+                
+                <th scope="col">Category name</th>
+                <th scope="col" colspan="3"> Buttons</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var c in Model)
+            {
+                <tr style="margin-bottom:5px;">
+                    <th>@c.Id</th>
+                    <td>@c.ServiceName</td>
+                    <td>@c.Description</td>
+                    <td>@c.BasePrice</td>
+                    <td>@c.AdditionalPrice</td>
+
+
+                        <td>@c.CategoryName</td>
+                    <td><a asp-action="Details" asp-route-id="@c.Id" class="btn btn-outline-dark">Detail</a></td>
+                    <td><a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-outline-success">Edit</a></td>
+                    <td><button onclick="confirmDelete(@c.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
+                </tr>
+            }
+        </tbody>
+        </table>
+    </div>
+</section>
+<script>
+    function confirmDelete(id) {
+        var confirmation = confirm("Are you sure to delete this Contract ?");
+        if (confirmation) {
+            window.location.href = "/Service/Delete/" + id;
+        }
+    }
+</script>

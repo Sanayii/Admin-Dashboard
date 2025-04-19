@@ -1,0 +1,24 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Service";
+    ViewBag.pagename = "Service";
+}
+@model Service
+<partial name="_Banner" />
+<section class="container my-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <h1 class="fw-bold fs-2 text-center mb-4">Service Details</h1>
+            <p class="card-text text-2xl mb-2"><strong>Id</strong> : @Model.Id</p>
+            <p class="card-text text-2xl mb-2"><strong>Service Name</strong> : @Model.ServiceName</p>
+            <p class="card-text text-2xl mb-2"><strong>Additional Price</strong>  : @Model.AdditionalPrice</p>
+            <p class="card-text text-2xl mb-2"><strong>Base Price</strong> : @Model.BasePrice</p>
+            <p class="card-text text-2xl mb-2"><strong>Description</strong> : @Model.Description</p>
+            <p class="card-text text-2xl mb-2"><strong>Category Id</strong> : @Model.CategoryId</p>
+            <a asp-action="Index" class="btn w-100 text-white" style="background-color:#262e39;">← Back to List</a>
+        </div>
+    </div>
+</section>
+
