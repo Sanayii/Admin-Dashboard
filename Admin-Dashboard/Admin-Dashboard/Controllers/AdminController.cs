@@ -25,12 +25,12 @@ namespace Admin_Dashboard.Controllers
 
         public IActionResult Index()
         {
-            var admins = _unitOfWork._adminRopo.getAllAdmins();
+            var admins = _unitOfWork._AdminRepo.GetAllAdmins();
             return View(admins);
         }
         public IActionResult GetAllAdmins()
         {
-            var allAdmins = _unitOfWork._adminRopo.getAll();
+            var allAdmins = _unitOfWork._AdminRepo.GetAll();
             return View("Index", allAdmins);
         }
 
@@ -45,7 +45,7 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                // إنشاء Admin مباشرة (بدون إنشاء AppUser منفصل)
+               
                 var admin = new Admin
                 {
                     UserName = vm.Email,
@@ -63,12 +63,12 @@ namespace Admin_Dashboard.Controllers
 
                 if (result.Succeeded)
                 {
-                    // إضافة أرقام الهاتف باستخدام UserPhoneRepo
+                   
                     foreach (var phone in vm.Phones)
                     {
                         if (!string.IsNullOrWhiteSpace(phone))
                         {
-                            _unitOfWork._userPhoneRepo.add(new UserPhone
+                            _unitOfWork._UserPhoneRepo.Add(new UserPhone
                             {
                                 PhoneNumber = phone,
                                 UserId = admin.Id
@@ -95,7 +95,7 @@ namespace Admin_Dashboard.Controllers
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            var admin = _unitOfWork._adminRopo.getById(id);
+            var admin = _unitOfWork._AdminRepo.GetById(id);
 
             if (admin == null)
                 return NotFound();
@@ -122,12 +122,12 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                var admin = _unitOfWork._adminRopo.getById(viewModel.Id);
+                var admin = _unitOfWork._AdminRepo.GetById(viewModel.Id);
 
                 if (admin == null)
                     return NotFound();
 
-                // تحديث بيانات المستخدم (AppUser)
+                // update Appuser 
                 var appUser = admin.IdNavigation;
                 appUser.FName = viewModel.FName;
                 appUser.LName = viewModel.LName;
@@ -137,10 +137,10 @@ namespace Admin_Dashboard.Controllers
                 appUser.Street = viewModel.Street;
                 appUser.Government = viewModel.Government;
 
-                // تحديث بيانات الـ Admin
+                //update admin data
                 admin.Salary = viewModel.Salary;
 
-                // تحديث أرقام الهاتف
+                //update phones
                 appUser.UserPhones.Clear();
                 foreach (var phone in viewModel.Phones)
                 {
@@ -152,7 +152,7 @@ namespace Admin_Dashboard.Controllers
                 }
 
                 await _userManager.UpdateAsync(appUser);
-                _unitOfWork._adminRopo.edit(admin);
+                _unitOfWork._AdminRepo.Edit(admin);
                 _unitOfWork.save();
 
                 return RedirectToAction("Index");
@@ -169,7 +169,7 @@ namespace Admin_Dashboard.Controllers
         [HttpPost]
         public IActionResult Delete(string id)
         {
-            var admin = _unitOfWork._adminRopo.getById(id);
+            var admin = _unitOfWork._AdminRepo.GetById(id);
 
             if (admin != null)
             {

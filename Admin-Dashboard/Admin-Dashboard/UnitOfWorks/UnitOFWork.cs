@@ -8,26 +8,26 @@ namespace Admin_Dashboard.UnitOfWorks
     {
         SanayiiContext db;
 
-        GenericRepository<IdentityRole> roleRepo;
-        GenericRepository<UserPhone> userPhoneRepo;
+        GenericRepository<IdentityRole> RoleRepo;
+        GenericRepository<UserPhone> UserPhoneRepo;
 
-        GenericRepository<Category> categoryRopo;
-        GenericRepository<Service> serviceRopo;
+        GenericRepository<Category> CategoryRepo;
+        GenericRepository<Service> ServiceRepo;
 
-        GenericRepository<Payment> paymentMethodsRopo;
-        GenericRepository<Payment> paymentRepo;
+        GenericRepository<Payment> PaymentMethodsRepo;
+        GenericRepository<Payment> PaymentRepo;
 
-        AdminRepository adminRepo;
-        CustomerRepository customerRepo;
-        ArtisanRepository artisanRepo;
+        AdminRepository AdminRepo;
+        CustomerRepository CustomerRepo;
+        ArtisanRepository ArtisanRepo;
 
-        GenericRepository<Contract> contractRepo;
-        GenericRepository<Violation> violationRepo;
+        GenericRepository<Contract> ContractRepo;
+        GenericRepository<Violation> ViolationRepo;
 
-        GenericRepository<ServiceRequestPayment> serviceRequestPaymentRepo;
+        GenericRepository<ServiceRequestPayment> ServiceRequestPaymentRepo;
 
-        GenericRepository<Discount> discountRepo;
-        GenericRepository<CustomerDiscount> customerDiscountRepo;
+        GenericRepository<Discount> DiscountRepo;
+        GenericRepository<CustomerDiscount> CustomerDiscountRepo;
 
         GenericRepository<Review> reviewRepo;
 
@@ -38,180 +38,180 @@ namespace Admin_Dashboard.UnitOfWorks
             this.db = db;
         }
 
-        public GenericRepository<IdentityRole> _roleRepo
+        public GenericRepository<IdentityRole> _RoleRepo
         {
             get
             {
-                if (roleRepo == null)
+                if (RoleRepo == null)
                 {
-                    roleRepo = new GenericRepository<IdentityRole>(db);
+                    RoleRepo = new GenericRepository<IdentityRole>(db);
                 }
-                return roleRepo;
+                return RoleRepo;
             }
         }
 
 
-        public GenericRepository<Category> _categoryRopo
+        public GenericRepository<Category> _CategoryRepo
         {
             get
             {
-                if (categoryRopo == null)
+                if (CategoryRepo == null)
                 {
-                    categoryRopo = new GenericRepository<Category>(db);
+                    CategoryRepo = new GenericRepository<Category>(db);
                 }
-                return categoryRopo;
+                return CategoryRepo;
             }
         }
-        public GenericRepository<UserPhone> _userPhoneRepo
+        public GenericRepository<UserPhone> _UserPhoneRepo
         {
             get
             {
-                if (userPhoneRepo == null)
+                if (UserPhoneRepo == null)
                 {
-                    userPhoneRepo = new GenericRepository<UserPhone>(db);
+                    UserPhoneRepo = new GenericRepository<UserPhone>(db);
                 }
-                return userPhoneRepo;
-            }
-        }
-
-
-        public GenericRepository<Service> _serviceRopo
-        {
-            get
-            {
-                if (serviceRopo == null)
-                {
-                    serviceRopo = new GenericRepository<Service>(db);
-                }
-                return serviceRopo;
-            }
-        }
-
-        public GenericRepository<Payment> _paymentMethodsRopo
-        {
-            get
-            {
-                if (paymentMethodsRopo == null)
-                {
-                    paymentMethodsRopo = new GenericRepository<Payment>(db);
-                }
-                return paymentMethodsRopo;
-            }
-        }
-
-        public GenericRepository<Payment> _paymentRopo
-        {
-            get
-            {
-                if (paymentRepo == null)
-                {
-                    paymentRepo = new GenericRepository<Payment>(db);
-                }
-                return paymentRepo;
-            }
-        }
-
-        public AdminRepository _adminRopo
-        {
-            get
-            {
-                if (adminRepo == null)
-                {
-                    adminRepo = new AdminRepository(db);
-                }
-                return adminRepo;
+                return UserPhoneRepo;
             }
         }
 
 
-        public CustomerRepository _customerRepo
+        public GenericRepository<Service> _ServiceRepo
         {
             get
             {
-                if (customerRepo == null)
+                if (ServiceRepo == null)
                 {
-                    customerRepo = new CustomerRepository(db);
+                    ServiceRepo = new GenericRepository<Service>(db);
                 }
-                return customerRepo;
+                return ServiceRepo;
+            }
+        }
+
+        public GenericRepository<Payment> _paymentMethodsRepo
+        {
+            get
+            {
+                if (PaymentMethodsRepo == null)
+                {
+                    PaymentMethodsRepo = new GenericRepository<Payment>(db);
+                }
+                return PaymentMethodsRepo;
+            }
+        }
+
+        public GenericRepository<Payment> _PaymentRepo
+        {
+            get
+            {
+                if (PaymentRepo == null)
+                {
+                    PaymentRepo = new GenericRepository<Payment>(db);
+                }
+                return PaymentRepo;
+            }
+        }
+
+        public AdminRepository _AdminRepo
+        {
+            get
+            {
+                if (AdminRepo == null)
+                {
+                    AdminRepo = new AdminRepository(db);
+                }
+                return AdminRepo;
             }
         }
 
 
-        public ArtisanRepository _artisanRepo
+        public CustomerRepository _CustomerRepo
         {
             get
             {
-                if (artisanRepo == null)
+                if (CustomerRepo == null)
                 {
-                    artisanRepo = new ArtisanRepository(db);
+                    CustomerRepo = new CustomerRepository(db);
                 }
-                return artisanRepo;
+                return CustomerRepo;
             }
         }
 
 
-        public GenericRepository<Contract> _contractRepo
+        public ArtisanRepository _ArtisanRepo
         {
             get
             {
-                if (contractRepo == null)
+                if (ArtisanRepo == null)
                 {
-                    contractRepo = new GenericRepository<Contract>(db);
+                    ArtisanRepo = new ArtisanRepository(db);
                 }
-                return contractRepo;
-            }
-        }
-
-        public GenericRepository<Violation> _violationRepo
-        {
-            get
-            {
-                if (violationRepo == null)
-                {
-                    violationRepo = new GenericRepository<Violation>(db);
-                }
-                return violationRepo;
-            }
-        }
-
-        public GenericRepository<ServiceRequestPayment> _serviceRequestPaymentRepo
-        {
-            get
-            {
-                if (serviceRequestPaymentRepo == null)
-                {
-                    serviceRequestPaymentRepo = new GenericRepository<ServiceRequestPayment>(db);
-                }
-                return serviceRequestPaymentRepo;
-            }
-        }
-
-        public GenericRepository<Discount> _discountRepo
-        {
-            get
-            {
-                if (discountRepo == null)
-                {
-                    discountRepo = new GenericRepository<Discount>(db);
-                }
-                return discountRepo;
-            }
-        }
-
-        public GenericRepository<CustomerDiscount> _customerDiscountRepo
-        {
-            get
-            {
-                if (customerDiscountRepo == null)
-                {
-                    customerDiscountRepo = new GenericRepository<CustomerDiscount>(db);
-                }
-                return customerDiscountRepo;
+                return ArtisanRepo;
             }
         }
 
 
-        public GenericRepository<Review> _reviewRepo
+        public GenericRepository<Contract> _ContractRepo
+        {
+            get
+            {
+                if (ContractRepo == null)
+                {
+                    ContractRepo = new GenericRepository<Contract>(db);
+                }
+                return ContractRepo;
+            }
+        }
+
+        public GenericRepository<Violation> _ViolationRepo
+        {
+            get
+            {
+                if (ViolationRepo == null)
+                {
+                    ViolationRepo = new GenericRepository<Violation>(db);
+                }
+                return ViolationRepo;
+            }
+        }
+
+        public GenericRepository<ServiceRequestPayment> _ServiceRequestPaymentRepo
+        {
+            get
+            {
+                if (ServiceRequestPaymentRepo == null)
+                {
+                    ServiceRequestPaymentRepo = new GenericRepository<ServiceRequestPayment>(db);
+                }
+                return ServiceRequestPaymentRepo;
+            }
+        }
+
+        public GenericRepository<Discount> _DiscountRepo
+        {
+            get
+            {
+                if (DiscountRepo == null)
+                {
+                    DiscountRepo = new GenericRepository<Discount>(db);
+                }
+                return DiscountRepo;
+            }
+        }
+
+        public GenericRepository<CustomerDiscount> _CustomerDiscountRepo
+        {
+            get
+            {
+                if (CustomerDiscountRepo == null)
+                {
+                    CustomerDiscountRepo = new GenericRepository<CustomerDiscount>(db);
+                }
+                return CustomerDiscountRepo;
+            }
+        }
+
+
+        public GenericRepository<Review> _ReviewRepo
         {
             get
             {

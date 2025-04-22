@@ -15,7 +15,7 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult Index()
         {
-            var payments=unitOFWork._paymentRopo.getAll();
+            var payments=unitOFWork._PaymentRepo.GetAll();
             return View(payments);
         }
         public IActionResult Create()
@@ -27,7 +27,7 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                unitOFWork._paymentRopo.add(payment);
+                unitOFWork._PaymentRepo.Add(payment);
                 unitOFWork.save();
                 return RedirectToAction("Index");
             }
@@ -35,7 +35,7 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult Edit(int id)
         {
-            var payment = unitOFWork._paymentRopo.getById(id);
+            var payment = unitOFWork._PaymentRepo.GetById(id);
             return View(payment);
         }
         [HttpPost]
@@ -43,7 +43,7 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                unitOFWork._paymentRopo.edit(payment);
+                unitOFWork._PaymentRepo.Edit(payment);
                 unitOFWork.save();
                 return RedirectToAction("Index");
             }
@@ -51,13 +51,13 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult Delete(int id)
         {
-            unitOFWork._paymentRopo.delete(id);
+            unitOFWork._PaymentRepo.Delete(id);
             unitOFWork.save();
             return RedirectToAction("Index");
         }
         public IActionResult Detail(int id)
         {
-            var payment = unitOFWork._paymentRopo.getById(id);
+            var payment = unitOFWork._PaymentRepo.GetById(id);
             return View(payment);
         }
     }

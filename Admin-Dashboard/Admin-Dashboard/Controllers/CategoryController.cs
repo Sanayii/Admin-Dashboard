@@ -18,24 +18,24 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult All()
         {
-            var Categorys = UnitOfWorks._categoryRopo.getAll(); 
+            var Categorys = UnitOfWorks._CategoryRepo.GetAll(); 
             return View(Categorys);
         }
         public ActionResult Detail(int id)
         {
             if (id == null) return BadRequest();
-            var item = UnitOfWorks._categoryRopo.getById(id);
+            var item = UnitOfWorks._CategoryRepo.GetById(id);
             if (item == null) return NotFound();
             return View(item);
         }
         public IActionResult Delete(int id)
         {
             if (id == null) return BadRequest();
-            var item = UnitOfWorks._categoryRopo.getById(id);
+            var item = UnitOfWorks._CategoryRepo.GetById(id);
             if (item == null) return NotFound();
             try
             {
-                UnitOfWorks._categoryRopo.delete(id);
+                UnitOfWorks._CategoryRepo.Delete(id);
                 UnitOfWorks.save();
             }
             catch (DbUpdateException ex)
@@ -54,7 +54,7 @@ namespace Admin_Dashboard.Controllers
                 return View(catg);
             }
 
-            UnitOfWorks._categoryRopo.add(catg);
+            UnitOfWorks._CategoryRepo.Add(catg);
             UnitOfWorks.save();
             return RedirectToAction("All");
         }
@@ -72,7 +72,7 @@ namespace Admin_Dashboard.Controllers
                 return View(catg);
             }
 
-            UnitOfWorks._categoryRopo.edit(catg);
+            UnitOfWorks._CategoryRepo.Edit(catg);
             UnitOfWorks.save();
             return RedirectToAction("All");
         }
@@ -81,7 +81,7 @@ namespace Admin_Dashboard.Controllers
         public IActionResult Edit(int id)
         {
             if (id == null) return BadRequest();
-            var catg = UnitOfWorks._categoryRopo.getById(id);
+            var catg = UnitOfWorks._CategoryRepo.GetById(id);
             if (catg == null) return NotFound();
             return View(catg);
         }

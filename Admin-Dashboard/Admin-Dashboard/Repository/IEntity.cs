@@ -2,13 +2,13 @@
 {
     public interface IEntity<Entity>
     {
-        public List<Entity> getAll();
-        public Entity getById<T>(T id);
+        public List<Entity> GetAll();
+        public Entity GetById<T>(T id);
 
-        public void add(Entity entity);
+        public void Add(Entity entity);
 
-        public void edit(Entity entity);
+        public void Edit(Entity entity);
 
-        public void delete<T>(T id);
+        public void Delete<T>(T id);
     }
 }

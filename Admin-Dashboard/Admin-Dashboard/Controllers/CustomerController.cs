@@ -19,18 +19,18 @@ namespace Admin_Dashboard.Controllers
 
         public IActionResult Index()
         {
-            var customers = _unitOfWork._customerRepo.GetAllCustomers();
+            var customers = _unitOfWork._CustomerRepo.GetAllCustomers();
             return View(customers);
         }
         public IActionResult GetAllCustomers()
         {
-            var AllCustomers = _unitOfWork._customerRepo.getAll();
+            var AllCustomers = _unitOfWork._CustomerRepo.GetAll();
             return View("Index", AllCustomers);
         }
         [HttpGet]
         public IActionResult Edit(string id)
         {
-            var customer = _unitOfWork._customerRepo.getById(id);
+            var customer = _unitOfWork._CustomerRepo.GetById(id);
             if (customer == null)
                 return NotFound();
 
@@ -42,7 +42,7 @@ namespace Admin_Dashboard.Controllers
             if (!ModelState.IsValid)
                 return View(customer);
 
-            var existingCustomer = _unitOfWork._customerRepo.getById(customer.Id);
+            var existingCustomer = _unitOfWork._CustomerRepo.GetById(customer.Id);
             if (existingCustomer == null)
                 return NotFound();
 
@@ -65,12 +65,12 @@ namespace Admin_Dashboard.Controllers
         [HttpPost]
         public IActionResult Delete(string id)
         {
-            var customer = _unitOfWork._customerRepo.getById(id);
+            var customer = _unitOfWork._CustomerRepo.GetById(id);
             if (customer != null)
             {
 
                 customer.IsDeleted = true;
-                _unitOfWork._customerRepo.edit(customer);
+                _unitOfWork._CustomerRepo.Edit(customer);
                 _unitOfWork.save();
             }
 

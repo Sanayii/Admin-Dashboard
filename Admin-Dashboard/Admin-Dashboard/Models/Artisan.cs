@@ -28,7 +28,7 @@ public partial class Artisan : AppUser
     public virtual Contract Contract { get; set; }
 
     [ForeignKey("Id")]
-    public virtual AppUser IdNavigation { get; set; }
+    public virtual AppUser IdNavigation { get; set; }//important for other classes to work as contract....
 
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();

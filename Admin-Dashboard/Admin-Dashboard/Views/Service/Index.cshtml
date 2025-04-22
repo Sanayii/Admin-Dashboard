@@ -17,41 +17,41 @@
         <table class="Mtable table-hover">
             <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">Service Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">BasePrice</th>
-                <th scope="col">Additional Price</th>
-                
-                
-                <th scope="col">Category name</th>
-                <th scope="col" colspan="3"> Buttons</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var c in Model)
-            {
-                <tr style="margin-bottom:5px;">
-                    <th>@c.Id</th>
-                    <td>@c.ServiceName</td>
-                    <td>@c.Description</td>
-                    <td>@c.BasePrice</td>
-                    <td>@c.AdditionalPrice</td>
+                    <th scope="col">#</th>
+                    <th scope="col">Service Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">BasePrice</th>
+                    <th scope="col">Additional Price</th>
+
+
+                    <th scope="col">Category name</th>
+                    <th scope="col" colspan="3"> Buttons</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var c in Model)
+                {
+                    <tr style="margin-bottom:5px;">
+                        <th>@c.Id</th>
+                        <td>@c.ServiceName</td>
+                        <td>@c.Description</td>
+                        <td>@c.BasePrice</td>
+                        <td>@c.AdditionalPrice</td>
 
 
                         <td>@c.CategoryName</td>
-                    <td><a asp-action="Details" asp-route-id="@c.Id" class="btn btn-outline-dark">Detail</a></td>
-                    <td><a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-outline-success">Edit</a></td>
-                    <td><button onclick="confirmDelete(@c.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
-                </tr>
-            }
-        </tbody>
+                        <td><a asp-action="Details" asp-route-id="@c.Id" class="btn btn-outline-dark">Detail</a></td>
+                        <td><a asp-action="Edit" asp-route-id="@c.Id" class="btn btn-outline-success">Edit</a></td>
+                        <td><button onclick="confirmDelete(@c.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 </section>
 <script>
     function confirmDelete(id) {
-        var confirmation = confirm("Are you sure to delete this Contract ?");
+        var confirmation = confirm("Are you sure to delete this Service ?");
         if (confirmation) {
             window.location.href = "/Service/Delete/" + id;
         }
