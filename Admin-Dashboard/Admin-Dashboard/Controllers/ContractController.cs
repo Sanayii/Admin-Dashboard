@@ -12,17 +12,17 @@ namespace Admin_Dashboard.Controllers
     public class ContractController : Controller
     {
         private readonly UnitOFWork Unit;
-        
+
         public ContractController(UnitOFWork unit)
         {
             Unit = unit;
-            
+
         }
         public IActionResult Index()
         {
             //var contracts = Unit._contractRepo.getAll();
             //return View(contracts);
-            var contracts = Unit._contractRepo.getAll();
+            var contracts = Unit._ContractRepo.GetAll();
 
             var viewModel = contracts.Select(c => new ContractViewModel
             {
@@ -31,15 +31,15 @@ namespace Admin_Dashboard.Controllers
                 EndDate = c.EndDate,
                 MaxViolationsAllowed = c.MaxViolationsAllowed,
                 Status = c.Status,
-                ArtisanFullName = c.Artisan?.IdNavigation?.FName + " " + c.Artisan?.IdNavigation?.LName ?? "N/A" 
-            }).ToList(); 
+                ArtisanFullName = c.Artisan?.IdNavigation?.FName + " " + c.Artisan?.IdNavigation?.LName ?? "N/A"
+            }).ToList();
 
             return View(viewModel);
 
         }
         public IActionResult Create()
         {
-            var artisans = Unit._artisanRepo.getAll()
+            var artisans = Unit._ArtisanRepo.GetAll()
                   .Select(a => new {
                       Id = a.Id,
                       Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
@@ -53,13 +53,13 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                Unit._contractRepo.add(contract);
+                Unit._ContractRepo.Add(contract);
                 Unit.save();
                 return RedirectToAction("Index");
             }
 
-            
-            var artisans = Unit._artisanRepo.getAll()
+
+            var artisans = Unit._ArtisanRepo.GetAll()
                           .Select(a => new {
                               Id = a.Id,
                               Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
@@ -68,36 +68,16 @@ namespace Admin_Dashboard.Controllers
             ViewBag.Artisans = new SelectList(artisans, "Id", "Name");
             return View(contract);
         }
-        //public IActionResult Edit(int id)
-        //{
-        //    var contract = Unit._contractRepo.getById(id);
-        //    if (contract == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    return View(contract);
-        //}
-        //[HttpPost]
-        //public IActionResult Edit(int id, Contract contract)
-        //{
-        //    if (id != contract.Id) return NotFound();
-        //    if (ModelState.IsValid)
-        //    {
-        //        Unit._contractRepo.edit(contract);
-        //        Unit.save();
-        //        return RedirectToAction("Index");
-        //    }
-        //    return View(contract);
-        //}
+
         public IActionResult Edit(int id)
         {
-            var contract = Unit._contractRepo.getById(id);
+            var contract = Unit._ContractRepo.GetById(id);
             if (contract == null)
             {
                 return NotFound();
             }
 
-            var artisans = Unit._artisanRepo.getAll()
+            var artisans = Unit._ArtisanRepo.GetAll()
                           .Select(a => new {
                               Id = a.Id,
                               Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
@@ -120,7 +100,7 @@ namespace Admin_Dashboard.Controllers
             {
                 try
                 {
-                    Unit._contractRepo.edit(contract);
+                    Unit._ContractRepo.Edit(contract);
                     Unit.save();
                     return RedirectToAction("Index");
                 }
@@ -138,7 +118,7 @@ namespace Admin_Dashboard.Controllers
             }
 
 
-            var artisans = Unit._artisanRepo.getAll()
+            var artisans = Unit._ArtisanRepo.GetAll()
                           .Select(a => new {
                               Id = a.Id,
                               Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
@@ -150,54 +130,24 @@ namespace Admin_Dashboard.Controllers
 
         private bool ContractExists(int id)
         {
-            return Unit._contractRepo.getAll().Any(e => e.Id == id);
+            return Unit._ContractRepo.GetAll().Any(e => e.Id == id);
         }
         public IActionResult Delete(int id)
         {
-            Unit._contractRepo.delete(id);
+            Unit._ContractRepo.Delete(id);
             Unit.save();
             return RedirectToAction("Index");
         }
         public IActionResult Details(int id)
         {
-            //var contract = Unit._contractRepo.getById(id);
 
-            //if (contract == null)
-            //{
-            //    return NotFound(); 
-            //}
-
-            //if (contract.Artisan?.IdNavigation == null)
-            //{
-            //    ViewBag.ErrorMessage = "Artisan data is missing";
-            //    return View(contract); 
-            //}
-
-            //return View(contract);
-            //var contract = Unit._contractRepo.getById(id);
-
-            //if (contract == null)
-            //{
-            //    return NotFound();
-            //}
-
-            //if (contract.Artisan?.IdNavigation != null)
-            //{
-            //    ViewBag.ArtisanName = $"{contract.Artisan.IdNavigation.FName} {contract.Artisan.IdNavigation.LName}";
-            //}
-            //else
-            //{
-            //    ViewBag.ArtisanName = "N/A";
-            //}
-
-            //return View(contract);
-            var contract = Unit._contractRepo.getById(id);
+            var contract = Unit._ContractRepo.GetById(id);
 
             if (contract == null) return NotFound();
 
             if (!string.IsNullOrEmpty(contract.ArtisanId))
             {
-                var artisan = Unit._artisanRepo.getById(contract.ArtisanId);
+                var artisan = Unit._ArtisanRepo.GetById(contract.ArtisanId);
                 if (artisan?.IdNavigation != null)
                 {
                     ViewBag.ArtisanName = $"{artisan.IdNavigation.FName} {artisan.IdNavigation.LName}";

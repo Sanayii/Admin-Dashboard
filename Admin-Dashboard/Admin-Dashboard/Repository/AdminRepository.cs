@@ -8,11 +8,11 @@ namespace Admin_Dashboard.Repository
         public AdminRepository(SanayiiContext db) : base(db)
         {
         }
-        public List<Admin> getAllAdmins()
+        public List<Admin> GetAllAdmins()
         { 
            return db.Admins.Where(Admin=>Admin.IsDeleted == false).ToList();
         }
-        public  void addadmin (Admin admin)
+        public  void AddAdmin (Admin admin)
         {
             
             db.Admins.Add(admin);

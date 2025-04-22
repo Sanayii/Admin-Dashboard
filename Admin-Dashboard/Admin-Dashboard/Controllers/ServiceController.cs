@@ -17,14 +17,14 @@ namespace Admin_Dashboard.Controllers
         {
             //var services = Unit._serviceRopo.getAll();
             //return View(services);
-            var services = Unit._serviceRopo.getAll(); 
-            var categories = Unit._categoryRopo.getAll().ToDictionary(c => c.Id, c => c.Name); 
+            var services = Unit._ServiceRepo.GetAll();
+            var categories = Unit._CategoryRepo.GetAll().ToDictionary(c => c.Id, c => c.Name);
 
             var viewModel = services.Select(s => new ServiceViewModel
             {
                 Id = s.Id,
                 ServiceName = s.ServiceName,
-                CategoryName = categories.ContainsKey(s.CategoryId) ? categories[s.CategoryId] : "N/A", 
+                CategoryName = categories.ContainsKey(s.CategoryId) ? categories[s.CategoryId] : "N/A",
                 Description = s.Description,
                 BasePrice = s.BasePrice,
                 AdditionalPrice = s.AdditionalPrice
@@ -34,7 +34,7 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult Create()
         {
-            var categories = Unit._categoryRopo.getAll().Select(c => new
+            var categories = Unit._CategoryRepo.GetAll().Select(c => new
             {
                 Id = c.Id,
                 Name = c.Name
@@ -49,7 +49,7 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-                Unit._serviceRopo.add(service);
+                Unit._ServiceRepo.Add(service);
                 Unit.save();
                 return RedirectToAction("Index");
             }
@@ -57,12 +57,12 @@ namespace Admin_Dashboard.Controllers
         }
         public IActionResult Edit(int id)
         {
-            var service = Unit._serviceRopo.getById(id);
+            var service = Unit._ServiceRepo.GetById(id);
             if (service == null)
             {
                 return NotFound();
             }
-            var categories = Unit._categoryRopo.getAll().Select(c => new
+            var categories = Unit._CategoryRepo.GetAll().Select(c => new
             {
                 Id = c.Id,
                 Name = c.Name
@@ -77,37 +77,26 @@ namespace Admin_Dashboard.Controllers
             if (id != service.Id) return NotFound();
             if (ModelState.IsValid)
             {
-                Unit._serviceRopo.edit(service);
+                Unit._ServiceRepo.Edit(service);
                 Unit.save();
                 return RedirectToAction("Index");
             }
-            ViewBag.Categories = new SelectList(Unit._categoryRopo.getAll(), "Id", "Name", service.CategoryId);
+            ViewBag.Categories = new SelectList(Unit._CategoryRepo.GetAll(), "Id", "Name", service.CategoryId);
             return View(service);
         }
         public IActionResult Delete(int id)
         {
-            var service = Unit._serviceRopo.getById(id);
+            var service = Unit._ServiceRepo.GetById(id);
             if (service == null)
             {
                 return NotFound();
             }
-            return View(service);
-        }
-        [HttpPost, ActionName("Delete")]
-        public IActionResult DeleteConfirmed(int id)
-        {
-            var service = Unit._serviceRopo.getById(id);
-            if (service == null)
-            {
-                return NotFound();
-            }
-            Unit._serviceRopo.delete(service);
-            Unit.save();
             return RedirectToAction("Index");
         }
+
         public IActionResult Details(int id)
         {
-            var service = Unit._serviceRopo.getById(id);
+            var service = Unit._ServiceRepo.GetById(id);
             if (service == null)
             {
                 return NotFound();
