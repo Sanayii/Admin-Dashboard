@@ -202,5 +202,24 @@ namespace Admin_Dashboard.Controllers
             ViewBag.Categories = _unitOfWork._CategoryRepo.GetAll();
             return View(model);
         }
+        //search by admin name
+        [HttpGet]
+        public IActionResult Search(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            var allArtisans = _unitOfWork._ArtisanRepo.GetAllArtisan();
+
+            var filteredArtisans = allArtisans
+                .Where(a =>
+                    (a.IdNavigation.FName != null && a.IdNavigation.FName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                    (a.IdNavigation.LName != null && a.IdNavigation.LName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                .ToList();
+
+            return View("Index", filteredArtisans);
+        }
     }
 }

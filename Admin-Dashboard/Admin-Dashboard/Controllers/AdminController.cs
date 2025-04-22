@@ -45,7 +45,7 @@ namespace Admin_Dashboard.Controllers
         {
             if (ModelState.IsValid)
             {
-               
+
                 var admin = new Admin
                 {
                     UserName = vm.Email,
@@ -63,7 +63,7 @@ namespace Admin_Dashboard.Controllers
 
                 if (result.Succeeded)
                 {
-                   
+
                     foreach (var phone in vm.Phones)
                     {
                         if (!string.IsNullOrWhiteSpace(phone))
@@ -76,7 +76,7 @@ namespace Admin_Dashboard.Controllers
                         }
                     }
 
-                 _unitOfWork.save();
+                    _unitOfWork.save();
 
                     return RedirectToAction(nameof(Index));
                 }
@@ -179,5 +179,25 @@ namespace Admin_Dashboard.Controllers
 
             return RedirectToAction("Index");
         }
+   
+
+    //search by admin name
+   [HttpGet]
+        public IActionResult Search(string searchTerm)
+        {
+            if (string.IsNullOrWhiteSpace(searchTerm))
+            {
+                return RedirectToAction(nameof(Index));
+            }
+
+            var allAdmins = _unitOfWork._AdminRepo.GetAllAdmins();
+
+            var filteredAdmins = allAdmins
+                .Where(a =>
+                    (a.IdNavigation.FName != null && a.IdNavigation.FName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                    (a.IdNavigation.LName != null && a.IdNavigation.LName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                .ToList();
+
+            return View("Index", filteredAdmins);
+        } }
     }
-}

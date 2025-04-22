@@ -2568,3 +2568,10 @@ C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboar
 C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Dashboard.pdb
 C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Dashboard.genruntimeconfig.cache
 C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\ref\Admin-Dashboard.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\Cure.AspNetCore.Localization.Routing.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\Cure.AspNetCore.Localization.Routing.Mvc.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\Newtonsoft.Json.Bson.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\System.Formats.Asn1.dll
+C:\Users\AYA MAHMOUD\Source\Repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\System.Text.Json.dll

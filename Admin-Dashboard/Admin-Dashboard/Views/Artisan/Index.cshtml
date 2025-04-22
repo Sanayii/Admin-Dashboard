@@ -36,13 +36,38 @@
         <h2>Artisans Management</h2>
         <div>
             <a asp-action="GetAllArtisans" class="btn btn-outline-secondary me-2">
-                <i class="bi bi-people-fill"></i> View All Artisans
+                <i class="bi bi-people-fill"></i>  All Artisans
             </a>
             <a asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-person-plus"></i> Add Artisan
+                <i class="bi bi-person-plus"></i> Add New Artisan
             </a>
         </div>
     </div>
+
+
+    <!-- Add the search form here -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body py-3">
+            <form asp-action="Search" method="get" class="row g-3 align-items-center">
+                <div class="col-md-6 search-container">
+                    <div class="input-group">
+                        <input type="text" name="searchTerm" class="form-control"
+                               placeholder="Search by name..." value="@Context.Request.Query["searchTerm"]" />
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]))
+                        {
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-lg"></i> Clear
+                            </a>
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <div class="card shadow">
         <div class="card-body">

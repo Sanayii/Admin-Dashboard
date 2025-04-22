@@ -22,13 +22,37 @@
         <h2 class="mb-0">Customers Management</h2>
         <div>
             <a class="btn btn-outline-secondary me-2" asp-action="GetAllCustomers" asp-controller="Customer">
-                <i class="bi bi-archive me-1"></i>All Statuses
+                <i class="bi bi-archive me-1"></i>All Customers
             </a>
             <a class="btn btn-primary" asp-action="Create" asp-controller="Customer">
-                <i class="bi bi-person-plus me-1"></i>New Customer
+                <i class="bi bi-person-plus me-1"></i> Add New Customer
             </a>
         </div>
     </div>
+
+    <!-- Add the search form here -->
+    <div class="card shadow-sm mb-4">
+        <div class="card-body py-3">
+            <form asp-action="Search" method="get" class="row g-3 align-items-center">
+                <div class="col-md-6 search-container">
+                    <div class="input-group">
+                        <input type="text" name="searchTerm" class="form-control"
+                               placeholder="Search by name..." value="@Context.Request.Query["searchTerm"]" />
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search me-1"></i> Search
+                        </button>
+                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]))
+                        {
+                            <a asp-action="Index" class="btn btn-outline-secondary">
+                                <i class="bi bi-x-lg"></i> Clear
+                            </a>
+                        }
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
 
     <div class="card shadow-sm">
         <div class="card-body p-0">
