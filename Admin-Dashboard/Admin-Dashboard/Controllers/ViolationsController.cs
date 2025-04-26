@@ -6,23 +6,24 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
-
+using Admin_Dashboard.UnitOfWorks;
 namespace Admin_Dashboard.Controllers
 {
     public class ViolationsController : Controller
     {
         private readonly SanayiiContext _context;
-
-        public ViolationsController(SanayiiContext context)
+        private UnitOFWork UnitOfWorks;
+        public ViolationsController(SanayiiContext context, UnitOFWork _unitOFWork)
         {
             _context = context;
+            UnitOfWorks = _unitOFWork;
         }
 
         // GET: Violations
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var sanayiiContext = _context.Violations.Include(v => v.Contract);
-            return View(await sanayiiContext.ToListAsync());
+            var s = UnitOfWorks._ViolationRepo.GetAll();
+            return View(s);
         }
 
         // GET: Violations/Details/5
@@ -33,9 +34,7 @@ namespace Admin_Dashboard.Controllers
                 return NotFound();
             }
 
-            var violation = await _context.Violations
-                .Include(v => v.Contract)
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var violation = UnitOfWorks._ViolationRepo.GetById(id);
             if (violation == null)
             {
                 return NotFound();
@@ -47,7 +46,7 @@ namespace Admin_Dashboard.Controllers
         // GET: Violations/Create
         public IActionResult Create()
         {
-            ViewData["ContractId"] = new SelectList(_context.Contracts, "Id", "ArtisanId");
+            ViewData["ContractId"] = new SelectList(_context.Contracts, "Id", "Id");
             return View();
         }
 
@@ -120,39 +119,23 @@ namespace Admin_Dashboard.Controllers
             ViewData["ContractId"] = new SelectList(_context.Contracts, "Id", "ArtisanId", violation.ContractId);
             return View(violation);
         }
-
-        // GET: Violations/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public IActionResult Delete(int id)
         {
-            if (id == null)
+            if (id == null) return BadRequest();
+            var item = UnitOfWorks._ViolationRepo.GetById(id);
+            if (item == null) return NotFound();
+            try
             {
-                return NotFound();
+                UnitOfWorks._ViolationRepo.Delete(id);
+                UnitOfWorks.save();
+            }
+            catch (DbUpdateException ex)
+            {
+                ViewBag.ErrorMessage = "Cannot delete this Violation.";
+                return View();
             }
 
-            var violation = await _context.Violations
-                .Include(v => v.Contract)
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (violation == null)
-            {
-                return NotFound();
-            }
-
-            return View(violation);
-        }
-
-        // POST: Violations/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
-        {
-            var violation = await _context.Violations.FindAsync(id);
-            if (violation != null)
-            {
-                _context.Violations.Remove(violation);
-            }
-
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("index");
         }
 
         private bool ViolationExists(int id)

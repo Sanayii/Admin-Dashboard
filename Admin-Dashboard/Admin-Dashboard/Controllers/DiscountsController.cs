@@ -6,34 +6,44 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
+using Admin_Dashboard.UnitOfWorks;
+using Microsoft.AspNetCore.Identity;
 
 namespace Admin_Dashboard.Controllers
 {
     public class DiscountsController : Controller
     {
-        private readonly SanayiiContext _context;
 
-        public DiscountsController(SanayiiContext context)
+        private readonly ILogger<AdminController> _logger;
+        private readonly UnitOFWork _unitOfWork;
+
+
+        public DiscountsController(
+            ILogger<AdminController> logger,
+            UnitOFWork unitOfWork)
         {
-            _context = context;
+            _logger = logger;
+            _unitOfWork = unitOfWork;
+
         }
 
         // GET: Discounts
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Discounts.ToListAsync());
+            var discounts = _unitOfWork._DiscountRepo.GetAll();
+            return View(discounts);
         }
 
         // GET: Discounts/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public IActionResult Details(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var discount = await _context.Discounts
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var discount = _unitOfWork._DiscountRepo.GetById(id);
+
             if (discount == null)
             {
                 return NotFound();
@@ -43,36 +53,35 @@ namespace Admin_Dashboard.Controllers
         }
 
         // GET: Discounts/Create
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Discounts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Amount,MinRequiredRequests,IsFixedAmount,IsPercentage,ExpireDate")] Discount discount)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(discount);
-                await _context.SaveChangesAsync();
+                _unitOfWork._DiscountRepo.Add(discount);
+                _unitOfWork.save();
                 return RedirectToAction(nameof(Index));
             }
             return View(discount);
         }
 
         // GET: Discounts/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public IActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var discount = await _context.Discounts.FindAsync(id);
+            var discount = _unitOfWork._DiscountRepo.GetById(id);
             if (discount == null)
             {
                 return NotFound();
@@ -80,12 +89,10 @@ namespace Admin_Dashboard.Controllers
             return View(discount);
         }
 
-        // POST: Discounts/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Amount,MinRequiredRequests,IsFixedAmount,IsPercentage,ExpireDate")] Discount discount)
+        public IActionResult Edit(int id, [Bind("Id,Name,Amount,MinRequiredRequests,IsFixedAmount,IsPercentage,ExpireDate")] Discount discount)
         {
             if (id != discount.Id)
             {
@@ -96,8 +103,8 @@ namespace Admin_Dashboard.Controllers
             {
                 try
                 {
-                    _context.Update(discount);
-                    await _context.SaveChangesAsync();
+                    _unitOfWork._DiscountRepo.Edit(discount);
+                    _unitOfWork.save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -123,8 +130,8 @@ namespace Admin_Dashboard.Controllers
                 return NotFound();
             }
 
-            var discount = await _context.Discounts
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var discount = _unitOfWork._DiscountRepo.GetById(id);
+
             if (discount == null)
             {
                 return NotFound();
@@ -136,21 +143,22 @@ namespace Admin_Dashboard.Controllers
         // POST: Discounts/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public IActionResult DeleteConfirmed(int id)
         {
-            var discount = await _context.Discounts.FindAsync(id);
+            var discount = _unitOfWork._DiscountRepo.GetById(id);
             if (discount != null)
             {
-                _context.Discounts.Remove(discount);
+                _unitOfWork._DiscountRepo.Delete(discount);
+                _unitOfWork.save();
             }
 
-            await _context.SaveChangesAsync();
+            _unitOfWork._DiscountRepo.Delete(discount);
             return RedirectToAction(nameof(Index));
         }
 
         private bool DiscountExists(int id)
         {
-            return _context.Discounts.Any(e => e.Id == id);
+            return _unitOfWork._DiscountRepo.GetAll().Any(e => e.Id == id);
         }
     }
 }

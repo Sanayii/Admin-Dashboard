@@ -1,55 +1,74 @@
 ﻿@model Admin_Dashboard.Models.Discount
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Discount";
+    ViewBag.pagename = "Discounts";
 }
 
-<h1>Create</h1>
+<partial name="_Banner" />
 
-<h4>Discount</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Amount" class="control-label"></label>
-                <input asp-for="Amount" class="form-control" />
-                <span asp-validation-for="Amount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MinRequiredRequests" class="control-label"></label>
-                <input asp-for="MinRequiredRequests" class="form-control" />
-                <span asp-validation-for="MinRequiredRequests" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsFixedAmount" class="control-label"></label>
-                <input asp-for="IsFixedAmount" class="form-control" />
-                <span asp-validation-for="IsFixedAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IsPercentage" class="control-label"></label>
-                <input asp-for="IsPercentage" class="form-control" />
-                <span asp-validation-for="IsPercentage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ExpireDate" class="control-label"></label>
-                <input asp-for="ExpireDate" class="form-control" />
-                <span asp-validation-for="ExpireDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="container mt-4">
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="mb-0">Create New Discount</h4>
+        </div>
+        <div class="card-body">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Amount" class="form-label"></label>
+                    <input asp-for="Amount" class="form-control" />
+                    <span asp-validation-for="Amount" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="MinRequiredRequests" class="form-label"></label>
+                    <input asp-for="MinRequiredRequests" class="form-control" />
+                    <span asp-validation-for="MinRequiredRequests" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IsFixedAmount" class="form-label"></label>
+                    <select asp-for="IsFixedAmount" class="form-select">
+                        <option value="">Select</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                    <span asp-validation-for="IsFixedAmount" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IsPercentage" class="form-label"></label>
+                    <select asp-for="IsPercentage" class="form-select">
+                        <option value="">Select</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                    <span asp-validation-for="IsPercentage" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="ExpireDate" class="form-label"></label>
+                    <input asp-for="ExpireDate" class="form-control" type="date" />
+                    <span asp-validation-for="ExpireDate" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex">
+                    <button type="submit" class="btn btn-success me-2">
+                        <i class="bi bi-plus-circle"></i> Create
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Back to List
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

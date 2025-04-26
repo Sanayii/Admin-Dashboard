@@ -101,6 +101,7 @@ namespace Admin_Dashboard.Controllers
             {
                 return NotFound();
             }
+            ViewBag.Category = service.Category.Name;
             return View(service);
         }
     }

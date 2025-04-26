@@ -6,86 +6,93 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
+using Admin_Dashboard.UnitOfWorks;
 
 namespace Admin_Dashboard.Controllers
 {
     public class CustomerDiscountsController : Controller
     {
-        private readonly SanayiiContext _context;
-
-        public CustomerDiscountsController(SanayiiContext context)
+        private readonly UnitOFWork Unit;
+        public CustomerDiscountsController(UnitOFWork _Unit)
         {
-            _context = context;
+            Unit = _Unit;
         }
 
         // GET: CustomerDiscounts
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var sanayiiContext = _context.CustomerDiscounts.Include(c => c.Customer).Include(c => c.Discount);
-            return View(await sanayiiContext.ToListAsync());
+            var allCustomerDiscounts = Unit._CustomerDiscountRepo.GetAll().ToList();
+            return View(allCustomerDiscounts);
         }
 
         // GET: CustomerDiscounts/Details/5
-        public async Task<IActionResult> Details(string id)
+        public IActionResult Details(string customerId, int discountId)
         {
-            if (id == null)
+
+            if (string.IsNullOrEmpty(customerId))
             {
                 return NotFound();
             }
 
-            var customerDiscount = await _context.CustomerDiscounts
-                .Include(c => c.Customer)
-                .Include(c => c.Discount)
-                .FirstOrDefaultAsync(m => m.CustomerId == id);
+            var customerDiscount = Unit._CustomerDiscountRepo
+                .GetAll()
+                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
             if (customerDiscount == null)
             {
                 return NotFound();
             }
 
+            customerDiscount.Customer = Unit._CustomerRepo.GetById(customerId);
+            customerDiscount.Discount = Unit._DiscountRepo.GetById(discountId);
+
             return View(customerDiscount);
+
+
         }
 
-        // GET: CustomerDiscounts/Create
+        //// GET: CustomerDiscounts/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id");
-            ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Name");
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id");
+            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name");
             return View();
         }
 
-        // POST: CustomerDiscounts/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount customerDiscount)
+        public IActionResult Create([Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount customerDiscount)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(customerDiscount);
-                await _context.SaveChangesAsync();
+                Unit._CustomerDiscountRepo.Add(customerDiscount);
+                Unit.save();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Name", customerDiscount.DiscountId);
+
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
+            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
             return View(customerDiscount);
         }
 
-        // GET: CustomerDiscounts/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        //// GET: CustomerDiscounts/Edit/5
+        public IActionResult Edit(string customerId, int discountId)
         {
-            if (id == null)
-            {
+            if (customerId == null || discountId == 0)
                 return NotFound();
-            }
 
-            var customerDiscount = await _context.CustomerDiscounts.FindAsync(id);
+            // استخدم Unit of Work
+            var customerDiscount = Unit._CustomerDiscountRepo
+                .GetAll()
+                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+
             if (customerDiscount == null)
-            {
                 return NotFound();
-            }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Name", customerDiscount.DiscountId);
+
+            // ملأ ViewData للمحتوى المنسدِل
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
+            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
+
             return View(customerDiscount);
         }
 
@@ -94,76 +101,80 @@ namespace Admin_Dashboard.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount customerDiscount)
+        public IActionResult Edit(string customerId, int discountId, [Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount customerDiscount)
         {
-            if (id != customerDiscount.CustomerId)
-            {
+            if (customerId != customerDiscount.CustomerId || discountId != customerDiscount.DiscountId)
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Update(customerDiscount);
-                    await _context.SaveChangesAsync();
+                    Unit._CustomerDiscountRepo.Edit(customerDiscount);
+                    Unit.save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!CustomerDiscountExists(customerDiscount.CustomerId))
-                    {
+                    bool exists = Unit._CustomerDiscountRepo
+                        .GetAll()
+                        .Any(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+
+                    if (!exists)
                         return NotFound();
-                    }
                     else
-                    {
                         throw;
-                    }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CustomerId"] = new SelectList(_context.Customers, "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(_context.Discounts, "Id", "Name", customerDiscount.DiscountId);
+
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
+            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
+
             return View(customerDiscount);
         }
 
-        // GET: CustomerDiscounts/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        //// GET: CustomerDiscounts/Delete/5
+        public IActionResult Delete(string customerId, int discountId)
         {
-            if (id == null)
+            if (string.IsNullOrEmpty(customerId) || discountId == 0)
             {
                 return NotFound();
             }
 
-            var customerDiscount = await _context.CustomerDiscounts
-                .Include(c => c.Customer)
-                .Include(c => c.Discount)
-                .FirstOrDefaultAsync(m => m.CustomerId == id);
+            var customerDiscount = Unit._CustomerDiscountRepo
+                .GetAll()
+                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+
             if (customerDiscount == null)
             {
                 return NotFound();
             }
 
-            return View(customerDiscount);
+            Unit._CustomerDiscountRepo.Delete(customerDiscount); // نحذف العنصر
+            Unit.save(); // نحفظ التغييرات
+
+            return RedirectToAction("Index");
         }
 
-        // POST: CustomerDiscounts/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
-        {
-            var customerDiscount = await _context.CustomerDiscounts.FindAsync(id);
-            if (customerDiscount != null)
-            {
-                _context.CustomerDiscounts.Remove(customerDiscount);
-            }
+        //// POST: CustomerDiscounts/Delete/5
+        //[HttpPost, ActionName("Delete")]
+        //[ValidateAntiForgeryToken]
+        //public async Task<IActionResult> DeleteConfirmed(string id)
+        //{
+        //    var customerDiscount = await _context.CustomerDiscounts.FindAsync(id);
+        //    if (customerDiscount != null)
+        //    {
+        //        _context.CustomerDiscounts.Remove(customerDiscount);
+        //    }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+        //    await _context.SaveChangesAsync();
+        //    return RedirectToAction(nameof(Index));
+        //}
 
-        private bool CustomerDiscountExists(string id)
-        {
-            return _context.CustomerDiscounts.Any(e => e.CustomerId == id);
-        }
+        //private bool CustomerDiscountExists(string id)
+        //{
+        //    return _context.CustomerDiscounts.Any(e => e.CustomerId == id);
+        //}
     }
 }

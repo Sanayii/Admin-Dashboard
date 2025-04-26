@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Admin_Dashboard.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Models;
@@ -15,11 +16,11 @@ public partial class Payment
     public int Id { get; set; }
 
     [Required]
-    public string Status { get; set; }
+    public PaymentStatus Status { get; set; }
 
     public int Amount { get; set; }
 
-    public int Method { get; set; }
+    public PaymentMethod Method { get; set; }
 
     [InverseProperty("Payment")]
     public virtual ICollection<ServiceRequestPayment> ServiceRequestPayments { get; set; } = new List<ServiceRequestPayment>();

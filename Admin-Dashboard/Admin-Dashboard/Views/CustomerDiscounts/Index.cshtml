@@ -2,46 +2,60 @@
 
 @{
     ViewData["Title"] = "Index";
+    ViewBag.pagename = "CustomerDiscounts";
 }
 
-<h1>Index</h1>
+<partial name="_Banner" />
+<section "container p-3">
+    <div class="table-container p-5">
+        <a asp-action="Create" class="btn btn-outline-dark" style="text-align:center;background-color:#262e39;
+        color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.DateGiven)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Customer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Discount)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateGiven)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Discount.Name)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+        <table class="Mtable table-hover">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.DateGiven)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Customer)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Discount)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.DateGiven.ToString("dd/MM/yyyy")
+                        </td>
+                        <td>
+                            @item.Customer.FName @item.Customer.LName
+                        </td>
+                        <td>
+                            @item.Discount.Name
+                        </td>
+                        <td>
+                            <a asp-action="Details" asp-route-customerId="@item.CustomerId" asp-route-discountId="@item.DiscountId" class="btn btn-outline-dark mx-2">Detail</a>
+                            <a asp-action="Edit" asp-route-customerId="@item.CustomerId" asp-route-discountId="@item.DiscountId" class="btn btn-outline-success mx-2">Edit</a>
+
+                            <button onclick="confirmDelete('@item.CustomerId', @item.DiscountId)" class="btn btn-outline-danger mx-2" style="text-transform:none;margin:0px;">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+<script>
+    function confirmDelete(customerId, discountId) {
+        var confirmation = confirm("Are you sure to delete this Discount ?");
+        if (confirmation) {
+            window.location.href = "/CustomerDiscounts/Delete?customerId=" + customerId + "&discountId=" + discountId;
+        }
+    }
+</script>
