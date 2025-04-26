@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "Service Request";
+    ViewBag.pagename = "Service Request";
+}
+
+@model List<ServiceRequestPayment>
+
+<partial name="_Banner" />
+
+<section class="container p-3">
+    <div class="table-container p-5">
+        <a asp-action="Create" class="btn btn-outline-dark" style="text-align:center;background-color:#262e39;
+color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a>
+        <table class="Mtable table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Service</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Payment Method</th>
+                    <th scope="col">Payment Status</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Execution Time</th>
+                    <th scope="col" colspan="3">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr style="margin-bottom:5px;">
+                        <td>@p.Customer.FName @p.Customer.LName</td> 
+                        <td>@p.Service.ServiceName</td>
+                        <td>@p.Status</td> 
+                        <td>@p.Payment.Method.ToString()</td> 
+                        <td>@p.Payment.Status.ToString()</td> 
+                        <td>@p.Payment.Amount</td>
+                        <td>@p.CreatedAt.ToString("yyyy-MM-dd")</td>
+                        <td>@p.ExecutionTime</td>
+                        <td>
+                            <a asp-action="Detail" asp-route-paymentId="@p.PaymentId" asp-route-customerId="@p.CustomerId" asp-route-serviceId="@p.ServiceId" class="btn btn-outline-dark">Detail</a>
+                        </td>
+                        <td>
+                            <a asp-action="Edit" asp-route-paymentId="@p.PaymentId" asp-route-customerId="@p.CustomerId" asp-route-serviceId="@p.ServiceId" class="btn btn-outline-success">Edit</a>
+                        </td>
+                        <td>
+                            <button onclick="confirmDelete(@p.PaymentId, @p.CustomerId, @p.ServiceId)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button>
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<script>
+    function confirmDelete(paymentId, customerId, serviceId) {
+    var confirmation = confirm("Are you sure to delete this Service Request?");
+    if (confirmation) {
+            window.location.href = "/ServiceRequestPayment/Delete?paymentId=" + paymentId + "&customerId=" + customerId + "&serviceId=" + serviceId;
+    }
+}
+
+</script>

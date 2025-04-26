@@ -1,0 +1,38 @@
+﻿@model Admin_Dashboard.ViewModels.ServiceRequestPaymentViewModel
+
+<partial name="_Banner" />
+
+<section class="container my-5">
+    <div class="card shadow-lg mx-auto" style="max-width: 600px;">
+        <div class="card-body">
+            <h1 class="fw-bold fs-2 text-center mb-4">Payment Process Detail</h1>
+
+            <!-- Customer -->
+            <p class="card-text text-2xl mb-2"><strong>Customer:</strong> @Model.CustomerName</p>
+
+            <!-- Service -->
+            <p class="card-text text-2xl mb-2"><strong>Service:</strong> @Model.ServiceName</p>
+
+            <!-- Payment Status -->
+            <p class="card-text text-2xl mb-2"><strong>Status:</strong> @Model.Status</p>
+
+            <!-- Payment Method -->
+            <p class="card-text text-2xl mb-2"><strong>Payment Method:</strong> @Model.PaymentMethod.ToString()</p>
+
+            <!-- Payment Status -->
+            <p class="card-text text-2xl mb-2"><strong>Payment Status:</strong> @Model.PaymentStatus.ToString()</p>
+
+            <!-- Amount -->
+            <p class="card-text text-2xl mb-2"><strong>Amount:</strong> @Model.Amount</p>
+
+            <!-- Date -->
+            <p class="card-text text-2xl mb-2"><strong>Date:</strong> @Model.Date.ToString("yyyy-MM-dd")</p>
+
+            <!-- Execution Time -->
+            <p class="card-text text-2xl mb-4"><strong>Execution Time:</strong> @Model.ExecutionTime.ToString()</p>
+
+            <!-- Back Button -->
+            <a asp-action="Index" class="btn w-100 text-white" style="background-color:#262e39;">← Back to List</a>
+        </div>
+    </div>
+</section>

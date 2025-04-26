@@ -11,6 +11,10 @@ namespace Admin_Dashboard.Repository
         {
             return db.Customers.Where(c => c.IsDeleted == false).ToList();
         }
+        public Customer GetCustomerById(string id)
+        {
+            return db.Customers.FirstOrDefault(c => c.Id == id && c.IsDeleted == false);
+        }
     }
     
 }

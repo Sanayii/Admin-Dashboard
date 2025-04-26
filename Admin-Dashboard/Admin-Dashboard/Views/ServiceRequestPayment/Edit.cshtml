@@ -1,0 +1,111 @@
+﻿@model Admin_Dashboard.ViewModels.ServiceRequestPaymentViewModel
+
+@{
+	ViewData["Title"] = "Edit Service Request";
+	ViewBag.pagename = "Service Request";
+    var serviceRequestStatus = new Dictionary<string, string> {
+        { "1", "Service Requested" },
+        { "2", "In Progress" },
+        { "3", "Artisan on the Way" },
+        { "4", "Artisan Nearing Location" },
+        { "5", "Artisan Arrived" },
+        { "6", "Service Undergoing" },
+        { "7", "Service Completed" },
+        { "8", "Service Cancelled" },
+        { "9", "Awaiting Approval" },
+        { "10", "Artisan Busy" }
+    };
+
+    var serviceRequestStatusList = serviceRequestStatus.Select(x => new SelectListItem
+            {
+                Text = x.Value,
+                Value = x.Key,
+                Selected = x.Key == Model.Status // Set the "Selected" attribute if it matches the Status value
+            }).ToList();
+
+    serviceRequestStatusList.Add(new SelectListItem { Text = "Other", Value = "Other", Selected = Model.Status == "Other" });
+}
+
+<partial name="_Banner" />
+
+<section class="container" style="margin-top: 3%; margin-bottom: 3%;">
+    <div class="form">
+        <form method="post" asp-action="Edit" id="paymentForm">
+            <h1 class="fw-bold text-2xl text-dark mb-4 align-center">Edit Service Request</h1>
+
+            <!-- Hidden Inputs for IDs -->
+            <input type="hidden" asp-for="CustomerId" />
+            <input type="hidden" asp-for="PaymentId" />
+            <input type="hidden" asp-for="ServiceId" />
+
+            <!-- Customer (Display Only) -->
+            <div class="form-group">
+                <label>Customer</label>
+                <input class="form-control" value="@Model.CustomerName" disabled />
+                <input type="hidden" asp-for="CustomerName" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+
+            <!-- Service (Display Only) -->
+            <div class="form-group">
+                <label>Service</label>
+                <input class="form-control" value="@Model.ServiceName" disabled />
+                <input type="hidden" asp-for="ServiceName" />
+                <span asp-validation-for="ServiceName" class="text-danger"></span>
+            </div>
+
+            <!-- Status -->
+            <div class="form-group">
+                <label>Status</label>
+                <select asp-for="Status" class="form-control" asp-items="@(new SelectList(serviceRequestStatusList, "Value", "Text"))" id="statusSelect">
+                </select>
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+
+            <!-- Custom Status (appears when "Other" is selected) -->
+            <div class="form-group" id="otherStatusInput" style="display: @(Model.Status == "Other" ? "block" : "none")">
+                <label>Custom Status</label>
+                <input asp-for="CustomStatus" class="form-control" placeholder="Enter custom status" id="customStatusInput" />
+            </div>
+
+            <!-- Date -->
+            <div class="form-group">
+                <label>Date</label>
+                <input asp-for="Date" class="form-control" type="date" value="@Model.Date.ToString("yyyy-MM-dd")" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+
+            <!-- Execution Time -->
+            <div class="form-group">
+                <label>Execution Time</label>
+                <input asp-for="ExecutionTime" class="form-control" />
+                <span asp-validation-for="ExecutionTime" class="text-danger"></span>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary" style="text-align:center; background-color:#262e39; color:#fff; width: 119px; height: 50px; margin-bottom:30px">
+                Submit
+            </button>
+        </form>
+    </div>
+</section>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        // Show or hide the custom status input based on the selection of "Other"
+        $('#statusSelect').change(function() {
+            if ($(this).val() === 'Other') {
+                $('#otherStatusInput').show();
+            } else {
+                $('#otherStatusInput').hide();
+            }
+        });
+
+        // Trigger change event on page load to handle already selected values
+        $('#statusSelect').trigger('change');
+    });
+</script>

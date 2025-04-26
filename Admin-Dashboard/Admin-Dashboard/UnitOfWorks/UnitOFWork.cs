@@ -18,13 +18,13 @@ namespace Admin_Dashboard.UnitOfWorks
         GenericRepository<Payment> PaymentRepo;
 
         AdminRepository AdminRepo;
+        ServiceRequestPaymentRepository serviceRequestPaymentRepo;
         CustomerRepository CustomerRepo;
         ArtisanRepository ArtisanRepo;
 
         GenericRepository<Contract> ContractRepo;
         GenericRepository<Violation> ViolationRepo;
 
-        GenericRepository<ServiceRequestPayment> ServiceRequestPaymentRepo;
 
         GenericRepository<Discount> DiscountRepo;
         GenericRepository<CustomerDiscount> CustomerDiscountRepo;
@@ -122,7 +122,17 @@ namespace Admin_Dashboard.UnitOfWorks
                 return AdminRepo;
             }
         }
-
+        public ServiceRequestPaymentRepository _ServiceRequestPaymentRepo
+        {
+            get
+            {
+                if (serviceRequestPaymentRepo == null)
+                {
+                    serviceRequestPaymentRepo = new ServiceRequestPaymentRepository(db);
+                }
+                return serviceRequestPaymentRepo;
+            }
+        }
 
         public CustomerRepository _CustomerRepo
         {
@@ -171,18 +181,6 @@ namespace Admin_Dashboard.UnitOfWorks
                     ViolationRepo = new GenericRepository<Violation>(db);
                 }
                 return ViolationRepo;
-            }
-        }
-
-        public GenericRepository<ServiceRequestPayment> _ServiceRequestPaymentRepo
-        {
-            get
-            {
-                if (ServiceRequestPaymentRepo == null)
-                {
-                    ServiceRequestPaymentRepo = new GenericRepository<ServiceRequestPayment>(db);
-                }
-                return ServiceRequestPaymentRepo;
             }
         }
 

@@ -23,6 +23,9 @@ public partial class ServiceRequestPayment
     [Key]
     public int ServiceId { get; set; }
 
+    public string Status { get; set; }
+
+
     public DateTime CreatedAt { get; set; }
 
     public int ExecutionTime { get; set; }
