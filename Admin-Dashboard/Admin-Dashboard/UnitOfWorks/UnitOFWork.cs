@@ -30,7 +30,7 @@ namespace Admin_Dashboard.UnitOfWorks
         GenericRepository<CustomerDiscount> CustomerDiscountRepo;
 
         GenericRepository<Review> reviewRepo;
-
+        GenericRepository<Notification> notificationRepo;
 
 
         public UnitOFWork(SanayiiContext db)
@@ -220,7 +220,17 @@ namespace Admin_Dashboard.UnitOfWorks
                 return reviewRepo;
             }
         }
-
+        public GenericRepository<Notification> _NotificationRepo
+        {
+            get
+            {
+                if (notificationRepo == null)
+                {
+                    notificationRepo = new GenericRepository<Notification>(db);
+                }
+                return notificationRepo;
+            }
+        }
         public void save()
         {
             db.SaveChanges();

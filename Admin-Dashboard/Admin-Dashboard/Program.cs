@@ -5,6 +5,7 @@ using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.Models;
 using Microsoft.Extensions.Options;
 using System.Configuration;
+using Admin_Dashboard.Services;
 
 namespace Admin_Dashboard;
 
@@ -31,6 +32,7 @@ public class Program
 
         builder.Services.AddDatabaseDeveloperPageExceptionFilter();
         builder.Services.AddScoped<UnitOFWork>(); // Ensure UnitOfWork is added here
+        builder.Services.AddScoped<INotificationService,NotificationService>();
         builder.Services.AddControllersWithViews();
 
         var app = builder.Build();

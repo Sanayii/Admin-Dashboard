@@ -1,11 +1,13 @@
 ﻿using Admin_Dashboard.Enums;
 using Admin_Dashboard.Models;
 using Admin_Dashboard.Repository;
+using Admin_Dashboard.Services;
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Admin_Dashboard.Controllers
 {
@@ -13,6 +15,7 @@ namespace Admin_Dashboard.Controllers
     {
         private readonly ILogger<ServiceRequestPaymentController> logger;
         private readonly UnitOFWork unitOFWork;
+        private readonly INotificationService notificationService;
         private readonly Dictionary<string, string>  statusDictionary = new Dictionary<string, string> {
         { "1", "Service Requested" },
         { "2", "In Progress" },
@@ -27,10 +30,11 @@ namespace Admin_Dashboard.Controllers
     };
 
         // Constructor
-        public ServiceRequestPaymentController(ILogger<ServiceRequestPaymentController> logger, UnitOFWork unitOFWork)
+        public ServiceRequestPaymentController(ILogger<ServiceRequestPaymentController> logger, UnitOFWork unitOFWork,INotificationService notificationService)
         {
             this.logger = logger;
             this.unitOFWork = unitOFWork;
+            this.notificationService = notificationService;
         }
 
         // Index action to show all ServiceRequestPayments
@@ -79,7 +83,7 @@ namespace Admin_Dashboard.Controllers
 
         // Edit action (POST) to save the updates
         [HttpPost]
-        public IActionResult Edit(ServiceRequestPaymentViewModel SRP_VM)
+        public async Task<IActionResult> Edit(ServiceRequestPaymentViewModel SRP_VM)
         {
 
             if (ModelState.IsValid)
@@ -104,9 +108,25 @@ namespace Admin_Dashboard.Controllers
                 if (SRP != null)
                 {
                     if (SRP.Status != statusToSave)
-                        //SendNotification();
+                        {
+                            var notification = new Notification
+                            {
+                                UserId = SRP.CustomerId,
+                                Title = "Service Request Status Update",
+                                Content = $"Your service request status has been updated to: {statusToSave}",
+                                IsRead = false,
+                                CreatedAt = DateTime.Now
+                            };
+                            await notificationService.SendNotification(notification);
+                            
 
-                    SRP.Status = statusToSave;
+
+                            
+                        }
+
+
+
+                        SRP.Status = statusToSave;
                     SRP.CreatedAt = SRP_VM.Date;
                     SRP.ExecutionTime = SRP_VM.ExecutionTime;
 

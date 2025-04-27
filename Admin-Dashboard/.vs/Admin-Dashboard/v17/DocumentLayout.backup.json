@@ -3,16 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\servicerequestpayment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\servicerequestpayment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\services\\notificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\services\\inotificationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\servicerequestpaymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\servicerequestpaymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\controllers\\paymentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\servicerequestpaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\servicerequestpaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\viewmodels\\servicerequestpaymentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\viewmodels\\servicerequestpaymentviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\servicerequestpayment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\servicerequestpayment\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\views\\servicerequestpayment\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -27,16 +51,8 @@
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\views\\servicerequestpayment\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\servicerequestpaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\servicerequestpaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\customerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\unitofworks\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,10 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\repository\\adminrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|c:\\users\\asus\\source\\repos\\dotnet study\\final projects\\sanayii\\admin-dashboard\\admin-dashboard\\admin-dashboard\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FB5A40AC-B11A-4DFA-AA8B-C4032B66FEAE}|Admin-Dashboard\\Admin-Dashboard.csproj|solutionrelative:admin-dashboard\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,7 +74,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1069,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -74,72 +86,70 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CustomerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "NotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Services\\NotificationService.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Services\\NotificationService.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Services\\NotificationService.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Services\\NotificationService.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAADwvyEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T21:44:33.242Z",
+              "WhenOpened": "2025-04-27T09:37:28.626Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "INotificationService.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Services\\INotificationService.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Services\\INotificationService.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Services\\INotificationService.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Services\\INotificationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T09:33:39.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentController.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\PaymentController.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\PaymentController.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Controllers\\PaymentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-27T07:34:39.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "ServiceRequestPaymentController.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ServiceRequestPaymentController.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Controllers\\ServiceRequestPaymentController.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Controllers\\ServiceRequestPaymentController.cs",
               "RelativeToolTip": "Admin-Dashboard\\Controllers\\ServiceRequestPaymentController.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAFcAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-26T16:30:45.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Detail.cshtml",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
-              "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAowCYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T16:17:08.379Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ServiceRequestPaymentViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
-              "RelativeToolTip": "Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAA0wAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:11:31.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 8,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml*",
-              "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml*",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAowG0AAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T16:07:59.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T16:07:59.046Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Index.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Index.cshtml",
@@ -147,12 +157,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Index.cshtml",
               "ViewState": "AgIAABQAAAAAAAAAAAAnwCYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T15:57:38.35Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T15:57:38.35Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "ServiceRequestPaymentRepository.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\ServiceRequestPaymentRepository.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\ServiceRequestPaymentRepository.cs",
@@ -160,12 +169,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Repository\\ServiceRequestPaymentRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:36:02.219Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:36:02.219Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 10,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
@@ -173,25 +181,71 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\Payment\\Edit.cshtml",
               "ViewState": "AgIAAC8AAAAAAAAAAAAowDMAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-26T16:17:19.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T16:17:19.898Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Notification.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Models\\Notification.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T15:56:21.617Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "UnitOFWork.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
               "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
               "RelativeToolTip": "Admin-Dashboard\\UnitOfWorks\\UnitOFWork.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAlwIgAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAANcAAAAAAAAAAAAAAOQAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:52:21.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:52:21.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 7,
+              "Title": "ServiceRequestPaymentViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
+              "RelativeToolTip": "Admin-Dashboard\\ViewModels\\ServiceRequestPaymentViewModel.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T16:11:31.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
+              "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Detail.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAowCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T16:17:08.379Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CustomerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "RelativeToolTip": "Admin-Dashboard\\Repository\\CustomerRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-26T21:44:33.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
               "Title": "ServiceRequestPayment.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\ServiceRequestPayment.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\ServiceRequestPayment.cs",
@@ -199,12 +253,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Models\\ServiceRequestPayment.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAwBkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T16:50:36.175Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T16:50:36.175Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Program.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Program.cs",
@@ -212,12 +265,11 @@
               "RelativeToolTip": "Admin-Dashboard\\Program.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAewBIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:51:57.185Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:51:57.185Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "AdminRepository.cs",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Repository\\AdminRepository.cs",
               "RelativeDocumentMoniker": "Admin-Dashboard\\Repository\\AdminRepository.cs",
@@ -225,21 +277,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Repository\\AdminRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T20:35:17.053Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Notification.cs",
-              "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Notification.cs",
-              "RelativeDocumentMoniker": "Admin-Dashboard\\Models\\Notification.cs",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Models\\Notification.cs",
-              "RelativeToolTip": "Admin-Dashboard\\Models\\Notification.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:56:21.617Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-26T20:35:17.053Z"
             }
           ]
         }
