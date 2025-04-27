@@ -34,6 +34,7 @@ public class Program
         builder.Services.AddScoped<UnitOFWork>(); // Ensure UnitOfWork is added here
         builder.Services.AddScoped<INotificationService,NotificationService>();
         builder.Services.AddControllersWithViews();
+        builder.Services.AddHttpClient();
 
         var app = builder.Build();
 

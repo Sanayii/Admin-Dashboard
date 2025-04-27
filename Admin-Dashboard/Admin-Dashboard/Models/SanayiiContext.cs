@@ -47,6 +47,7 @@ public partial class SanayiiContext : IdentityDbContext<AppUser>
     public virtual DbSet<AppUser> Users { get; set; }
 
     public virtual DbSet<UserPhone> UserPhones { get; set; }
+    public virtual DbSet<Notification> Notifications { get; set; }
 
     public virtual DbSet<Violation> Violations { get; set; }
     private readonly IConfiguration _configuration;

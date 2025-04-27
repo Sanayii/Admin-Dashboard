@@ -28,9 +28,9 @@ namespace Admin_Dashboard.Services
 
             _logger.LogInformation($"Notification sent to CustomerId={notification.UserId}: Your service request status has been updated to: {notification.Content}");
 
-            // **Send Notification via HTTP to Web API (SignalR broadcast)**
+            // Send Notification via HTTP to Web API (SignalR broadcast)
             var client = _httpClientFactory.CreateClient();
-            client.BaseAddress = new Uri("https://localhost:723/");  // Replace with your Web API URL
+            client.BaseAddress = new Uri("https://localhost:7234/");  
 
             var content = new StringContent(System.Text.Json.JsonSerializer.Serialize(notification), System.Text.Encoding.UTF8, "application/json");
             var response = await client.PostAsync("api/notification/send", content);
