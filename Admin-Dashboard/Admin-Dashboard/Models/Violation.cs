@@ -18,9 +18,6 @@ public partial class Violation
     [Required]
     public string Reason { get; set; }
 
-    [Required]
-    public string Status { get; set; }
-
     public DateTime Date { get; set; }
 
     public int ContractId { get; set; }

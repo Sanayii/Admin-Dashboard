@@ -12,9 +12,13 @@
         <div class="card-body">
             <h1 class="fw-bold fs-2 text-center mb-4">Review Details</h1>
             <p class="card-text text-2xl mb-2"><strong>Id</strong> : @Model.Id</p>
+            <p class="card-text text-2xl mb-2"><strong>Customer</strong> : @Model.Customer.FName @Model.Customer.LName</p>
+            <p class="card-text text-2xl mb-2"><strong>Artisan</strong> : @Model.Artisan.FName @Model.Artisan.LName</p>
+            <p class="card-text text-2xl mb-2"><strong>Service</strong> : @Model.Service.ServiceName</p>
             <p class="card-text text-2xl mb-2"><strong>Rating</strong> : @Model.Rating</p>
+            <p class="card-text text-2xl mb-2"><strong>Comment</strong> : @Model.Comment</p>
             <p class="card-text text-2xl mb-2"> <strong>Review Date</strong> : @Model.ReviewDate</p>
-            <p class="card-text text-2xl mb-2"><strong>Artisan Id</strong> : @Model.ArtisanId</p>
+            <p class="card-text text-2xl mb-2"><strong>Contain Violation</strong> : @Model.isViolate</p>
             <a asp-action="Index" class="btn w-100 text-white" style="background-color:#262e39;">← Back to List</a>
         </div>
     </div>

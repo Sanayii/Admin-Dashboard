@@ -14,7 +14,6 @@ color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Reason</th>
-                    <th scope="col">Status</th>
                     <th scope="col">Date</th>
                     <th scope="col">Contract Owner</th>
                     <th scope="col" colspan="3"> Buttons</th>
@@ -27,7 +26,6 @@ color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a
                     <tr style="margin-bottom:5px;">
                         <th>@p.Id</th>
                         <td>@p.Reason</td>
-                        <td>@p.Status</td>
                         <td>@p.Date</td>
                         <td>@p.Contract.Artisan.UserName</td>
                         <td><a asp-action="Details" asp-route-id="@p.Id" class="btn btn-outline-dark">Detail</a></td>

@@ -40,4 +40,8 @@ public partial class Review
     [ForeignKey("ServiceId")]
     [InverseProperty("Reviews")]
     public virtual Service Service { get; set; }
+
+    public string Comment { get; set; }
+    public bool isViolate { get; set; } = false;
+    public bool isReviewed { get; set; } = false;
 }

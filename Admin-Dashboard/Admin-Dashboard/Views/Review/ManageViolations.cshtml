@@ -2,18 +2,13 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-    ViewData["Title"] = "Review";
-    ViewBag.pagename = "Review";
+    ViewData["Title"] = "Manage Violations";
+    ViewBag.pagename = "Manage Violations";
 }
 @model List<Review>
 <partial name="_Banner" />
 <section "container p-3">
     <div class="table-container p-5">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <a class="btn btn-primary" asp-action="ManageViolations">
-                Manage Violations
-            </a>
-        </div>
         <table class="Mtable table-hover">
             <thead>
                 <tr>
@@ -40,19 +35,11 @@
                         <td>@c.Comment</td>
                         <td>@c.ReviewDate</td>
                         <td>@c.isViolate</td>
-                        <td><a asp-action="Details" asp-route-id="@c.Id" class="btn btn-outline-dark">Detail</a></td>
-                        <td><button onclick="confirmDelete(@c.Id)" class="btn btn-outline-danger" style="text-transform:none;margin:0px;">Delete</button></td>
+                        <td><a asp-action="AcceptAsViolation" asp-route-id="@c.Id" class="btn btn-outline-dark">Accept</a></td>
+                        <td><a asp-action="IgnoreViolation" asp-route-id="@c.Id" class="btn btn-outline-dark">Ignore</a></td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
 </section>
-<script>
-    function confirmDelete(id) {
-        var confirmation = confirm("Are you sure to delete this Review ?");
-        if (confirmation) {
-            window.location.href = "/Review/Delete/" + id;
-        }
-    }
-</script>
