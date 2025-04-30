@@ -12,6 +12,7 @@ namespace Admin_Dashboard.Models;
 [Table("ServiceRequestPayment")]
 [Index("PaymentId", Name = "IX_ServiceRequestPayment_PaymentId")]
 [Index("ServiceId", Name = "IX_ServiceRequestPayment_ServiceId")]
+[Index("ArtisanId", Name = "IX_ServiceRequestPayment_ArtisanId")]
 public partial class ServiceRequestPayment
 {
     [Key]
@@ -19,7 +20,8 @@ public partial class ServiceRequestPayment
 
     [Key]
     public int PaymentId { get; set; }
-
+    [Key]
+    public string ArtisanId { get; set; }
     [Key]
     public int ServiceId { get; set; }
 
@@ -41,4 +43,6 @@ public partial class ServiceRequestPayment
     [ForeignKey("ServiceId")]
     [InverseProperty("ServiceRequestPayments")]
     public virtual Service Service { get; set; }
-}
+
+    [ForeignKey("ArtisanId")]
+    public virtual Artisan Artisan { get; set; }}
