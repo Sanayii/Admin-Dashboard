@@ -16,23 +16,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#262e39', // Your original header/footer color
-                        accent: '#3b82f6',
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.3s ease-in-out',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(-10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                    },
-                }
-            }
+        theme: {
+        extend: {
+        colors: {
+        primary: '#262e39', // Your original header/footer color
+        accent: '#3b82f6',
+        },
+        animation: {
+        'fade-in': 'fadeIn 0.3s ease-in-out',
+        },
+        keyframes: {
+        fadeIn: {
+        '0%': { opacity: '0', transform: 'translateY(-10px)' },
+        '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        },
+        }
+        }
         }
     </script>
 </head>
@@ -49,11 +49,11 @@
                 <!-- Desktop Navigation -->
                 <nav class="hidden md:flex items-center space-x-8">
 
-                        
-                        <!-- User Auth Section -->
-                        <div class="ml-6 flex items-center">
+
+                    <!-- User Auth Section -->
+                    <div class="ml-6 flex items-center">
                         <div class="flex items-center space-x-6">
-                            
+
                             @if (SignInManager.IsSignedIn(User))
                             {
                                 <a asp-action="All" asp-controller="Category" class="hover:text-gray-300 transition-colors flex items-center">
@@ -115,7 +115,7 @@
                                             <i class="bi bi-chat-left-dots mr-2"></i>Review
                                         </a>
                                     </div>
-                                    </div>
+                                </div>
                             }
                             else
                             {
@@ -128,13 +128,13 @@
                                     </a>
                                 </div>
                             }
-                        
+
 
                         </div>
                     </div>
 
 
-                   
+
                 </nav>
 
                 <!-- Mobile menu button -->
@@ -195,8 +195,7 @@
             <!-- Logo & Social -->
             <div class="flex flex-col space-y-4">
                 <div class="text-2xl font-bold tracking-wider flex items-center">
-                    <span class="border-r-4 pr-2 mr-2 border-white">MG</span>
-                    <span>K</span>
+                    <img src="~/images/logo.png" width="50" height="50" />
                 </div>
                 <p class="text-gray-300 text-sm">Connecting artisans with clients through quality craftsmanship.</p>
                 <div class="flex space-x-3">
@@ -216,8 +215,9 @@
             </div>
 
             <!-- Quick Links -->
-            <div>
-                <h3 class="font-bold text-white text-lg mb-4 flex items-center">
+
+                <div>
+                    <h3 class="font-bold text-white text-lg mb-4 flex items-center">
                     <i class="bi bi-link-45deg mr-2"></i> Navigation
                 </h3>
                 <ul class="space-y-2 text-sm">
@@ -226,6 +226,8 @@
                             <i class="bi bi-chevron-right mr-1 text-xs"></i> Home
                         </a>
                     </li>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
                     <li>
                         <a asp-controller="Service" asp-action="Index" class="text-gray-300 hover:text-white transition-colors flex items-center">
                             <i class="bi bi-chevron-right mr-1 text-xs"></i> Services
@@ -266,6 +268,12 @@
                             <i class="bi bi-chevron-right mr-1 text-xs"></i>Contracts
                         </a>
                     </li>
+                    <li>
+                        <a asp-action="Index" asp-controller="ServiceRequestPayment" class="text-gray-300 hover:text-white transition-colors flex items-center">
+                            <i class="bi bi-chevron-right mr-1 text-xs"></i>Service Requests
+                        </a>
+                    </li>
+                    }
                 </ul>
             </div>
 

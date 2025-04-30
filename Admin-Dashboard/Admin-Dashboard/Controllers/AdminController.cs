@@ -1,12 +1,14 @@
 ﻿using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         private readonly ILogger<AdminController> _logger;

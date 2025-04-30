@@ -3,9 +3,11 @@ using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.Areas.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CustomerController : Controller
     {
         private readonly UnitOFWork _unitOfWork;

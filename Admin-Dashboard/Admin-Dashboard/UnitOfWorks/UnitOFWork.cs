@@ -27,7 +27,7 @@ namespace Admin_Dashboard.UnitOfWorks
 
 
         GenericRepository<Discount> DiscountRepo;
-        GenericRepository<CustomerDiscount> CustomerDiscountRepo;
+        CustomerDiscountRepository CustomerDiscountRepo;
 
         ReviewRepository reviewRepo;
         GenericRepository<Notification> notificationRepo;
@@ -196,13 +196,13 @@ namespace Admin_Dashboard.UnitOfWorks
             }
         }
 
-        public GenericRepository<CustomerDiscount> _CustomerDiscountRepo
+        public CustomerDiscountRepository _CustomerDiscountRepo
         {
             get
             {
                 if (CustomerDiscountRepo == null)
                 {
-                    CustomerDiscountRepo = new GenericRepository<CustomerDiscount>(db);
+                    CustomerDiscountRepo = new CustomerDiscountRepository(db);
                 }
                 return CustomerDiscountRepo;
             }

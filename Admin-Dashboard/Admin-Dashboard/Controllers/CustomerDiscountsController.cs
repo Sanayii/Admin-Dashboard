@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class CustomerDiscountsController : Controller
     {
         private readonly UnitOFWork Unit;
@@ -21,7 +23,7 @@ namespace Admin_Dashboard.Controllers
         // GET: CustomerDiscounts
         public IActionResult Index()
         {
-            var allCustomerDiscounts = Unit._CustomerDiscountRepo.GetAll().ToList();
+            var allCustomerDiscounts = Unit._CustomerDiscountRepo.GetAllCustomerDiscounts();
             return View(allCustomerDiscounts);
         }
 
@@ -34,16 +36,11 @@ namespace Admin_Dashboard.Controllers
                 return NotFound();
             }
 
-            var customerDiscount = Unit._CustomerDiscountRepo
-                .GetAll()
-                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+            var customerDiscount = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId);
             if (customerDiscount == null)
             {
                 return NotFound();
             }
-
-            customerDiscount.Customer = Unit._CustomerRepo.GetById(customerId);
-            customerDiscount.Discount = Unit._DiscountRepo.GetById(discountId);
 
             return View(customerDiscount);
 
@@ -53,7 +50,7 @@ namespace Admin_Dashboard.Controllers
         //// GET: CustomerDiscounts/Create
         public IActionResult Create()
         {
-            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id");
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "UserName");
             ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name");
             return View();
         }
@@ -70,8 +67,9 @@ namespace Admin_Dashboard.Controllers
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
+            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "UserName", customerDiscount.CustomerId);
+            var discounts = Unit._DiscountRepo.GetAll();
+            ViewBag.discounts = new SelectList(discounts, "Id", "Name");
             return View(customerDiscount);
         }
 
@@ -81,20 +79,17 @@ namespace Admin_Dashboard.Controllers
             if (customerId == null || discountId == 0)
                 return NotFound();
 
-            // استخدم Unit of Work
-            var customerDiscount = Unit._CustomerDiscountRepo
-                .GetAll()
-                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
-
+            var customerDiscount = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId);
             if (customerDiscount == null)
                 return NotFound();
 
-            // ملأ ViewData للمحتوى المنسدِل
-            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
+            // Fill dropdown and preselect current discount
+            var discounts = Unit._DiscountRepo.GetAll();
+            ViewBag.discounts = new SelectList(discounts, "Id", "Name");
 
             return View(customerDiscount);
         }
+
 
         // POST: CustomerDiscounts/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
@@ -115,9 +110,7 @@ namespace Admin_Dashboard.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    bool exists = Unit._CustomerDiscountRepo
-                        .GetAll()
-                        .Any(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+                    bool exists = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId) != null;
 
                     if (!exists)
                         return NotFound();
@@ -129,8 +122,8 @@ namespace Admin_Dashboard.Controllers
             }
 
             ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
-            ViewData["DiscountId"] = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", customerDiscount.DiscountId);
-
+            var discounts = Unit._DiscountRepo.GetAll();
+            ViewBag.discounts = new SelectList(discounts, "Id", "Name");
             return View(customerDiscount);
         }
 
@@ -142,39 +135,29 @@ namespace Admin_Dashboard.Controllers
                 return NotFound();
             }
 
-            var customerDiscount = Unit._CustomerDiscountRepo
-                .GetAll()
-                .FirstOrDefault(cd => cd.CustomerId == customerId && cd.DiscountId == discountId);
+            var customerDiscount = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId);
 
             if (customerDiscount == null)
             {
                 return NotFound();
             }
-
-            Unit._CustomerDiscountRepo.Delete(customerDiscount); // نحذف العنصر
-            Unit.save(); // نحفظ التغييرات
-
-            return RedirectToAction("Index");
+            return View(customerDiscount);
         }
 
-        //// POST: CustomerDiscounts/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public async Task<IActionResult> DeleteConfirmed(string id)
-        //{
-        //    var customerDiscount = await _context.CustomerDiscounts.FindAsync(id);
-        //    if (customerDiscount != null)
-        //    {
-        //        _context.CustomerDiscounts.Remove(customerDiscount);
-        //    }
+        // POST: CustomerDiscounts/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public IActionResult DeleteConfirmed(string customerId, int discountId)
+        {
+            var customerDiscount = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId);
 
-        //    await _context.SaveChangesAsync();
-        //    return RedirectToAction(nameof(Index));
-        //}
+            if (customerDiscount != null)
+            {
+                Unit._CustomerDiscountRepo.DeleteCustomerDiscount(customerId,discountId);
+            }
 
-        //private bool CustomerDiscountExists(string id)
-        //{
-        //    return _context.CustomerDiscounts.Any(e => e.CustomerId == id);
-        //}
+            Unit.save();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }

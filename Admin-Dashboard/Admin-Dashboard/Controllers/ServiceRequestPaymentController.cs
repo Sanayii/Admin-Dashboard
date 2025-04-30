@@ -4,6 +4,7 @@ using Admin_Dashboard.Repository;
 using Admin_Dashboard.Services;
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Collections.ObjectModel;
@@ -11,6 +12,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServiceRequestPaymentController : Controller
     {
         private readonly ILogger<ServiceRequestPaymentController> logger;
@@ -56,18 +58,13 @@ namespace Admin_Dashboard.Controllers
 
             var cus = unitOFWork._CustomerRepo.GetCustomerById(customerId);
 
-            // Define the dictionary for mapping status codes to their corresponding string values
-           
-
-            // Map status to string (if it exists in dictionary, else keep the original value)
-            string status = statusDictionary.ContainsKey(SRP.Status) ? statusDictionary[SRP.Status] : SRP.Status;
 
             var SRP_VM = new ServiceRequestPaymentViewModel()
             {
                 CustomerId = customerId,
                 ServiceId = serviceId,
                 PaymentId = SRP.PaymentId,
-                Status = status,  // Use the mapped status
+                Status = SRP.Status,  // Use the mapped status
                 Date = SRP.CreatedAt,
                 ExecutionTime = SRP.ExecutionTime,
                 CustomerName = cus.FName + " " + cus.LName,
@@ -88,45 +85,24 @@ namespace Admin_Dashboard.Controllers
 
             if (ModelState.IsValid)
             {
-                // Map the selected status (numeric) to the corresponding string value
-                
-
-                string statusToSave = statusDictionary.ContainsKey(SRP_VM.Status) ? statusDictionary[SRP_VM.Status] : SRP_VM.Status;
-
-                // If "Other" is selected, save custom status
-                if (SRP_VM.Status == "Other" && !string.IsNullOrEmpty(SRP_VM.CustomStatus))
-                {
-                    statusToSave = SRP_VM.CustomStatus;
-                }
-
                 var SRP = unitOFWork._ServiceRequestPaymentRepo.GetByIDS(SRP_VM.CustomerId, SRP_VM.PaymentId, SRP_VM.ServiceId);
 
-                // Check if Status is Changed
-                if (SRP.Status != statusToSave)
-                    //SendNotification();
 
                 if (SRP != null)
                 {
-                    if (SRP.Status != statusToSave)
+                    if (SRP.Status != SRP_VM.Status)
                         {
                             var notification = new Notification
                             {
                                 UserId = SRP.CustomerId,
                                 Title = "Service Request Status Update",
-                                Content = $"Your service request status has been updated to: {statusToSave}",
+                                Content = $"Your service request status has been updated to: {SRP_VM.Status}",
                                 IsRead = false,
                                 CreatedAt = DateTime.Now
                             };
                             await notificationService.SendNotification(notification);
-                            
-
-
-                            
                         }
-
-
-
-                        SRP.Status = statusToSave;
+                    SRP.Status = SRP_VM.Status;
                     SRP.CreatedAt = SRP_VM.Date;
                     SRP.ExecutionTime = SRP_VM.ExecutionTime;
 

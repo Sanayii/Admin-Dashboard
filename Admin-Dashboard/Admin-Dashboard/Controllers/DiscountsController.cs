@@ -8,9 +8,11 @@ using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class DiscountsController : Controller
     {
 
@@ -148,11 +150,9 @@ namespace Admin_Dashboard.Controllers
             var discount = _unitOfWork._DiscountRepo.GetById(id);
             if (discount != null)
             {
-                _unitOfWork._DiscountRepo.Delete(discount);
+                _unitOfWork._DiscountRepo.Delete(discount.Id);
                 _unitOfWork.save();
             }
-
-            _unitOfWork._DiscountRepo.Delete(discount);
             return RedirectToAction(nameof(Index));
         }
 

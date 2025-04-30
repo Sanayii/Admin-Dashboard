@@ -1,11 +1,13 @@
 ﻿using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ServiceController : Controller
     {
         private readonly UnitOFWork Unit;

@@ -13,17 +13,10 @@
         { "7", "Service Completed" },
         { "8", "Service Cancelled" },
         { "9", "Awaiting Approval" },
-        { "10", "Artisan Busy" }
+        { "10", "Artisan Busy" },
+        { "11","Service done Successfully, you Should complete payment method!"},
+        { "12","Service done Successfully, and payment done Successfully"}
     };
-
-    var serviceRequestStatusList = serviceRequestStatus.Select(x => new SelectListItem
-            {
-                Text = x.Value,
-                Value = x.Key,
-                Selected = x.Key == Model.Status // Set the "Selected" attribute if it matches the Status value
-            }).ToList();
-
-    serviceRequestStatusList.Add(new SelectListItem { Text = "Other", Value = "Other", Selected = Model.Status == "Other" });
 }
 
 <partial name="_Banner" />
@@ -57,15 +50,9 @@
             <!-- Status -->
             <div class="form-group">
                 <label>Status</label>
-                <select asp-for="Status" class="form-control" asp-items="@(new SelectList(serviceRequestStatusList, "Value", "Text"))" id="statusSelect">
+                <select asp-for="Status" class="form-control" asp-items="@(new SelectList(serviceRequestStatus, "Key", "Value"))" id="statusSelect">
                 </select>
                 <span asp-validation-for="Status" class="text-danger"></span>
-            </div>
-
-            <!-- Custom Status (appears when "Other" is selected) -->
-            <div class="form-group" id="otherStatusInput" style="display: @(Model.Status == "Other" ? "block" : "none")">
-                <label>Custom Status</label>
-                <input asp-for="CustomStatus" class="form-control" placeholder="Enter custom status" id="customStatusInput" />
             </div>
 
             <!-- Date -->

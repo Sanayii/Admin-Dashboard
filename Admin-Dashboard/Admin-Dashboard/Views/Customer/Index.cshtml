@@ -60,7 +60,6 @@
                 <table class="table table-hover mb-0">
                     <thead class="table-light">
                         <tr>
-                            <th>ID</th>
                             <th>Customer</th>
                             <th>Contact</th>
                             <th>Location</th>
@@ -72,7 +71,6 @@
                         @foreach (var customer in Model)
                         {
                             <tr>
-                                <td class="align-middle">#@customer.Id</td>
                                 <td class="align-middle">
                                     <div class="customer-name">@customer.FName @customer.LName</div>
                                     @if (customer.Age.HasValue)

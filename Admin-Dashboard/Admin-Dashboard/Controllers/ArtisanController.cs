@@ -5,9 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Repository;
 using Admin_Dashboard.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ArtisanController : Controller
     {
         private readonly UnitOFWork _unitOfWork;

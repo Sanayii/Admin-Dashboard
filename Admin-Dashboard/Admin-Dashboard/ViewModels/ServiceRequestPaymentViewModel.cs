@@ -11,8 +11,7 @@ namespace Admin_Dashboard.ViewModels
 
         public string ServiceName { get; set; }
         public string CustomerName { get; set; }
-        public string Status { get; set; }
-        public string? CustomStatus { get; set; }
+        public ServiceRequestStatus Status { get; set; }
         public PaymentMethod PaymentMethod { get; set; }
         public PaymentStatus PaymentStatus { get; set; }
         public decimal Amount { get; set; }

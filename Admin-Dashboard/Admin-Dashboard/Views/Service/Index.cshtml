@@ -17,7 +17,6 @@
         <table class="Mtable table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Service Name</th>
                     <th scope="col">Description</th>
                     <th scope="col">BasePrice</th>
@@ -32,7 +31,6 @@
                 @foreach (var c in Model)
                 {
                     <tr style="margin-bottom:5px;">
-                        <th>@c.Id</th>
                         <td>@c.ServiceName</td>
                         <td>@c.Description</td>
                         <td>@c.BasePrice</td>

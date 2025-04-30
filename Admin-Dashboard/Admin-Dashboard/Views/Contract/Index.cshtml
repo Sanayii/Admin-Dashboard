@@ -19,7 +19,6 @@
         <table class="Mtable table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">StartDate</th>
                     <th scope="col">EndDate</th>
                     <th scope="col">MaxViolationsAllowed</th>
@@ -32,7 +31,6 @@
                 @foreach (var c in Model)
                 {
                     <tr style="margin-bottom:5px;">
-                        <th>@c.Id</th>
                         <td>@c.StartDate.ToString("yyyy-MM-dd")</td>
                         <td>@c.EndDate.ToString("yyyy-MM-dd")</td>
                         <td>@c.MaxViolationsAllowed</td>

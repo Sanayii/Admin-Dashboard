@@ -7,8 +7,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Admin_Dashboard.Models;
 using Admin_Dashboard.UnitOfWorks;
+using Microsoft.AspNetCore.Authorization;
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ViolationsController : Controller
     {
         private readonly SanayiiContext _context;

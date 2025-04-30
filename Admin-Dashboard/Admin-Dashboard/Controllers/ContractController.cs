@@ -2,6 +2,7 @@
 using Admin_Dashboard.Repository;
 using Admin_Dashboard.UnitOfWorks;
 using Admin_Dashboard.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using System.Threading.Tasks;
 
 namespace Admin_Dashboard.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class ContractController : Controller
     {
         private readonly UnitOFWork Unit;
@@ -51,6 +53,20 @@ namespace Admin_Dashboard.Controllers
         [HttpPost]
         public IActionResult Create(Contract contract)
         {
+            var artisans = Unit._ArtisanRepo.GetAll()
+                          .Select(a => new {
+                              Id = a.Id,
+                              Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
+                          }).ToList();
+
+            if (contract.EndDate <= contract.StartDate)
+            {
+                ModelState.AddModelError("EndDate", "End date must be after Start date.");
+                ViewBag.Artisans = new SelectList(artisans, "Id", "Name");
+                return View(contract);
+            }
+
+
             if (ModelState.IsValid)
             {
                 Unit._ContractRepo.Add(contract);
@@ -59,18 +75,14 @@ namespace Admin_Dashboard.Controllers
             }
 
 
-            var artisans = Unit._ArtisanRepo.GetAll()
-                          .Select(a => new {
-                              Id = a.Id,
-                              Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
-                          }).ToList();
-
+            
             ViewBag.Artisans = new SelectList(artisans, "Id", "Name");
             return View(contract);
         }
 
         public IActionResult Edit(int id)
         {
+
             var contract = Unit._ContractRepo.GetById(id);
             if (contract == null)
             {
@@ -91,11 +103,23 @@ namespace Admin_Dashboard.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, Contract contract)
         {
+            var artisans = Unit._ArtisanRepo.GetAll()
+                          .Select(a => new {
+                              Id = a.Id,
+                              Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
+                          }).ToList();
+
+            ViewBag.Artisans = new SelectList(artisans, "Id", "Name", contract.ArtisanId);
             if (id != contract.Id)
             {
                 return NotFound();
             }
+            if (contract.EndDate <= contract.StartDate)
+            {
+                ModelState.AddModelError("EndDate", "End date must be after Start date.");
 
+                return View(contract);
+            }
             if (ModelState.IsValid)
             {
                 try
@@ -116,13 +140,6 @@ namespace Admin_Dashboard.Controllers
                     }
                 }
             }
-
-
-            var artisans = Unit._ArtisanRepo.GetAll()
-                          .Select(a => new {
-                              Id = a.Id,
-                              Name = $"{a.IdNavigation?.FName} {a.IdNavigation?.LName}"
-                          }).ToList();
 
             ViewBag.Artisans = new SelectList(artisans, "Id", "Name", contract.ArtisanId);
             return View(contract);

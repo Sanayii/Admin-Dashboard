@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Admin_Dashboard.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace Admin_Dashboard.Models;
@@ -25,7 +26,7 @@ public partial class ServiceRequestPayment
     [Key]
     public int ServiceId { get; set; }
 
-    public string Status { get; set; }
+    public ServiceRequestStatus Status { get; set; }
 
 
     public DateTime CreatedAt { get; set; }

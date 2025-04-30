@@ -14,7 +14,6 @@ color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a
         <table class="Mtable table-hover">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col" colspan="3"> Buttons</th>
                 </tr>
@@ -24,7 +23,6 @@ color:#fff;font-size:1.3rem;width: 119px;height: 50px;margin-bottom:30px">New</a
                 {
 
                     <tr style="margin-bottom:5px;">
-                        <th>@p.Id</th>
                         <td>@p.Name</td>
                         <td><a asp-action="Detail" asp-controller="Category" asp-route-id="@p.Id" class="btn btn-outline-dark">Detail</a></td>
                         <td><a asp-action="Edit" asp-controller="Category" asp-route-id="@p.Id" class="btn btn-outline-success">Edit</a></td>
