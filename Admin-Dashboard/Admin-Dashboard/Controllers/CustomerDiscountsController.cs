@@ -72,8 +72,7 @@ namespace Admin_Dashboard.Controllers
             ViewBag.discounts = new SelectList(discounts, "Id", "Name");
             return View(customerDiscount);
         }
-
-        //// GET: CustomerDiscounts/Edit/5
+        [HttpGet]
         public IActionResult Edit(string customerId, int discountId)
         {
             if (customerId == null || discountId == 0)
@@ -83,49 +82,39 @@ namespace Admin_Dashboard.Controllers
             if (customerDiscount == null)
                 return NotFound();
 
-            // Fill dropdown and preselect current discount
-            var discounts = Unit._DiscountRepo.GetAll();
-            ViewBag.discounts = new SelectList(discounts, "Id", "Name");
+            ViewBag.discounts = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name");
+            ViewBag.customers = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "UserName");
 
             return View(customerDiscount);
         }
 
 
-        // POST: CustomerDiscounts/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Edit(string customerId, int discountId, [Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount customerDiscount)
+        public IActionResult Edit(string originalCustomerId, int originalDiscountId, [Bind("CustomerId,DiscountId,DateGiven")] CustomerDiscount newCustomerDiscount)
         {
-            if (customerId != customerDiscount.CustomerId || discountId != customerDiscount.DiscountId)
-                return NotFound();
-
             if (ModelState.IsValid)
             {
                 try
                 {
-                    Unit._CustomerDiscountRepo.Edit(customerDiscount);
+                    Unit._CustomerDiscountRepo.ReplaceCustomerDiscount(originalCustomerId, originalDiscountId, newCustomerDiscount);
                     Unit.save();
                 }
-                catch (DbUpdateConcurrencyException)
+                catch (Exception ex)
                 {
-                    bool exists = Unit._CustomerDiscountRepo.GetCustomerDiscount(customerId, discountId) != null;
-
-                    if (!exists)
-                        return NotFound();
-                    else
-                        throw;
+                    return BadRequest("Errore accured During Editing!" + ex.Message);
                 }
 
                 return RedirectToAction(nameof(Index));
             }
 
-            ViewData["CustomerId"] = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "Id", customerDiscount.CustomerId);
-            var discounts = Unit._DiscountRepo.GetAll();
-            ViewBag.discounts = new SelectList(discounts, "Id", "Name");
-            return View(customerDiscount);
+            ViewBag.discounts = new SelectList(Unit._DiscountRepo.GetAll(), "Id", "Name", newCustomerDiscount.DiscountId);
+            ViewBag.customers = new SelectList(Unit._CustomerRepo.GetAll(), "Id", "UserName", newCustomerDiscount.CustomerId);
+
+            return View(newCustomerDiscount);
         }
+
+
 
         //// GET: CustomerDiscounts/Delete/5
         public IActionResult Delete(string customerId, int discountId)
@@ -143,6 +132,7 @@ namespace Admin_Dashboard.Controllers
             }
             return View(customerDiscount);
         }
+
 
         // POST: CustomerDiscounts/Delete/5
         [HttpPost, ActionName("Delete")]

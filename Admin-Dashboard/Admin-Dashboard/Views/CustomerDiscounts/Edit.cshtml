@@ -11,13 +11,14 @@
         <form method="post" asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            <!-- Keep these hidden, you are NOT editing them -->
-            <input type="hidden" asp-for="@Model.CustomerId" />
-            <input type="hidden" asp-for="@Model.DiscountId" />
+            <!-- Hidden fields for IDS -->
+            <input type="hidden" name="originalCustomerId" value="@Model.CustomerId" />
+            <input type="hidden" name="originalDiscountId" value="@Model.DiscountId" />
 
             <div class="form-group">
-                <label>Customer Username</label>
-                <input type="text" class="form-control" value="@Model.Customer?.UserName" disabled />
+                <label asp-for="CustomerId" class="control-label">Customer</label>
+                <select asp-for="CustomerId" class="form-control" asp-items="ViewBag.customers"></select>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
             </div>
 
             <div class="form-group">

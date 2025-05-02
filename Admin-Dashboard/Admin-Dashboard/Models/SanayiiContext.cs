@@ -92,6 +92,7 @@ public partial class SanayiiContext : IdentityDbContext<AppUser>
 
         });
 
+
         OnModelCreatingPartial(modelBuilder);
     }
 
