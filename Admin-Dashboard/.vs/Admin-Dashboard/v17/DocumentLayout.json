@@ -353,8 +353,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\ServiceRequestPayment\\Index.cshtml",
               "ViewState": "AgIAAAsAAAAAAAAAAAAQwB8AAABSAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-05-03T12:17:19.829Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T12:17:19.829Z"
             },
             {
               "$type": "Document",
@@ -386,9 +385,9 @@
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
               "RelativeDocumentMoniker": "Admin-Dashboard\\appsettings.json",
-              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json*",
-              "RelativeToolTip": "Admin-Dashboard\\appsettings.json*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAiAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\asus\\source\\repos\\DotNet Study\\Final Projects\\Sanayii\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\Admin-Dashboard\\appsettings.json",
+              "RelativeToolTip": "Admin-Dashboard\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2025-05-01T18:46:10.903Z",
               "EditorCaption": ""
@@ -415,8 +414,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Views\\Customer\\Index.cshtml",
               "ViewState": "AgIAAK0AAAAAAAAAAAAAALwAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-30T23:58:00.79Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-30T23:58:00.79Z"
             },
             {
               "$type": "Document",
@@ -464,8 +462,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
               "ViewState": "AgIAAGcAAAAAAAAAAADgv3gAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-01T20:55:21.531Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-01T20:55:21.531Z"
             },
             {
               "$type": "Document",
@@ -477,8 +474,7 @@
               "RelativeToolTip": "Admin-Dashboard\\Enums\\ServiceRequestStatus.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAQwCEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T12:13:42.469Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-03T12:13:42.469Z"
             },
             {
               "$type": "Document",

@@ -38,7 +38,11 @@
         Service_done_Successfully__you_Should_complete_payment_method,
 
         [Display(Name = "Service done Successfully, and payment done Successfully")]
-        Service_done_Successfully__and_payment_done_Successfully
+        Service_done_Successfully__and_payment_done_Successfully,
+
+        [Display(Name = "Service Failed")]
+        Service_Failed
+
     }
 
 }
