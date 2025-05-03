@@ -105,6 +105,12 @@
                                             <div class="text-xs text-gray-500">Admin</div>
                                         </div>
 
+                                        <!-- إضافة رابط تعديل البروفايل -->
+                                        <a asp-area="Identity" asp-page="/Account/Manage/Index"
+                                           class="block px-4 py-2 hover:bg-gray-100 transition-colors text-sm hover:text-accent">
+                                            <i class="bi bi-person mr-2"></i> Edit Profile
+                                        </a>
+
                                         <a asp-area="Identity" asp-page="/Account/Manage/ChangePassword"
                                            class="block px-4 py-2 hover:bg-gray-100 transition-colors text-sm hover:text-accent">
                                             <i class="bi bi-key mr-2"></i> Change password
@@ -188,6 +194,11 @@
 
                 @if (SignInManager.IsSignedIn(User))
                 {
+                    <!-- Edit Profile  Linlk -->
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index"
+                       class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-accent transition-colors">
+                        <i class="bi bi-key mr-2"></i> Edit Profile
+                    </a>
                     <!-- Mobile Change Password Link -->
                     <a asp-area="Identity" asp-page="/Account/Manage/ChangePassword"
                        class="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-700 hover:text-accent transition-colors">

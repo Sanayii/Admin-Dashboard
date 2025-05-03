@@ -17,9 +17,9 @@ public partial class Customer : AppUser
 
     public virtual ICollection<CustomerDiscount> CustomerDiscounts { get; set; } = new List<CustomerDiscount>();
 
-    //[ForeignKey("Id")]
+    [ForeignKey("Id")]
 
-    //public virtual AppUser IdNavigation { get; set; }
+    public virtual AppUser IdNavigation { get; set; }
 
 
     public virtual ICollection<Review> Reviews { get; set; } = new List<Review>();

@@ -6,6 +6,11 @@
 }
 
 <style>
+    .admin-management-container {
+        background-color: #f8f9fa;
+        padding: 2rem 0;
+    }
+
     .admin-table th {
         white-space: nowrap;
     }
@@ -19,127 +24,454 @@
         font-size: 0.75em;
     }
 
-    /* Add this for search styling */
     .search-container {
-        max-width: 400px;
+        position: relative;
+        max-width: 500px;
+    }
+
+    #searchResults {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+        display: none;
+        background: white;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .search-result-item {
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .search-result-item:hover {
+            background-color: #f8f9fa;
+        }
+
+    .highlight-row {
+        background-color: #fffde7 !important;
+        transition: background-color 0.5s ease;
+        animation: highlightFade 2s ease-out;
+    }
+
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    @@keyframes highlightFade {
+        from {
+            background-color: #fffde7;
+        }
+
+        to {
+            background-color: transparent;
+        }
+    }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #searchResults {
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    /* Responsive styles */
+    @@media (max-width: 768px) {
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table thead {
+            display: none;
+        }
+
+        .table tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+
+        .table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+            .table td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 1rem;
+            }
+
+            .table td:last-child {
+                border-bottom: 0;
+            }
+
+        .btn-group-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
     }
 </style>
 
-<partial name="_Banner" />
-
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Admins Management</h2>
-        <div>
-            <a class="btn btn-outline-secondary me-2" asp-action="GetAllAdmins" asp-controller="Admin">
-                <i class="bi bi-archive me-1"></i>All Admins
-            </a>
-            <a class="btn btn-primary" asp-controller="Admin" asp-action="Create">
-                <i class="bi bi-person-plus me-1"></i> Add New Admin
-            </a>
+<div class="admin-management-container">
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">
+                <i class="bi bi-people-fill me-2"></i>Admins Management
+            </h2>
+            <div>
+                <a class="btn btn-outline-secondary me-2" asp-action="GetAllAdmins" asp-controller="Admin">
+                    <i class="bi bi-archive me-1"></i>All Admins
+                </a>
+                <a class="btn btn-primary" asp-controller="Admin" asp-action="Create">
+                    <i class="bi bi-person-plus me-1"></i> Add New Admin
+                </a>
+            </div>
         </div>
-    </div>
 
-    <!-- Add the search form here -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-body py-3">
-            <form asp-action="Search" method="get" class="row g-3 align-items-center">
-                <div class="col-md-6 search-container">
+        <!-- Search Section -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body py-3">
+                <div class="search-container">
                     <div class="input-group">
-                        <input type="text" name="searchTerm" class="form-control"
-                               placeholder="Search by name..." value="@Context.Request.Query["searchTerm"]" />
-                        <button type="submit" class="btn btn-primary">
+                        <input type="text" id="liveSearchInput" class="form-control"
+                               placeholder="Search by name or email..." autocomplete="off" />
+                        <button class="btn btn-primary" type="button" id="searchButton">
                             <i class="bi bi-search me-1"></i> Search
                         </button>
-                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]))
-                        {
-                            <a asp-action="Index" class="btn btn-outline-secondary">
-                                <i class="bi bi-x-lg"></i> Clear
-                            </a>
-                        }
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch" style="display:none;">
+                            <i class="bi bi-x-lg"></i> Clear
+                        </button>
                     </div>
+                    <div id="searchResults" class="list-group mt-1"></div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
 
-    <div class="card shadow-sm">
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-hover mb-0 admin-table">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Admin</th>
-                            <th>Salary</th>
-                            <th>Details</th>
-                            <th>Status</th>
-                            <th class="text-end">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var item in Model)
-                        {
+        <!-- Admins Table -->
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0 admin-table" id="adminsTable">
+                        <thead class="table-light">
                             <tr>
-                                <td class="align-middle">
-                                    <div class="fw-semibold">@item.IdNavigation?.FName @item.IdNavigation?.LName</div>
-                                    <small class="text-muted">@item.IdNavigation?.Email</small>
-                                </td>
-                                <td class="align-middle salary-cell">
-                                    @item.Salary.ToString("C")
-                                </td>
-                                <td class="align-middle">
-                                    <div class="d-flex flex-column">
-                                        <span>Age: @item.IdNavigation?.Age</span>
-                                        <div class="mt-1">
-                                            @if (item.IdNavigation?.UserPhones != null && item.IdNavigation.UserPhones.Any())
+                                <th class="ps-4">Admin</th>
+                                <th>Salary</th>
+                                <th>Details</th>
+                                <th>Status</th>
+                                <th class="pe-4 text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminsTableBody">
+                            @foreach (var item in Model)
+                            {
+                                <tr id="admin-@item.Id">
+                                    <td class="ps-4 align-middle" data-label="Admin">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-circle bg-primary text-white me-3">
+                                                @item.IdNavigation?.FName?.FirstOrDefault()@item.IdNavigation?.LName?.FirstOrDefault()
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">@item.IdNavigation?.FName @item.IdNavigation?.LName</div>
+                                                <small class="text-muted">@item.IdNavigation?.Email</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle salary-cell" data-label="Salary">
+                                        @item.Salary.ToString("C")
+                                    </td>
+                                    <td class="align-middle" data-label="Details">
+                                        <div class="d-flex flex-column">
+                                            <span>Age: @item.IdNavigation?.Age</span>
+                                            <div class="mt-1">
+                                                @if (item.IdNavigation?.UserPhones != null && item.IdNavigation.UserPhones.Any())
+                                                {
+                                                    foreach (var phone in item.IdNavigation.UserPhones.Take(2))
+                                                    {
+                                                        <span class="badge bg-light text-dark border me-1">@phone.PhoneNumber</span>
+                                                    }
+                                                    @if (item.IdNavigation.UserPhones.Count > 2)
+                                                    {
+                                                        <span class="badge bg-light text-muted border">+@(item.IdNavigation.UserPhones.Count - 2)</span>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <span class="badge bg-light text-muted border">No phones</span>
+                                                }
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle" data-label="Status">
+                                        @if (item.IdNavigation?.IsDeleted == true)
+                                        {
+                                            <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-1 rounded-pill">
+                                                <i class="bi bi-x-circle-fill me-1"></i>Inactive
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-1 rounded-pill">
+                                                <i class="bi bi-check-circle-fill me-1"></i>Active
+                                            </span>
+                                        }
+                                    </td>
+                                    <td class="pe-4 align-middle text-end" data-label="Actions">
+                                        <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                            <a asp-controller="Admin" asp-action="Edit" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                                <i class="bi bi-pencil me-1"></i>Edit
+                                            </a>
+                                            @if (item.IdNavigation?.IsDeleted == true)
                                             {
-                                                foreach (var phone in item.IdNavigation.UserPhones.Take(2))
-                                                {
-                                                    <span class="badge bg-light text-dark border me-1">@phone.PhoneNumber</span>
-                                                }
-                                                @if (item.IdNavigation.UserPhones.Count > 2)
-                                                {
-                                                    <span class="badge bg-light text-muted border">+@(item.IdNavigation.UserPhones.Count - 2)</span>
-                                                }
+                                                <form asp-action="Activate" asp-controller="Admin" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                                        <i class="bi bi-check-circle me-1"></i>Activate
+                                                    </button>
+                                                </form>
                                             }
                                             else
                                             {
-                                                <span class="badge bg-light text-muted border">No phones</span>
+                                                <form asp-action="Delete" asp-controller="Admin" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                            onclick="return confirm('Deactivate this admin?')">
+                                                        <i class="bi bi-x-circle me-1"></i>Deactivate
+                                                    </button>
+                                                </form>
                                             }
                                         </div>
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    @if (item.IdNavigation?.IsDeleted == true)
-                                    {
-                                        <span class="badge bg-danger bg-opacity-10 text-danger status-badge">Inactive</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-success bg-opacity-10 text-success status-badge">Active</span>
-                                    }
-                                </td>
-                                <td class="align-middle text-end">
-                                    <div class="d-flex justify-content-end gap-2">
-                                        <a asp-controller="Admin" asp-action="Edit" asp-route-id="@item.Id"
-                                           class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </a>
-                                        <form asp-action="Delete" asp-controller="Admin" method="post">
-                                            <input type="hidden" name="id" value="@item.Id" />
-                                            <button type="submit"
-                                                    class="btn btn-sm btn-outline-danger d-flex align-items-center"
-                                                    onclick="return confirm('Delete this admin?')">
-                                                <i class="bi bi-trash me-1"></i>Delete
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            const searchInput = $('#liveSearchInput');
+            const searchResults = $('#searchResults');
+            const clearSearchBtn = $('#clearSearch');
+            const searchButton = $('#searchButton');
+            const adminsTableBody = $('#adminsTableBody');
+
+            let searchTimeout;
+
+            // Real-time search as you type
+            searchInput.on('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = $(this).val().trim();
+
+                if (searchTerm.length >= 2) {
+                    searchTimeout = setTimeout(() => {
+                        performSearch(searchTerm);
+                    }, 300);
+                    clearSearchBtn.show();
+                } else {
+                    searchResults.hide();
+                    if (searchTerm.length === 0) {
+                        clearSearchBtn.hide();
+                        loadAllAdmins();
+                    }
+                }
+            });
+
+            // Search button click
+            searchButton.click(function() {
+                const searchTerm = searchInput.val().trim();
+                if (searchTerm) {
+                    performSearch(searchTerm, true);
+                }
+            });
+
+            // Clear search
+            clearSearchBtn.click(function() {
+                searchInput.val('');
+                searchResults.hide();
+                clearSearchBtn.hide();
+                loadAllAdmins();
+            });
+
+            function performSearch(searchTerm, isButtonClick = false) {
+                $.get({
+                    url: '@Url.Action("Search", "Admin")',
+                    data: { searchTerm: searchTerm },
+                    success: function(response) {
+                        if (isButtonClick) {
+                            updateTableWithResults(response);
+                        } else {
+                            displaySearchSuggestions(response);
+                        }
+                    },
+                    error: function() {
+                        adminsTableBody.html('<tr><td colspan="5" class="text-center text-danger py-4">Error loading search results</td></tr>');
+                    }
+                });
+            }
+
+            function displaySearchSuggestions(response) {
+                const results = response && response.success ? response.data : [];
+
+                if (results.length === 0) {
+                    searchResults.html('<div class="list-group-item text-muted">No matching admins found</div>').show();
+                    return;
+                }
+
+                let html = '';
+                results.forEach(admin => {
+                    html += `
+                        <div class="list-group-item search-result-item"
+                             data-admin-id="${admin.id}">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>${admin.fName} ${admin.lName}</strong>
+                                    <div class="text-muted small">${admin.email}</div>
+                                </div>
+                                <span class="badge ${admin.isDeleted ? 'bg-danger' : 'bg-success'}">
+                                    ${admin.isDeleted ? 'Inactive' : 'Active'}
+                                </span>
+                            </div>
+                        </div>`;
+                });
+
+                searchResults.html(html).show();
+
+                $('.search-result-item').click(function() {
+                    const adminId = $(this).data('admin-id');
+                    highlightAdminInTable(adminId);
+                    searchResults.hide();
+                });
+            }
+
+            function updateTableWithResults(response) {
+                const results = response && response.success ? response.data : [];
+
+                if (results.length === 0) {
+                    adminsTableBody.html('<tr><td colspan="5" class="text-center py-4">No matching admins found</td></tr>');
+                    return;
+                }
+
+                let html = '';
+                results.forEach(admin => {
+                    html += `
+                        <tr id="admin-${admin.id}" class="highlight-row">
+                            <td class="ps-4 align-middle" data-label="Admin">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-circle bg-primary text-white me-3">
+                                        ${admin.fName?.charAt(0)}${admin.lName?.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <div class="fw-semibold">${admin.fName} ${admin.lName}</div>
+                                        <small class="text-muted">${admin.email}</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle salary-cell" data-label="Salary">
+                                $${admin.salary.toFixed(2)}
+                            </td>
+                            <td class="align-middle" data-label="Details">
+                                <div class="d-flex flex-column">
+                                    <span>Age: ${admin.age || 'N/A'}</span>
+                                    <div class="mt-1">
+                                        ${admin.phones && admin.phones.length > 0 ?
+                                          admin.phones.map(phone =>
+                                            `<span class="badge bg-light text-dark border me-1">${phone}</span>`
+                                          ).join('') +
+                                          (admin.phoneCount > 2 ?
+                                           `<span class="badge bg-light text-muted border">+${admin.phoneCount - 2}</span>` : '')
+                                          : '<span class="badge bg-light text-muted border">No phones</span>'}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle" data-label="Status">
+                                <span class="badge ${admin.isDeleted ? 'bg-danger bg-opacity-10 text-danger' : 'bg-success bg-opacity-10 text-success'} px-3 py-1 rounded-pill">
+                                    <i class="bi ${admin.isDeleted ? 'bi-x-circle-fill' : 'bi-check-circle-fill'} me-1"></i>
+                                    ${admin.isDeleted ? 'Inactive' : 'Active'}
+                                </span>
+                            </td>
+                            <td class="pe-4 align-middle text-end" data-label="Actions">
+                                <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                    <a href="/Admin/Edit/${admin.id}"
+                                       class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                        <i class="bi bi-pencil me-1"></i>Edit
+                                    </a>
+                                    ${admin.isDeleted ?
+                                      `<form action="/Admin/Activate" method="post">
+                                        <input type="hidden" name="id" value="${admin.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                            <i class="bi bi-check-circle me-1"></i>Activate
+                                        </button>
+                                      </form>` :
+                                      `<form action="/Admin/Delete" method="post">
+                                        <input type="hidden" name="id" value="${admin.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                onclick="return confirm('Deactivate this admin?')">
+                                            <i class="bi bi-x-circle me-1"></i>Deactivate
+                                        </button>
+                                      </form>`}
+                                </div>
+                            </td>
+                        </tr>`;
+                });
+
+                adminsTableBody.html(html);
+            }
+
+            function highlightAdminInTable(adminId) {
+                $('tr').removeClass('highlight-row');
+                const row = $(`#admin-${adminId}`);
+                row.addClass('highlight-row');
+
+                $('html, body').animate({
+                    scrollTop: row.offset().top - 100
+                }, 500);
+            }
+
+            function loadAllAdmins() {
+                $.get('@Url.Action("Index", "Admin")', function(data) {
+                    $('#adminsTable').html($(data).find('#adminsTable').html());
+                });
+            }
+
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.search-container').length) {
+                    searchResults.hide();
+                }
+            });
+        });
+    </script>
+}

@@ -23,12 +23,14 @@ namespace Admin_Dashboard.Controllers
             _userManager = usermanager;
         }
 
+        //return active artisans only
         public IActionResult Index()
         {
             var artisans = _unitOfWork._ArtisanRepo.GetAllArtisan();
             return View(artisans);
         }
 
+        //return active and unactive artisans
         public IActionResult GetAllArtisans()
         {
             var AllArtisans = _unitOfWork._ArtisanRepo.GetAll();
@@ -118,6 +120,20 @@ namespace Admin_Dashboard.Controllers
 
             return RedirectToAction("Index");
         }
+        public IActionResult Activate(string id)
+        {
+            var artisan = _unitOfWork._ArtisanRepo.GetById(id);
+            if (artisan != null)
+            {
+                artisan.IsDeleted = false;
+                _unitOfWork._ArtisanRepo.Edit(artisan);
+                _unitOfWork.save();
+            }
+
+            return RedirectToAction("Index");
+        }
+
+
 
         [HttpGet]
         public IActionResult Create()
@@ -206,7 +222,7 @@ namespace Admin_Dashboard.Controllers
         }
         //search by admin name
         [HttpGet]
-        public IActionResult Search(string searchTerm)
+        public IActionResult Search2(string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
@@ -222,6 +238,54 @@ namespace Admin_Dashboard.Controllers
                 .ToList();
 
             return View("Index", filteredArtisans);
+        }
+
+        [HttpGet]
+        public IActionResult Search(string searchTerm)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(searchTerm))
+                {
+                    return Json(new { success = true, data = new List<object>(), count = 0 });
+                }
+
+                var allArtisans = _unitOfWork._ArtisanRepo.GetAllArtisan()
+                    .Where(a => !a.IsDeleted)
+                    .ToList();
+
+                var filteredArtisans = allArtisans
+                    .Where(a =>
+                        (a.FName != null && a.FName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                        (a.LName != null && a.LName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                        (a.Email != null && a.Email.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                    .Select(a => new
+                    {
+                        id = a.Id,
+                        fName = a.FName,
+                        lName = a.LName,
+                        email = a.Email,
+                        age = a.Age,
+                        isDeleted = a.IsDeleted,
+                        phones = a.UserPhones?.Select(p => p.PhoneNumber).Take(2).ToList(),
+                        phoneCount = a.UserPhones?.Count ?? 0,
+                        rating = a.Rating,
+                        category = a.Category?.Name
+                    })
+                    .ToList();
+
+                return Json(new
+                {
+                    success = true,
+                    data = filteredArtisans,
+                    count = filteredArtisans.Count
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching artisans");
+                return Json(new { success = false, message = "An error occurred while searching", data = new List<object>() });
+            }
         }
     }
 }

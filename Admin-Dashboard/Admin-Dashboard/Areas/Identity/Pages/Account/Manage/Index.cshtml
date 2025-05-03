@@ -1,0 +1,115 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">@ViewData["Title"]</h4>
+                </div>
+                <div class="card-body">
+                    <partial name="_StatusMessage" model="Model.StatusMessage" />
+
+                    <form id="profile-form" method="post" class="needs-validation" novalidate>
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.FName" class="form-control" placeholder=" " required />
+                                    <label asp-for="Input.FName"></label>
+                                    <span asp-validation-for="Input.FName" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.LName" class="form-control" placeholder=" " required />
+                                    <label asp-for="Input.LName"></label>
+                                    <span asp-validation-for="Input.LName" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.Age" class="form-control" placeholder=" " />
+                                    <label asp-for="Input.Age"></label>
+                                    <span asp-validation-for="Input.Age" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.PhoneNumber" class="form-control" placeholder=" " />
+                                    <label asp-for="Input.PhoneNumber"></label>
+                                    <span asp-validation-for="Input.PhoneNumber" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.City" class="form-control" placeholder=" " />
+                                    <label asp-for="Input.City"></label>
+                                    <span asp-validation-for="Input.City" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Input.Street" class="form-control" placeholder=" " />
+                                    <label asp-for="Input.Street"></label>
+                                    <span asp-validation-for="Input.Street" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input asp-for="Input.Government" class="form-control" placeholder=" " />
+                                    <label asp-for="Input.Government"></label>
+                                    <span asp-validation-for="Input.Government" class="invalid-feedback"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-4">
+                                <button id="update-profile-button" type="submit" class="btn btn-primary px-4 py-2">
+                                    <i class="bi bi-save me-2"></i>Save Changes
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // Bootstrap 5 validation
+        (function () {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            const forms = document.querySelectorAll('.needs-validation')
+
+            // Loop over them and prevent submission
+            Array.from(forms).forEach(form => {
+                form.addEventListener('submit', event => {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
+}

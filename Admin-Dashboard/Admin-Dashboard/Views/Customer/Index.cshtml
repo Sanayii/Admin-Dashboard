@@ -6,129 +6,506 @@
 }
 
 <style>
-    .action-buttons .btn {
-        min-width: 90px;
+    .customer-management-container {
+        background-color: #f8f9fa;
+        padding: 2rem 0;
     }
-
+    
     .customer-name {
         font-weight: 500;
     }
+    
+    .search-container {
+        position: relative;
+        max-width: 500px;
+    }
+    
+    #searchResults {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+        display: none;
+        background: white;
+        border-radius: 0 0 5px 5px;
+    }
+    
+    .search-result-item {
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+    
+    .search-result-item:hover {
+        background-color: #f8f9fa;
+    }
+    
+    .highlight-row {
+        background-color: #fffde7 !important;
+        transition: background-color 0.5s ease;
+        animation: highlightFade 2s ease-out;
+    }
+    
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+    
+    @@keyframes highlightFade {
+        from { background-color: #fffde7; }
+        to { background-color: transparent; }
+    }
+    
+    @@keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    #searchResults {
+        animation: fadeIn 0.2s ease-out;
+    }
+    
+    /* Table spacing and responsive styles */
+    .table {
+        border-collapse: separate;
+        border-spacing: 0 10px;
+    }
+    
+    .table thead th {
+        border-bottom: none;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
+    .table tbody tr {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        margin-bottom: 10px;
+    }
+    
+    .table td {
+        padding: 1rem;
+        vertical-align: middle;
+        border-top: none;
+        border-bottom: none;
+    }
+    
+    .table td:first-child {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+    
+    .table td:last-child {
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+    }
+    
+    /* Responsive styles */
+    @@media (max-width: 768px) {
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .table thead {
+            display: none;
+        }
+        
+        .table tbody tr {
+            display: block;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .table td:before {
+            content: attr(data-label);
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .table td:last-child {
+            border-bottom: 0;
+        }
+        
+        .btn-group-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
 </style>
 
-<partial name="_Banner" />
-
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Customers Management</h2>
-        <div>
-            <a class="btn btn-outline-secondary me-2" asp-action="GetAllCustomers" asp-controller="Customer">
-                <i class="bi bi-archive me-1"></i>All Customers
-            </a>
-          
+<div class="customer-management-container">
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">
+                <i class="bi bi-people me-2"></i>Customers Management
+            </h2>
+            <div>
+                <a class="btn btn-outline-secondary me-2" asp-action="GetAllCustomers">
+                    <i class="bi bi-archive me-1"></i>All Customers
+                </a>
+            </div>
         </div>
-    </div>
 
-    <!-- Add the search form here -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-body py-3">
-            <form asp-action="Search" method="get" class="row g-3 align-items-center">
-                <div class="col-md-6 search-container">
+        <!-- Search Section -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body py-3">
+                <div class="search-container">
                     <div class="input-group">
-                        <input type="text" name="searchTerm" class="form-control"
-                               placeholder="Search by name..." value="@Context.Request.Query["searchTerm"]" />
-                        <button type="submit" class="btn btn-primary">
+                        <input type="text" id="liveSearchInput" class="form-control" 
+                               placeholder="Search by name, email or location..." autocomplete="off" />
+                        <button class="btn btn-primary" type="button" id="searchButton">
                             <i class="bi bi-search me-1"></i> Search
                         </button>
-                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]))
-                        {
-                            <a asp-action="Index" class="btn btn-outline-secondary">
-                                <i class="bi bi-x-lg"></i> Clear
-                            </a>
-                        }
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch" style="display:none;">
+                            <i class="bi bi-x-lg"></i> Clear
+                        </button>
                     </div>
+                    <div id="searchResults" class="list-group mt-1"></div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
 
-
-    <div class="card shadow-sm">
-        <div class="card-body p-0">
-            <div class="table-responsive">
-                <table class="table table-hover mb-0">
-                    <thead class="table-light">
-                        <tr>
-                            <th>Customer</th>
-                            <th>Contact</th>
-                            <th>Location</th>
-                            <th>Status</th>
-                            <th class="text-end">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var customer in Model)
-                        {
+        <!-- Customers Table -->
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table mb-0" id="customersTable">
+                        <thead class="table-light">
                             <tr>
-                                <td class="align-middle">
-                                    <div class="customer-name">@customer.FName @customer.LName</div>
-                                    @if (customer.Age.HasValue)
-                                    {
-                                        <small class="text-muted">Age: @customer.Age</small>
-                                    }
-                                </td>
-                                <td class="align-middle">
-                                    <div>@customer.Email</div>
-                                    <div class="mt-1">
-                                        @if (customer.UserPhones != null && customer.UserPhones.Any())
+                                <th class="ps-4">Customer</th>
+                                <th>Contact</th>
+                                <th>Location</th>
+                                <th>Status</th>
+                                <th class="pe-4 text-end">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="customersTableBody">
+                            @foreach (var item in Model)
+                            {
+                                <tr id="customer-@item.Id">
+                                    <td class="ps-4 align-middle" data-label="Customer">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-circle bg-primary text-white me-3">
+                                                @item.FName?.FirstOrDefault()@item.LName?.FirstOrDefault()
+                                            </div>
+                                            <div>
+                                                <div class="customer-name">@item.FName @item.LName</div>
+                                                @if (item.Age.HasValue)
+                                                {
+                                                    <small class="text-muted">Age: @item.Age</small>
+                                                }
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle" data-label="Contact">
+                                        <div>@item.Email</div>
+                                        <div class="mt-1">
+                                            @if (item.UserPhones != null && item.UserPhones.Any())
+                                            {
+                                                foreach (var phone in item.UserPhones.Take(2))
+                                                {
+                                                    <span class="badge bg-light text-dark border me-1">@phone.PhoneNumber</span>
+                                                }
+                                                @if (item.UserPhones.Count > 2)
+                                                {
+                                                    <span class="badge bg-light text-muted border">+@(item.UserPhones.Count - 2)</span>
+                                                }
+                                            }
+                                            else
+                                            {
+                                                <span class="badge bg-light text-muted border">No phones</span>
+                                            }
+                                        </div>
+                                    </td>
+                                    <td class="align-middle" data-label="Location">
+                                        @if (!string.IsNullOrEmpty(item.City))
                                         {
-                                            foreach (var phone in customer.UserPhones.Take(2))
-                                            {
-                                                <span class="badge bg-light text-dark border me-1">@phone.PhoneNumber</span>
-                                            }
-                                            @if (customer.UserPhones.Count > 2)
-                                            {
-                                                <span class="badge bg-light text-muted border">+@(customer.UserPhones.Count - 2)</span>
-                                            }
+                                            <div class="mb-1">
+                                                <span class="badge bg-light text-dark border">@item.City</span>
+                                            </div>
+                                        }
+                                        @if (!string.IsNullOrEmpty(item.Government))
+                                        {
+                                            <div>
+                                                <span class="badge bg-light text-dark border">@item.Government</span>
+                                            </div>
+                                        }
+                                    </td>
+
+                                    <td class="align-middle" data-label="Status">
+                                        @if (item.IsDeleted)
+                                        {
+                                            <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-1 rounded-pill">
+                                                <i class="bi bi-x-circle-fill me-1"></i>Inactive
+                                            </span>
                                         }
                                         else
                                         {
-                                            <span class="badge bg-light text-muted border">No phones</span>
+                                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-1 rounded-pill">
+                                                <i class="bi bi-check-circle-fill me-1"></i>Active
+                                            </span>
                                         }
-                                    </div>
-                                </td>
-                                <td class="align-middle">
-                                    <span class="badge bg-light text-dark border">@customer.City</span>
-                                </td>
-                                <td class="align-middle">
-                                    @if (customer.IsDeleted)
-                                    {
-                                        <span class="badge bg-danger bg-opacity-10 text-danger">Inactive</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-success bg-opacity-10 text-success">Active</span>
-                                    }
-                                </td>
-                                <td class="align-middle text-end">
-                                    <div class="action-buttons d-flex justify-content-end gap-2">
-                                        <a asp-action="Edit" asp-route-id="@customer.Id"
-                                           class="btn btn-sm btn-outline-primary d-flex align-items-center">
-                                            <i class="bi bi-pencil me-1"></i>Edit
-                                        </a>
-                                        <form asp-action="Delete" asp-route-id="@customer.Id" method="post">
-                                            <button type="submit"
-                                                    class="btn btn-sm btn-outline-danger d-flex align-items-center"
-                                                    onclick="return confirm('Delete this customer?')">
-                                                <i class="bi bi-trash me-1"></i>Delete
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+                                    </td>
+                                    <td class="pe-4 align-middle text-end" data-label="Actions">
+                                        <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                            <a asp-action="Edit" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                                <i class="bi bi-pencil me-1"></i>Edit
+                                            </a>
+                                            @if (item.IsDeleted)
+                                            {
+                                                <form asp-action="Activate" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                                        <i class="bi bi-check-circle me-1"></i>Activate
+                                                    </button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <form asp-action="Delete" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                            onclick="return confirm('Deactivate this customer?')">
+                                                        <i class="bi bi-x-circle me-1"></i>Deactivate
+                                                    </button>
+                                                </form>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            const searchInput = $('#liveSearchInput');
+            const searchResults = $('#searchResults');
+            const clearSearchBtn = $('#clearSearch');
+            const searchButton = $('#searchButton');
+            const customersTableBody = $('#customersTableBody');
+            
+            let searchTimeout;
+            
+            // Real-time search as you type
+            searchInput.on('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = $(this).val().trim();
+                
+                if (searchTerm.length >= 2) {
+                    searchTimeout = setTimeout(() => {
+                        performSearch(searchTerm);
+                    }, 300);
+                    clearSearchBtn.show();
+                } else {
+                    searchResults.hide();
+                    if (searchTerm.length === 0) {
+                        clearSearchBtn.hide();
+                        loadAllCustomers();
+                    }
+                }
+            });
+            
+            // Search button click
+            searchButton.click(function() {
+                const searchTerm = searchInput.val().trim();
+                if (searchTerm) {
+                    performSearch(searchTerm, true);
+                }
+            });
+            
+            // Clear search
+            clearSearchBtn.click(function() {
+                searchInput.val('');
+                searchResults.hide();
+                clearSearchBtn.hide();
+                loadAllCustomers();
+            });
+            
+            function performSearch(searchTerm, isButtonClick = false) {
+                $.get({
+                    url: '@Url.Action("Search", "Customer")',
+                    data: { searchTerm: searchTerm },
+                    success: function(response) {
+                        if (isButtonClick) {
+                            updateTableWithResults(response);
+                        } else {
+                            displaySearchSuggestions(response);
+                        }
+                    },
+                    error: function() {
+                        customersTableBody.html('<tr><td colspan="5" class="text-center text-danger py-4">Error loading search results</td></tr>');
+                    }
+                });
+            }
+            
+            function displaySearchSuggestions(response) {
+                const results = response && response.success ? response.data : [];
+                
+                if (results.length === 0) {
+                    searchResults.html('<div class="list-group-item text-muted">No matching customers found</div>').show();
+                    return;
+                }
+                
+                let html = '';
+                results.forEach(customer => {
+                    html += `
+                        <div class="list-group-item search-result-item" 
+                             data-customer-id="${customer.id}">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>${customer.fName} ${customer.lName}</strong>
+                                    <div class="text-muted small">${customer.email}</div>
+                                    <div class="mt-1">
+                                        ${customer.city ? `<span class="badge bg-light text-dark border me-1">${customer.city}</span>` : ''}
+                                        ${customer.government ? `<span class="badge bg-light text-dark border">${customer.government}</span>` : ''}
+                                    </div>
+                                </div>
+                                <span class="badge ${customer.isDeleted ? 'bg-danger' : 'bg-success'}">
+                                    ${customer.isDeleted ? 'Inactive' : 'Active'}
+                                </span>
+                            </div>
+                        </div>`;
+                });
+                
+                searchResults.html(html).show();
+                
+                $('.search-result-item').click(function() {
+                    const customerId = $(this).data('customer-id');
+                    highlightCustomerInTable(customerId);
+                    searchResults.hide();
+                });
+            }
+            
+            function updateTableWithResults(response) {
+                const results = response && response.success ? response.data : [];
+                
+                if (results.length === 0) {
+                    customersTableBody.html('<tr><td colspan="5" class="text-center py-4">No matching customers found</td></tr>');
+                    return;
+                }
+                
+                let html = '';
+                results.forEach(customer => {
+                    html += `
+                        <tr id="customer-${customer.id}" class="highlight-row">
+                            <td class="ps-4 align-middle" data-label="Customer">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-circle bg-primary text-white me-3">
+                                        ${customer.fName?.charAt(0)}${customer.lName?.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <div class="customer-name">${customer.fName} ${customer.lName}</div>
+                                        ${customer.age ? `<small class="text-muted">Age: ${customer.age}</small>` : ''}
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle" data-label="Contact">
+                                <div>${customer.email}</div>
+                                <div class="mt-1">
+                                    ${customer.phones && customer.phones.length > 0 ? 
+                                      customer.phones.map(phone => 
+                                        `<span class="badge bg-light text-dark border me-1">${phone}</span>`
+                                      ).join('') + 
+                                      (customer.phoneCount > 2 ? 
+                                       `<span class="badge bg-light text-muted border">+${customer.phoneCount - 2}</span>` : '')
+                                      : '<span class="badge bg-light text-muted border">No phones</span>'}
+                                </div>
+                            </td>
+                            <td class="align-middle" data-label="Location">
+                                ${customer.city ? `
+                                <div class="mb-1">
+                                    <span class="badge bg-light text-dark border">${customer.city}</span>
+                                </div>` : ''}
+                                ${customer.government ? `
+                                <div>
+                                    <span class="badge bg-light text-dark border">${customer.government}</span>
+                                </div>` : ''}
+                            </td>
+                            <td class="align-middle" data-label="Status">
+                                <span class="badge ${customer.isDeleted ? 'bg-danger bg-opacity-10 text-danger' : 'bg-success bg-opacity-10 text-success'} px-3 py-1 rounded-pill">
+                                    <i class="bi ${customer.isDeleted ? 'bi-x-circle-fill' : 'bi-check-circle-fill'} me-1"></i>
+                                    ${customer.isDeleted ? 'Inactive' : 'Active'}
+                                </span>
+                            </td>
+                            <td class="pe-4 align-middle text-end" data-label="Actions">
+                                <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                    <a href="/Customer/Edit/${customer.id}"
+                                       class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                        <i class="bi bi-pencil me-1"></i>Edit
+                                    </a>
+                                    ${customer.isDeleted ? 
+                                      `<form action="/Customer/Activate" method="post">
+                                        <input type="hidden" name="id" value="${customer.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                            <i class="bi bi-check-circle me-1"></i>Activate
+                                        </button>
+                                      </form>` : 
+                                      `<form action="/Customer/Delete" method="post">
+                                        <input type="hidden" name="id" value="${customer.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                onclick="return confirm('Deactivate this customer?')">
+                                            <i class="bi bi-x-circle me-1"></i>Deactivate
+                                        </button>
+                                      </form>`}
+                                </div>
+                            </td>
+                        </tr>`;
+                });
+                
+                customersTableBody.html(html);
+            }
+            
+            function highlightCustomerInTable(customerId) {
+                $('tr').removeClass('highlight-row');
+                const row = $(`#customer-${customerId}`);
+                row.addClass('highlight-row');
+                
+                $('html, body').animate({
+                    scrollTop: row.offset().top - 100
+                }, 500);
+            }
+            
+            function loadAllCustomers() {
+                $.get('@Url.Action("Index", "Customer")', function(data) {
+                    $('#customersTable').html($(data).find('#customersTable').html());
+                });
+            }
+            
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.search-container').length) {
+                    searchResults.hide();
+                }
+            });
+        });
+    </script>
+}

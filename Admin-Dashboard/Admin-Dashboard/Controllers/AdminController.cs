@@ -25,11 +25,14 @@ namespace Admin_Dashboard.Controllers
             _userManager = userManager;
         }
 
+        
+        //return all admins active only
         public IActionResult Index()
         {
             var admins = _unitOfWork._AdminRepo.GetAllAdmins();
             return View(admins);
         }
+        //return all admins only
         public IActionResult GetAllAdmins()
         {
             var allAdmins = _unitOfWork._AdminRepo.GetAll();
@@ -168,7 +171,7 @@ namespace Admin_Dashboard.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpPost]//deactive admin 
         public IActionResult Delete(string id)
         {
             var admin = _unitOfWork._AdminRepo.GetById(id);
@@ -181,11 +184,24 @@ namespace Admin_Dashboard.Controllers
 
             return RedirectToAction("Index");
         }
-   
+
+        //activate 
+        public IActionResult Activate (string id)
+        {
+            var admin = _unitOfWork._AdminRepo.GetById(id);
+            if (admin != null)
+            {
+                admin.IdNavigation.IsDeleted = false;
+                _unitOfWork.save();
+            }
+
+            return RedirectToAction("Index");
+
+        }
 
     //search by admin name
    [HttpGet]
-        public IActionResult Search(string searchTerm)
+        public IActionResult Search2(string searchTerm)
         {
             if (string.IsNullOrWhiteSpace(searchTerm))
             {
@@ -201,5 +217,54 @@ namespace Admin_Dashboard.Controllers
                 .ToList();
 
             return View("Index", filteredAdmins);
-        } }
+        }
+
+        [HttpGet]
+        public IActionResult Search(string searchTerm)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(searchTerm))
+                {
+                    return Json(new { success = true, data = new List<object>(), count = 0 });
+                }
+
+                var allAdmins = _unitOfWork._AdminRepo.GetAllAdmins()
+                    .Where(a => a.IdNavigation != null && !a.IdNavigation.IsDeleted)
+                    .ToList();
+
+                var filteredAdmins = allAdmins
+                    .Where(a =>
+                        (a.IdNavigation.FName != null && a.IdNavigation.FName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                        (a.IdNavigation.LName != null && a.IdNavigation.LName.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)) ||
+                        (a.IdNavigation.Email != null && a.IdNavigation.Email.Contains(searchTerm, StringComparison.OrdinalIgnoreCase)))
+                    .Select(a => new
+                    {
+                        id = a.Id,
+                        fName = a.IdNavigation.FName,
+                        lName = a.IdNavigation.LName,
+                        email = a.IdNavigation.Email,
+                        salary = a.Salary,
+                        age = a.IdNavigation.Age,
+                        isDeleted = a.IdNavigation.IsDeleted,
+                        phones = a.IdNavigation.UserPhones?.Select(p => p.PhoneNumber).Take(2).ToList(),
+                        phoneCount = a.IdNavigation.UserPhones?.Count ?? 0
+                    })
+                    .ToList();
+
+                return Json(new
+                {
+                    success = true,
+                    data = filteredAdmins,
+                    count = filteredAdmins.Count
+                });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error searching admins");
+                return Json(new { success = false, message = "An error occurred while searching", data = new List<object>() });
+            }
+        
     }
+    }
+}

@@ -1,13 +1,18 @@
 ﻿@model IEnumerable<Admin_Dashboard.Models.Artisan>
 
 @{
-    ViewData["Title"] = "Artisans List";
+    ViewData["Title"] = "Artisans Management";
     ViewBag.pagename = "Artisans";
 }
 
 <style>
+    .artisan-management-container {
+        background-color: #f8f9fa;
+        padding: 2rem 0;
+    }
+
     .rating {
-        font-size: 1.2rem;
+        font-size: 1rem;
         letter-spacing: 0.1rem;
         display: inline-flex;
         align-items: center;
@@ -24,128 +29,472 @@
         color: #6c757d;
     }
 
-    .action-buttons .btn {
-        min-width: 80px;
+    .search-container {
+        position: relative;
+        max-width: 500px;
+    }
+
+    #searchResults {
+        position: absolute;
+        width: 100%;
+        z-index: 1000;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.175);
+        display: none;
+        background: white;
+        border-radius: 0 0 5px 5px;
+    }
+
+    .search-result-item {
+        cursor: pointer;
+        transition: background-color 0.2s;
+    }
+
+        .search-result-item:hover {
+            background-color: #f8f9fa;
+        }
+
+    .highlight-row {
+        background-color: #fffde7 !important;
+        transition: background-color 0.5s ease;
+        animation: highlightFade 2s ease-out;
+    }
+
+    .avatar-circle {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+    }
+
+    @@keyframes highlightFade {
+        from {
+            background-color: #fffde7;
+        }
+
+        to {
+            background-color: transparent;
+        }
+    }
+
+    @@keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    #searchResults {
+        animation: fadeIn 0.2s ease-out;
+    }
+
+    /* Responsive styles */
+    @@media (max-width: 768px) {
+        .table-responsive {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .table thead {
+            display: none;
+        }
+
+        .table tr {
+            display: block;
+            margin-bottom: 1rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+        }
+
+        .table td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+            .table td:before {
+                content: attr(data-label);
+                font-weight: bold;
+                margin-right: 1rem;
+            }
+
+            .table td:last-child {
+                border-bottom: 0;
+            }
+
+        .btn-group-mobile {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
     }
 </style>
 
-<partial name="_Banner" />
-
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2>Artisans Management</h2>
-        <div>
-            <a asp-action="GetAllArtisans" class="btn btn-outline-secondary me-2">
-                <i class="bi bi-people-fill"></i>  All Artisans
-            </a>
-            <a asp-action="Create" class="btn btn-primary">
-                <i class="bi bi-person-plus"></i> Add New Artisan
-            </a>
+<div class="artisan-management-container">
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">
+                <i class="bi bi-hammer me-2"></i>Artisans Management
+            </h2>
+            <div>
+                <a class="btn btn-outline-secondary me-2" asp-action="GetAllArtisans">
+                    <i class="bi bi-archive me-1"></i>All Artisans
+                </a>
+                <a class="btn btn-primary" asp-action="Create">
+                    <i class="bi bi-person-plus me-1"></i> Add New Artisan
+                </a>
+            </div>
         </div>
-    </div>
 
-
-    <!-- Add the search form here -->
-    <div class="card shadow-sm mb-4">
-        <div class="card-body py-3">
-            <form asp-action="Search" method="get" class="row g-3 align-items-center">
-                <div class="col-md-6 search-container">
+        <!-- Search Section -->
+        <div class="card shadow-sm mb-4">
+            <div class="card-body py-3">
+                <div class="search-container">
                     <div class="input-group">
-                        <input type="text" name="searchTerm" class="form-control"
-                               placeholder="Search by name..." value="@Context.Request.Query["searchTerm"]" />
-                        <button type="submit" class="btn btn-primary">
+                        <input type="text" id="liveSearchInput" class="form-control"
+                               placeholder="Search by name, email or category..." autocomplete="off" />
+                        <button class="btn btn-primary" type="button" id="searchButton">
                             <i class="bi bi-search me-1"></i> Search
                         </button>
-                        @if (!string.IsNullOrEmpty(Context.Request.Query["searchTerm"]))
-                        {
-                            <a asp-action="Index" class="btn btn-outline-secondary">
-                                <i class="bi bi-x-lg"></i> Clear
-                            </a>
-                        }
+                        <button class="btn btn-outline-secondary" type="button" id="clearSearch" style="display:none;">
+                            <i class="bi bi-x-lg"></i> Clear
+                        </button>
                     </div>
+                    <div id="searchResults" class="list-group mt-1"></div>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
 
-
-    <div class="card shadow">
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-striped table-hover">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Name</th>
-                            <th>Category</th>
-                            <th>Rating</th>
-                            <th>Contact</th>
-                            <th>Status</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach (var artisan in Model)
-                        {
+        <!-- Artisans Table -->
+        <div class="card shadow-sm">
+            <div class="card-body p-0">
+                <div class="table-responsive">
+                    <table class="table table-hover mb-0" id="artisansTable">
+                        <thead class="table-light">
                             <tr>
-                                <td>
-                                    <div class="fw-bold">@artisan.FName @artisan.LName</div>
-                                    <small class="text-muted">@artisan.Email</small>
-                                </td>
-                                <td>
-                                    <span class="badge bg-primary">@artisan.Category?.Name</span>
-                                </td>
-                                <td>
-                                    <div class="rating" data-rating="@artisan.Rating">
-                                        @for (int i = 1; i <= 5; i++)
-                                        {
-                                            <i class="bi @(i <= artisan.Rating ? "bi-star-fill text-warning" : "bi-star text-secondary")"></i>
-                                        }
-                                        <span class="rating-value">@artisan.Rating.ToString("0.0")</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    @if (artisan.UserPhones != null && artisan.UserPhones.Any())
-                                    {
-                                        foreach (var phone in artisan.UserPhones.Take(2))
-                                        {
-                                            <span class="badge bg-info text-dark me-1 mb-1">@phone.PhoneNumber</span>
-                                        }
-                                        @if (artisan.UserPhones.Count > 2)
-                                        {
-                                            <span class="badge bg-secondary">+@(artisan.UserPhones.Count - 2) more</span>
-                                        }
-                                    }
-                                </td>
-                                <td>
-                                    @if (artisan.IsDeleted)
-                                    {
-                                        <span class="badge bg-danger">Inactive</span>
-                                    }
-                                    else
-                                    {
-                                        <span class="badge bg-success">Active</span>
-                                    }
-                                </td>
-                                <td class="action-buttons">
-                                    <div class="d-flex gap-2">
-                                        <a asp-action="Edit" asp-route-id="@artisan.Id"
-                                           class="btn btn-sm btn-outline-primary flex-grow-1">
-                                            <i class="bi bi-pencil me-1"></i> Edit
-                                        </a>
-                                        <form asp-action="Delete" method="post" class="flex-grow-1">
-                                            <input type="hidden" name="id" value="@artisan.Id" />
-                                            <button type="submit" class="btn btn-sm btn-outline-danger w-100"
-                                                    onclick="return confirm('Are you sure you want to delete this artisan?')">
-                                                <i class="bi bi-trash me-1"></i> Delete
-                                            </button>
-                                        </form>
-                                    </div>
-                                </td>
+                                <th class="ps-4">Artisan</th>
+                                <th>Category</th>
+                                <th>Rating</th>
+                                <th>Contact</th>
+                                <th>Status</th>
+                                <th class="pe-4 text-end">Actions</th>
                             </tr>
-                        }
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody id="artisansTableBody">
+                            @foreach (var item in Model)
+                            {
+                                <tr id="artisan-@item.Id">
+                                    <td class="ps-4 align-middle" data-label="Artisan">
+                                        <div class="d-flex align-items-center">
+                                            <div class="avatar-circle bg-primary text-white me-3">
+                                                @item.FName?.FirstOrDefault()@item.LName?.FirstOrDefault()
+                                            </div>
+                                            <div>
+                                                <div class="fw-semibold">@item.FName @item.LName</div>
+                                                <small class="text-muted">@item.Email</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle" data-label="Category">
+                                        <span class="badge bg-info">@item.Category?.Name</span>
+                                    </td>
+                                    <td class="align-middle" data-label="Rating">
+                                        <div class="rating" data-rating="@item.Rating">
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                <i class="bi @(i <= item.Rating ? "bi-star-fill text-warning" : "bi-star text-secondary")"></i>
+                                            }
+                                            <span class="rating-value">@item.Rating.ToString("0.0")</span>
+                                        </div>
+                                    </td>
+                                    <td class="align-middle" data-label="Contact">
+                                        @if (item.UserPhones != null && item.UserPhones.Any())
+                                        {
+                                            foreach (var phone in item.UserPhones.Take(2))
+                                            {
+                                                <span class="badge bg-light text-dark border me-1 mb-1">@phone.PhoneNumber</span>
+                                            }
+                                            @if (item.UserPhones.Count > 2)
+                                            {
+                                                <span class="badge bg-light text-muted border">+@(item.UserPhones.Count - 2)</span>
+                                            }
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-light text-muted border">No phones</span>
+                                        }
+                                    </td>
+                                    <td class="align-middle" data-label="Status">
+                                        @if (item.IsDeleted)
+                                        {
+                                            <span class="badge bg-danger bg-opacity-10 text-danger px-3 py-1 rounded-pill">
+                                                <i class="bi bi-x-circle-fill me-1"></i>Inactive
+                                            </span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-success bg-opacity-10 text-success px-3 py-1 rounded-pill">
+                                                <i class="bi bi-check-circle-fill me-1"></i>Active
+                                            </span>
+                                        }
+                                    </td>
+                                    <td class="pe-4 align-middle text-end" data-label="Actions">
+                                        <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                            <a asp-action="Edit" asp-route-id="@item.Id"
+                                               class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                                <i class="bi bi-pencil me-1"></i>Edit
+                                            </a>
+                                            @if (item.IsDeleted)
+                                            {
+                                                <form asp-action="Activate" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                                        <i class="bi bi-check-circle me-1"></i>Activate
+                                                    </button>
+                                                </form>
+                                            }
+                                            else
+                                            {
+                                                <form asp-action="Delete" method="post">
+                                                    <input type="hidden" name="id" value="@item.Id" />
+                                                    <button type="submit"
+                                                            class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                            onclick="return confirm('Deactivate this artisan?')">
+                                                        <i class="bi bi-x-circle me-1"></i>Deactivate
+                                                    </button>
+                                                </form>
+                                            }
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        $(document).ready(function() {
+            const searchInput = $('#liveSearchInput');
+            const searchResults = $('#searchResults');
+            const clearSearchBtn = $('#clearSearch');
+            const searchButton = $('#searchButton');
+            const artisansTableBody = $('#artisansTableBody');
+
+            let searchTimeout;
+
+            // Real-time search as you type
+            searchInput.on('input', function() {
+                clearTimeout(searchTimeout);
+                const searchTerm = $(this).val().trim();
+
+                if (searchTerm.length >= 2) {
+                    searchTimeout = setTimeout(() => {
+                        performSearch(searchTerm);
+                    }, 300);
+                    clearSearchBtn.show();
+                } else {
+                    searchResults.hide();
+                    if (searchTerm.length === 0) {
+                        clearSearchBtn.hide();
+                        loadAllArtisans();
+                    }
+                }
+            });
+
+            // Search button click
+            searchButton.click(function() {
+                const searchTerm = searchInput.val().trim();
+                if (searchTerm) {
+                    performSearch(searchTerm, true);
+                }
+            });
+
+            // Clear search
+            clearSearchBtn.click(function() {
+                searchInput.val('');
+                searchResults.hide();
+                clearSearchBtn.hide();
+                loadAllArtisans();
+            });
+
+            function performSearch(searchTerm, isButtonClick = false) {
+                $.get({
+                    url: '@Url.Action("Search", "Artisan")',
+                    data: { searchTerm: searchTerm },
+                    success: function(response) {
+                        if (isButtonClick) {
+                            updateTableWithResults(response);
+                        } else {
+                            displaySearchSuggestions(response);
+                        }
+                    },
+                    error: function() {
+                        artisansTableBody.html('<tr><td colspan="6" class="text-center text-danger py-4">Error loading search results</td></tr>');
+                    }
+                });
+            }
+
+            function displaySearchSuggestions(response) {
+                const results = response && response.success ? response.data : [];
+
+                if (results.length === 0) {
+                    searchResults.html('<div class="list-group-item text-muted">No matching artisans found</div>').show();
+                    return;
+                }
+
+                let html = '';
+                results.forEach(artisan => {
+                    html += `
+                        <div class="list-group-item search-result-item"
+                             data-artisan-id="${artisan.id}">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <strong>${artisan.fName} ${artisan.lName}</strong>
+                                    <div class="text-muted small">${artisan.email}</div>
+                                    <div class="mt-1">
+                                        <span class="badge bg-info">${artisan.category || 'No category'}</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="badge ${artisan.isDeleted ? 'bg-danger' : 'bg-success'}">
+                                        ${artisan.isDeleted ? 'Inactive' : 'Active'}
+                                    </span>
+                                    <div class="rating small mt-1">
+                                        ${Array(5).fill().map((_, i) =>
+                                            `<i class="bi ${i < Math.floor(artisan.rating) ? 'bi-star-fill text-warning' : 'bi-star text-secondary'}"></i>`
+                                        ).join('')}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                });
+
+                searchResults.html(html).show();
+
+                $('.search-result-item').click(function() {
+                    const artisanId = $(this).data('artisan-id');
+                    highlightArtisanInTable(artisanId);
+                    searchResults.hide();
+                });
+            }
+
+            function updateTableWithResults(response) {
+                const results = response && response.success ? response.data : [];
+
+                if (results.length === 0) {
+                    artisansTableBody.html('<tr><td colspan="6" class="text-center py-4">No matching artisans found</td></tr>');
+                    return;
+                }
+
+                let html = '';
+                results.forEach(artisan => {
+                    html += `
+                        <tr id="artisan-${artisan.id}" class="highlight-row">
+                            <td class="ps-4 align-middle" data-label="Artisan">
+                                <div class="d-flex align-items-center">
+                                    <div class="avatar-circle bg-primary text-white me-3">
+                                        ${artisan.fName?.charAt(0)}${artisan.lName?.charAt(0)}
+                                    </div>
+                                    <div>
+                                        <div class="fw-semibold">${artisan.fName} ${artisan.lName}</div>
+                                        <small class="text-muted">${artisan.email}</small>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="align-middle" data-label="Category">
+                                <span class="badge bg-info">${artisan.category || 'No category'}</span>
+                            </td>
+                            <td class="align-middle" data-label="Rating">
+                                <div class="rating" data-rating="${artisan.rating}">
+                                    ${Array(5).fill().map((_, i) =>
+                                        `<i class="bi ${i < Math.floor(artisan.rating) ? 'bi-star-fill text-warning' : 'bi-star text-secondary'}"></i>`
+                                    ).join('')}
+                                    <span class="rating-value">${artisan.rating.toFixed(1)}</span>
+                                </div>
+                            </td>
+                            <td class="align-middle" data-label="Contact">
+                                ${artisan.phones && artisan.phones.length > 0 ?
+                                  artisan.phones.map(phone =>
+                                    `<span class="badge bg-light text-dark border me-1 mb-1">${phone}</span>`
+                                  ).join('') +
+                                  (artisan.phoneCount > 2 ?
+                                   `<span class="badge bg-light text-muted border">+${artisan.phoneCount - 2}</span>` : '')
+                                  : '<span class="badge bg-light text-muted border">No phones</span>'}
+                            </td>
+                            <td class="align-middle" data-label="Status">
+                                <span class="badge ${artisan.isDeleted ? 'bg-danger bg-opacity-10 text-danger' : 'bg-success bg-opacity-10 text-success'} px-3 py-1 rounded-pill">
+                                    <i class="bi ${artisan.isDeleted ? 'bi-x-circle-fill' : 'bi-check-circle-fill'} me-1"></i>
+                                    ${artisan.isDeleted ? 'Inactive' : 'Active'}
+                                </span>
+                            </td>
+                            <td class="pe-4 align-middle text-end" data-label="Actions">
+                                <div class="d-flex justify-content-end gap-2 btn-group-mobile">
+                                    <a href="/Artisan/Edit/${artisan.id}"
+                                       class="btn btn-sm btn-outline-primary d-flex align-items-center">
+                                        <i class="bi bi-pencil me-1"></i>Edit
+                                    </a>
+                                    ${artisan.isDeleted ?
+                                      `<form action="/Artisan/Activate" method="post">
+                                        <input type="hidden" name="id" value="${artisan.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-success d-flex align-items-center">
+                                            <i class="bi bi-check-circle me-1"></i>Activate
+                                        </button>
+                                      </form>` :
+                                      `<form action="/Artisan/Delete" method="post">
+                                        <input type="hidden" name="id" value="${artisan.id}" />
+                                        <button type="submit"
+                                                class="btn btn-sm btn-outline-danger d-flex align-items-center"
+                                                onclick="return confirm('Deactivate this artisan?')">
+                                            <i class="bi bi-x-circle me-1"></i>Deactivate
+                                        </button>
+                                      </form>`}
+                                </div>
+                            </td>
+                        </tr>`;
+                });
+
+                artisansTableBody.html(html);
+            }
+
+            function highlightArtisanInTable(artisanId) {
+                $('tr').removeClass('highlight-row');
+                const row = $(`#artisan-${artisanId}`);
+                row.addClass('highlight-row');
+
+                $('html, body').animate({
+                    scrollTop: row.offset().top - 100
+                }, 500);
+            }
+
+            function loadAllArtisans() {
+                $.get('@Url.Action("Index", "Artisan")', function(data) {
+                    $('#artisansTable').html($(data).find('#artisansTable').html());
+                });
+            }
+
+            $(document).click(function(e) {
+                if (!$(e.target).closest('.search-container').length) {
+                    searchResults.hide();
+                }
+            });
+        });
+    </script>
+}
