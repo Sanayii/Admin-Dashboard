@@ -29,7 +29,7 @@
                     <tr style="margin-bottom:5px;">
                         <td>@p.Customer.FName @p.Customer.LName</td> 
                         <td>@p.Service.ServiceName</td>
-                        <td>@p.Status.ToString()</td> 
+                        <td>@string.Join(" ", p.Status.ToString().Split('_'))</td>
                         <td>@p.Payment.Method.ToString()</td> 
                         <td>@p.Payment.Status.ToString()</td> 
                         <td>@p.Payment.Amount</td>

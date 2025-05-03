@@ -3921,3 +3921,5 @@ C:\Users\AYA MAHMOUD\source\repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboar
 C:\Users\AYA MAHMOUD\source\repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Dashboard.pdb
 C:\Users\AYA MAHMOUD\source\repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\Admin-Dashboard.genruntimeconfig.cache
 C:\Users\AYA MAHMOUD\source\repos\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\obj\Debug\net9.0\ref\Admin-Dashboard.dll
+C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\AWJ.EmailProviders.dll
+C:\Users\asus\source\repos\DotNet Study\Final Projects\Sanayii\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\Admin-Dashboard\bin\Debug\net9.0\SendGrid.dll

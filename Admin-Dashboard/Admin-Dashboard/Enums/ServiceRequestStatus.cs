@@ -5,40 +5,40 @@
     public enum ServiceRequestStatus
     {
         [Display(Name = "Service Requested")]
-        ServiceRequested = 1,
+        Service_Requested = 1,
 
         [Display(Name = "In Progress")]
-        InProgress,
+        In_Progress,
 
         [Display(Name = "Artisan on the Way")]
-        ArtisanOnTheWay,
+        Artisan_On_The_Way,
 
         [Display(Name = "Artisan Nearing Location")]
-        ArtisanNearingLocation,
+        Artisan_Nearing_Location,
 
         [Display(Name = "Artisan Arrived")]
-        ArtisanArrived,
+        Artisan_Arrived,
 
         [Display(Name = "Service Undergoing")]
-        ServiceUndergoing,
+        Service_Undergoing,
 
         [Display(Name = "Service Completed")]
-        ServiceCompleted,
+        Service_Completed,
 
         [Display(Name = "Service Cancelled")]
-        ServiceCancelled,
+        Service_Cancelled,
 
         [Display(Name = "Awaiting Approval")]
-        AwaitingApproval,
+        Awaiting_Approval,
 
         [Display(Name = "Artisan Busy")]
-        ArtisanBusy,
+        Artisan_Busy,
 
         [Display(Name = "Service done Successfully, you Should complete payment method!")]
-        ServiceDonePendingPayment,
+        Service_done_Successfully__you_Should_complete_payment_method,
 
         [Display(Name = "Service done Successfully, and payment done Successfully")]
-        ServiceDoneAndPaid
+        Service_done_Successfully__and_payment_done_Successfully
     }
 
 }
