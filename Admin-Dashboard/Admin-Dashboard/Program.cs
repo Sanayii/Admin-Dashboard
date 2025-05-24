@@ -13,6 +13,10 @@ builder.Services.AddDbContext<SanayiiContext>(options =>
            .UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
+builder.Services.AddSignalR();
+// ...
+
+
 // Configure Identity with your custom AppUser
 builder.Services.AddIdentityCore<AppUser>(options =>
 {
@@ -68,7 +72,7 @@ else
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
-
+app.MapHub<DashboardHub>("/dashboardHub");
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
